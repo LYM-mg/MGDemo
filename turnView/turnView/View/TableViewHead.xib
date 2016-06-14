@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TableViewHead">
+            <rect key="frame" x="0.0" y="0.0" width="433" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MG明明就是你" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guX-3h-zBQ">
+                    <rect key="frame" x="161" y="34" width="112" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址：深圳" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7B-ZQ-puT">
+                    <rect key="frame" x="175" y="96" width="85" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="编辑个人资料" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Um3-pQ-8MS">
+                    <rect key="frame" x="167" y="137" width="102" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今年23岁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IU9-51-8Bj">
+                    <rect key="frame" x="181" y="65" width="72" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Um3-pQ-8MS" firstAttribute="centerX" secondItem="b7B-ZQ-puT" secondAttribute="centerX" id="0nE-YF-Cym"/>
+                <constraint firstItem="IU9-51-8Bj" firstAttribute="centerX" secondItem="guX-3h-zBQ" secondAttribute="centerX" id="1nv-xf-nsP"/>
+                <constraint firstItem="guX-3h-zBQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="CmM-He-7eh"/>
+                <constraint firstItem="b7B-ZQ-puT" firstAttribute="top" secondItem="IU9-51-8Bj" secondAttribute="bottom" constant="10" id="DDM-90-hvs"/>
+                <constraint firstItem="Um3-pQ-8MS" firstAttribute="top" secondItem="b7B-ZQ-puT" secondAttribute="bottom" constant="20" id="Kh8-o3-jkG"/>
+                <constraint firstItem="b7B-ZQ-puT" firstAttribute="centerX" secondItem="IU9-51-8Bj" secondAttribute="centerX" id="TAa-91-ZRs"/>
+                <constraint firstItem="guX-3h-zBQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="34" id="TE9-DZ-3Fd"/>
+                <constraint firstItem="IU9-51-8Bj" firstAttribute="top" secondItem="guX-3h-zBQ" secondAttribute="bottom" constant="10" id="xR5-Sz-qsY"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="270.5" y="185"/>
+        </view>
+    </objects>
+</document>
