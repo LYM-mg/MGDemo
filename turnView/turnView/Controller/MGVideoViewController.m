@@ -44,6 +44,9 @@ static NSString *const MGAssetCollectionName = @"MG的视频集";
     [self videoFromPhotos];
 }
 
+- (IBAction)closeClick {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 #pragma mark - 视频相关
 /*
  一.保存图片到【Camera Roll】(相机胶卷)
