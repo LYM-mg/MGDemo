@@ -104,7 +104,7 @@ static NSString *const MGAssetCollectionName = @"MG的视频集";
         [self presentViewController:picker animated:YES completion:NULL];
         self.shouldAsync = shouldAsync;
     } else {
-        NSLog(@"手机不支持摄像");
+        [SVProgressHUD showInfoWithStatus:(@"手机不支持摄像")];
     }
     
 }

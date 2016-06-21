@@ -7,6 +7,7 @@
 //
 
 #import "MGTableController.h"
+#import "MGSearchViewController.h"
 #import "UIView+Extension.h"
 #import "MGHeadView.h"
 #import "TableViewHead.h"
@@ -97,6 +98,15 @@ static NSString *const CellIdentfier = @"CellIdentfier";
     _topImageView.image = [UIImage imageNamed:@"12"];
     [topView addSubview:_topImageView];
     self.navigationItem.titleView = topView;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchClick)];
+}
+
+// 导航栏右边搜索的点击
+- (void)searchClick{
+    MGSearchViewController *searchVC = [[MGSearchViewController alloc] init];
+    searchVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:searchVC animated:YES];
 }
 
 #pragma mark - TableViewDatasource
@@ -119,7 +129,6 @@ static NSString *const CellIdentfier = @"CellIdentfier";
     MGSectionModel *sectionModel = self.sectionDataSources[indexPath.section];
     MGCellModel *cellModel = sectionModel.cellModels[indexPath.row];
     cell.textLabel.text = cellModel.title;
-
     
     return cell;
 }

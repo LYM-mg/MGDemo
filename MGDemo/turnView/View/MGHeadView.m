@@ -43,7 +43,7 @@
         line.backgroundColor = [UIColor lightGrayColor].CGColor;
         [self.contentView.layer addSublayer:line];
         
-        self.backgroundColor = [UIColor grayColor];
+        self.contentView.backgroundColor = [UIColor grayColor];
     }
     return self;
 }
