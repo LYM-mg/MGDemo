@@ -381,44 +381,6 @@ static NSString *const ShopCellIdentifier = @"ShopCellIdentifier";
     
     return cell;
 }
-//
-////返回YES允许其item移动
-//- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath{
-//    return YES;
-//}
-//
-//- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
-//    // 取出源item数据
-//    id objc = [self.shops objectAtIndex:sourceIndexPath.item];
-//    //从资源数组中移除该数据
-//    [self.shops removeObject:objc];
-//    //将数据插入到资源数组中的目标位置上
-//    [self.shops insertObject:objc atIndex:destinationIndexPath.item];
-//    [self.collectionView reloadData];
-//}
-//
-//#pragma mark - longPress手势
-//- (void)handleLongGesture:(UILongPressGestureRecognizer *)lpGesture{
-//    switch(lpGesture.state) {
-//        case UIGestureRecognizerStateBegan:
-//        {
-//            NSIndexPath *selectedIndexPath =  [self.collectionView indexPathForItemAtPoint:[lpGesture locationInView:lpGesture.view]];
-//            [self.collectionView beginInteractiveMovementForItemAtIndexPath:selectedIndexPath];
-//            break;
-//        }
-//        case UIGestureRecognizerStateChanged:
-//        {
-//            [self.collectionView updateInteractiveMovementTargetPosition:[lpGesture locationInView:self.collectionView]];
-//            break;
-//        }
-//        case UIGestureRecognizerStateEnded:
-//        {
-//            [self.collectionView endInteractiveMovement];
-//        }
-//        default:
-//            [self.collectionView cancelInteractiveMovement];
-//    }
-//}
 
 #pragma mark - MGWaterflowLayoutDelegate
 - (CGFloat)waterflowLayout:(MGWaterflowLayout *)waterflowLayout heightForItemAtIndex:(NSIndexPath *)indexPath itemWidth:(CGFloat)itemWidth

@@ -40,7 +40,7 @@ static NSString *const CellIdentifier = @"CellIdentifier";
 /// 初始化collectionView
 - (void)setUpLayout{
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake((MGSCREEN_WIDTH-10*5)/4, (MGSCREEN_WIDTH-10*5)/4);
+    layout.itemSize = CGSizeMake((MGSCREEN_WIDTH-10*3)/4, (MGSCREEN_WIDTH-10*3)/4);
     layout.minimumInteritemSpacing = 10;
     layout.minimumLineSpacing = 10;
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
@@ -72,19 +72,17 @@ static NSString *const CellIdentifier = @"CellIdentifier";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1.0];
     cell.backgroundColor = MGrandomColor;
     for (UIView *view in cell.subviews) {
         [view removeFromSuperview];
     }
     
     UILabel *label = [[UILabel alloc] init];
-
-    label.orgin = CGPointMake((cell.width-label.width)/2, (cell.height-label.height)/2);
+    label.center = CGPointMake(cell.contentView.centerX-20, cell.contentView.centerY - 10);
     label.text = self.dataArr[indexPath.item];
     label.textColor = [UIColor redColor];
     [label sizeToFit];
-    [cell.contentView addSubview:label];
+    [cell addSubview:label];
     return cell;
 }
 
