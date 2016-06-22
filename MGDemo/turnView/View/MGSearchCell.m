@@ -16,7 +16,7 @@
         if ([control isMemberOfClass:NSClassFromString(@"UITableViewCellEditControl")]){
             for (UIView *v in control.subviews)
             {
-                // 可以修改多选状态下选中状态的图片
+                // 可以修改TableView多选状态下选中状态的图片
                 if ([v isKindOfClass: [UIImageView class]]) {
                     UIImageView *img=(UIImageView *)v;
                     if (self.selected) {

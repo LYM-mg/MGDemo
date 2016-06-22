@@ -147,10 +147,10 @@
 
 //返回单元格内容
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    // 循环利用标识符
+    // 1.循环利用标识符
     static NSString *const cellIdentifier =@"cellIdentifier";
     
-    // 根据循环利用标识符从缓存池中获取cell
+    // 2.根据循环利用标识符从缓存池中获取cell
     MGSearchCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         // 创建cell
@@ -170,20 +170,21 @@
 #pragma mark - UISearchBarDelegate,UISearchResultsUpdating
 // 具体调用的时候使用的方法也发生了改变，这个时候使用updateSearchResultsForSearchController进行结果过滤:
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
-    // 取得搜索框的文字
+    // 1.取得搜索框的文字
     NSString *searchString = [self.searchController.searchBar text];
     
-    // 过滤
+    // 2.过滤
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
     
+    // 3.移除上一次的数据
     if (self.searchList != nil) {
         [self.searchList removeAllObjects];
     }
     
-    //过滤数据
+    // 4.过滤数据
     self.searchList = [NSMutableArray arrayWithArray:[_dataList filteredArrayUsingPredicate:predicate]];
     
-    //刷新表格
+    // 5.刷新表格
     [self.tableView reloadData];
 }
 

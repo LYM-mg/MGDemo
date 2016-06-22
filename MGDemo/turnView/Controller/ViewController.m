@@ -8,10 +8,7 @@
 
 #import "ViewController.h"
 #import "MGVideoViewController.h"
-
-
-#define MGSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define MGSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#import "MGSelectViewController.h"
 
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -29,12 +26,21 @@
     [super viewDidLoad];
     
     [self setMainView];
+    
+//    self.automaticallyAdjustsScrollViewInsets = NO;
+//    _leftView.contentInset = UIEdgeInsetsMake( 44, 0, 0, 0);
+//    _rightnView.contentInset = UIEdgeInsetsMake( 44, 0, 0, 0);
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    self.navigationController.navigationBar.hidden=YES;
+    self.navigationController.navigationBar.hidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)setMainView{
@@ -43,11 +49,11 @@
     _leftView.dataSource = self;
     [self.view addSubview:_leftView];
     
-    _rightnView=[[UITableView alloc] initWithFrame:(CGRectMake(0, 64, MGSCREEN_WIDTH, MGSCREEN_HEIGHT-64))];
+    _rightnView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 64, MGSCREEN_WIDTH, MGSCREEN_HEIGHT-64))];
     _rightnView.backgroundColor=[UIColor greenColor];
     [self.view addSubview:_rightnView];
 
-    _topBgView=[[UIView alloc] initWithFrame:(CGRectMake(0, 0, MGSCREEN_WIDTH, 64))];
+    _topBgView = [[UIView alloc] initWithFrame:(CGRectMake(0, 0, MGSCREEN_WIDTH, 64))];
 //    _topBgView.alpha = 0.0f;
     [self.view addSubview:_topBgView];
     
@@ -61,17 +67,32 @@
     NSDictionary *dics = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:15.0f] forKey:NSFontAttributeName];
     [segment setTitleTextAttributes:dics forState:UIControlStateNormal];
     segment.selectedSegmentIndex = 0;
-    [self.view insertSubview:segment aboveSubview:_topBgView];
+    [_topBgView addSubview:segment];
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setTitle:@"视频界面" forState:UIControlStateNormal];
-    btn.frame  = CGRectMake(MGSCREEN_WIDTH - 80, 20, 40, 24);
-    btn.backgroundColor = [UIColor orangeColor];
-    [btn addTarget:self action:@selector(videoClick) forControlEvents:UIControlEventTouchUpInside];
-    [btn sizeToFit];
-    [self.view insertSubview:btn aboveSubview:_topBgView];
+    UIButton *videoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [videoBtn setTitle:@"视频界面" forState:UIControlStateNormal];
+    videoBtn.frame  = CGRectMake(MGSCREEN_WIDTH - 80, 20, 40, 24);
+    videoBtn.backgroundColor = [UIColor orangeColor];
+    [videoBtn sizeToFit];
+    [videoBtn addTarget:self action:@selector(videoClick) forControlEvents:UIControlEventTouchUpInside];
+    [_topBgView addSubview:videoBtn];
+
     
+    UIButton *selectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [selectBtn setTitle:@"选择" forState:UIControlStateNormal];
+    selectBtn.frame  = CGRectMake( 15, 20, 40, 24);
+    selectBtn.backgroundColor = [UIColor orangeColor];
+    [selectBtn addTarget:self action:@selector(selectClick) forControlEvents:UIControlEventTouchUpInside];
+    [selectBtn sizeToFit];
+    [_topBgView addSubview:selectBtn];
     [self.view bringSubviewToFront:_leftView];
+}
+
+- (void)selectClick{
+    MGSelectViewController *selectVc = [[MGSelectViewController alloc] init];
+    selectVc.hidesBottomBarWhenPushed = YES;
+    selectVc.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:selectVc animated:YES];
 }
 
 - (void)videoClick{
