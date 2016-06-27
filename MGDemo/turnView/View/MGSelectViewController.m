@@ -176,7 +176,7 @@ static NSString *const ShopCellIdentifier = @"ShopCellIdentifier";
     _itemTableView.hidden = YES;
     _itemTableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     _itemTableView.backgroundColor=[UIColor blackColor];
-    _itemTableView.alpha=0.7f;
+    _itemTableView.alpha = 0.7f;
     [self.view addSubview:_itemTableView];
 }
 

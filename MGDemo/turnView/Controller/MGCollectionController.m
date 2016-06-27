@@ -62,6 +62,7 @@ static NSString *const CellIdentifier = @"CellIdentifier";
     // 创建长按手势
     UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongGesture:)];
     [self.collectionView addGestureRecognizer:longPressGesture];
+
 }
 
 #pragma mark - <UICollectionViewDataSource>
@@ -83,6 +84,16 @@ static NSString *const CellIdentifier = @"CellIdentifier";
     label.textColor = [UIColor redColor];
     [label sizeToFit];
     [cell addSubview:label];
+    
+    /** 在MGCollectionController中发现一处崩溃的地方。 长按cells间空白的地方，拖动程序就会崩溃
+     *
+     *  解法2：注释掉给self.collectionView添加的手势方法
+     */
+    // 把长按手势添加到cell上，而不是self.collectionView
+    // 创建长按手势
+//    UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongGesture:)];
+//    [cell addGestureRecognizer:longPressGesture];
+    
     return cell;
 }
 
@@ -95,30 +106,43 @@ static NSString *const CellIdentifier = @"CellIdentifier";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
-    // 取出源item数据
+    // 1.取出源item数据
     id objc = [self.dataArr objectAtIndex:sourceIndexPath.item];
-    //从资源数组中移除该数据
+
+    // 2.从资源数组中移除该数据
     [self.dataArr removeObject:objc];
-    //将数据插入到资源数组中的目标位置上
+    
+    // 3.将数据插入到资源数组中的目标位置上
     [self.dataArr insertObject:objc atIndex:destinationIndexPath.item];
 }
 
 
 #pragma mark - longPress手势
 - (void)handleLongGesture:(UILongPressGestureRecognizer *)lpGesture{
-    switch(lpGesture.state) {
+       switch(lpGesture.state) {
         case UIGestureRecognizerStateBegan:
         {
             NSIndexPath *selectedIndexPath =  [self.collectionView indexPathForItemAtPoint:[lpGesture locationInView:self.collectionView]];
+            
+            /** 在MGCollectionController中发现一处崩溃的地方。 长按cells间空白的地方，拖动程序就会崩溃
+             *  
+             *  解法1：
+             */
+            // 当移动空白处时，indexPath是空的，移除nil的index时就会崩溃。直接返回
+            if (selectedIndexPath == nil){
+                return;
+            }
+            
+            
             [self.collectionView beginInteractiveMovementForItemAtIndexPath:selectedIndexPath];
             break;
         }
         case UIGestureRecognizerStateChanged:
-            //移动过程当中随时更新cell位置
+            // 移动过程当中随时更新cell位置
             [self.collectionView updateInteractiveMovementTargetPosition:[lpGesture locationInView:self.collectionView]];
-            break;
+                break;
         case UIGestureRecognizerStateEnded:
-            //移动结束后关闭cell移动
+            // 移动结束后关闭cell移动
             [self.collectionView endInteractiveMovement];
             break;
         default:
@@ -126,5 +150,13 @@ static NSString *const CellIdentifier = @"CellIdentifier";
             break;
     }
 }
+
+//// 处理方法
+//- (instancetype)returnNil:(UILongPressGestureRecognizer *)lpGesture{
+//    NSIndexPath *selectedIndexPath =  [self.collectionView indexPathForItemAtPoint:[lpGesture locationInView:self.collectionView]];
+//    // 取出源item数据
+//    id objc = [self.dataArr objectAtIndex:selectedIndexPath.item];
+//    return objc;
+//}
 
 @end
