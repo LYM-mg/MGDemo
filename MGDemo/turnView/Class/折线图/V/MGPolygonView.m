@@ -9,7 +9,7 @@
 #import "MGPolygonView.h"
 
 @interface MGPolygonView ()
-@property (nonatomic, strong) CAShapeLayer *lineChartLayer;
+
 @property (nonatomic, strong)UIBezierPath * path1;
 /** 渐变背景视图 */
 @property (nonatomic, strong) UIView *gradientBackgroundView;

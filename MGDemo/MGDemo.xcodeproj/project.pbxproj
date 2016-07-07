@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A23A3AD1D2EB9FE00FFFF78 /* MGAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23A3AC1D2EB9FE00FFFF78 /* MGAnimationVC.m */; settings = {ASSET_TAGS = (); }; };
+		3A23A3B01D2EC0BA00FFFF78 /* MGAnimationPushVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23A3AF1D2EC0BA00FFFF78 /* MGAnimationPushVC.m */; settings = {ASSET_TAGS = (); }; };
+		3A23A3B31D2EC18400FFFF78 /* MGNavVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23A3B21D2EC18400FFFF78 /* MGNavVC.m */; settings = {ASSET_TAGS = (); }; };
+		3A23A3B81D2EC6F800FFFF78 /* CustomAnimateTransitionPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23A3B51D2EC6F800FFFF78 /* CustomAnimateTransitionPush.m */; settings = {ASSET_TAGS = (); }; };
+		3A23A3B91D2EC6F800FFFF78 /* CustomAnimateTransitionPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23A3B71D2EC6F800FFFF78 /* CustomAnimateTransitionPop.m */; settings = {ASSET_TAGS = (); }; };
 		3A29D0D51D1A426E004F1FDD /* MJArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A29D0701D1A426E004F1FDD /* MJArgument.m */; settings = {ASSET_TAGS = (); }; };
 		3A29D0D61D1A426E004F1FDD /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A29D0721D1A426E004F1FDD /* MJConst.m */; settings = {ASSET_TAGS = (); }; };
 		3A29D0D71D1A426E004F1FDD /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A29D0751D1A426E004F1FDD /* MJFoundation.m */; settings = {ASSET_TAGS = (); }; };
@@ -94,6 +99,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A23A3AB1D2EB9FE00FFFF78 /* MGAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAnimationVC.h; sourceTree = "<group>"; };
+		3A23A3AC1D2EB9FE00FFFF78 /* MGAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAnimationVC.m; sourceTree = "<group>"; };
+		3A23A3AE1D2EC0BA00FFFF78 /* MGAnimationPushVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAnimationPushVC.h; sourceTree = "<group>"; };
+		3A23A3AF1D2EC0BA00FFFF78 /* MGAnimationPushVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAnimationPushVC.m; sourceTree = "<group>"; };
+		3A23A3B11D2EC18400FFFF78 /* MGNavVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNavVC.h; sourceTree = "<group>"; };
+		3A23A3B21D2EC18400FFFF78 /* MGNavVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNavVC.m; sourceTree = "<group>"; };
+		3A23A3B41D2EC6F800FFFF78 /* CustomAnimateTransitionPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimateTransitionPush.h; sourceTree = "<group>"; };
+		3A23A3B51D2EC6F800FFFF78 /* CustomAnimateTransitionPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnimateTransitionPush.m; sourceTree = "<group>"; };
+		3A23A3B61D2EC6F800FFFF78 /* CustomAnimateTransitionPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimateTransitionPop.h; sourceTree = "<group>"; };
+		3A23A3B71D2EC6F800FFFF78 /* CustomAnimateTransitionPop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnimateTransitionPop.m; sourceTree = "<group>"; };
 		3A29D06F1D1A426E004F1FDD /* MJArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJArgument.h; sourceTree = "<group>"; };
 		3A29D0701D1A426E004F1FDD /* MJArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJArgument.m; sourceTree = "<group>"; };
 		3A29D0711D1A426E004F1FDD /* MJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJConst.h; sourceTree = "<group>"; };
@@ -266,6 +281,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A23A3A71D2EB9CD00FFFF78 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				3A23A3A91D2EB9CD00FFFF78 /* M */,
+				3A23A3AA1D2EB9CD00FFFF78 /* V */,
+				3A23A3A81D2EB9CD00FFFF78 /* C */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		3A23A3A81D2EB9CD00FFFF78 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				3A23A3AB1D2EB9FE00FFFF78 /* MGAnimationVC.h */,
+				3A23A3AC1D2EB9FE00FFFF78 /* MGAnimationVC.m */,
+				3A23A3AE1D2EC0BA00FFFF78 /* MGAnimationPushVC.h */,
+				3A23A3AF1D2EC0BA00FFFF78 /* MGAnimationPushVC.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		3A23A3A91D2EB9CD00FFFF78 /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		3A23A3AA1D2EB9CD00FFFF78 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				3A23A3B41D2EC6F800FFFF78 /* CustomAnimateTransitionPush.h */,
+				3A23A3B51D2EC6F800FFFF78 /* CustomAnimateTransitionPush.m */,
+				3A23A3B61D2EC6F800FFFF78 /* CustomAnimateTransitionPop.h */,
+				3A23A3B71D2EC6F800FFFF78 /* CustomAnimateTransitionPop.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
 		3A29D06E1D1A426E004F1FDD /* MJExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +498,7 @@
 				3A8501421D2E308E00E2CE67 /* ming */,
 				3A85017A1D2E31A600E2CE67 /* Search */,
 				3A8501681D2E308E00E2CE67 /* 折线图 */,
+				3A23A3A71D2EB9CD00FFFF78 /* Animation */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -658,6 +713,8 @@
 			children = (
 				3AE9E4531CF92D03000DCB72 /* AppDelegate.h */,
 				3AE9E4541CF92D03000DCB72 /* AppDelegate.m */,
+				3A23A3B11D2EC18400FFFF78 /* MGNavVC.h */,
+				3A23A3B21D2EC18400FFFF78 /* MGNavVC.m */,
 				3A8501411D2E308E00E2CE67 /* Class */,
 				3A3F4C3C1D0EEC4200311679 /* UIView--Frame */,
 				3AA3DA8F1D0FDB01008B96E2 /* ThirdLib */,
@@ -777,6 +834,7 @@
 				3A29D0F21D1A426E004F1FDD /* UIView+MJExtension.m in Sources */,
 				3A29D0E31D1A426E004F1FDD /* MJRefreshFooter.m in Sources */,
 				3A8501721D2E308E00E2CE67 /* MGWaterflowLayout.m in Sources */,
+				3A23A3B81D2EC6F800FFFF78 /* CustomAnimateTransitionPush.m in Sources */,
 				3A29D0FE1D1A426E004F1FDD /* UIImage+MultiFormat.m in Sources */,
 				3A3F4C3F1D0EEC4200311679 /* UIView+Extension.m in Sources */,
 				3A29D0FF1D1A426E004F1FDD /* UIImage+WebP.m in Sources */,
@@ -789,13 +847,16 @@
 				3A29D0D71D1A426E004F1FDD /* MJFoundation.m in Sources */,
 				3A29D0F01D1A426E004F1FDD /* UIScrollView+MJExtension.m in Sources */,
 				3A29D0F41D1A426E004F1FDD /* NSData+ImageContentType.m in Sources */,
+				3A23A3AD1D2EB9FE00FFFF78 /* MGAnimationVC.m in Sources */,
 				3A29D0DB1D1A426E004F1FDD /* MJType.m in Sources */,
 				3A29D0E71D1A426E004F1FDD /* MJRefreshAutoStateFooter.m in Sources */,
+				3A23A3B31D2EC18400FFFF78 /* MGNavVC.m in Sources */,
 				3A8501701D2E308E00E2CE67 /* MGShopCell.m in Sources */,
 				3A29D0DC1D1A426E004F1FDD /* MJTypeEncoding.m in Sources */,
 				3A29D1001D1A426E004F1FDD /* UIImageView+HighlightedWebCache.m in Sources */,
 				3A29D0E41D1A426E004F1FDD /* MJRefreshHeader.m in Sources */,
 				3A85016E1D2E308E00E2CE67 /* MGVideoViewController.m in Sources */,
+				3A23A3B01D2EC0BA00FFFF78 /* MGAnimationPushVC.m in Sources */,
 				3AFE8BA81D2E622C00512C3A /* MGCarGroup.m in Sources */,
 				3A29D0F81D1A426E004F1FDD /* SDWebImageDownloader.m in Sources */,
 				3A29D0FC1D1A426E004F1FDD /* UIButton+WebCache.m in Sources */,
@@ -826,6 +887,7 @@
 				3A29D0DD1D1A426E004F1FDD /* NSObject+MJCoding.m in Sources */,
 				3A29D0D51D1A426E004F1FDD /* MJArgument.m in Sources */,
 				3AE9E4551CF92D03000DCB72 /* AppDelegate.m in Sources */,
+				3A23A3B91D2EC6F800FFFF78 /* CustomAnimateTransitionPop.m in Sources */,
 				3A29D1011D1A426E004F1FDD /* UIImageView+WebCache.m in Sources */,
 				3A29D0ED1D1A426E004F1FDD /* MJRefreshStateHeader.m in Sources */,
 				3AA3DA9B1D0FDB18008B96E2 /* SVIndefiniteAnimatedView.m in Sources */,

@@ -53,12 +53,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ey-4C-P8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606" y="852"/>
+            <point key="canvasLocation" x="562" y="849"/>
         </scene>
         <!--search-->
         <scene sceneID="nRq-SC-5uG">
             <objects>
-                <navigationController id="PMx-0B-Sdg" sceneMemberID="viewController">
+                <navigationController id="PMx-0B-Sdg" customClass="MGNavVC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="search" image="gril.png" id="Mr1-pC-CA0"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iGm-Kv-dLI">
@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="182" y="827"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--折线图Navigation-->
         <scene sceneID="sMo-uG-l2i">
             <objects>
-                <navigationController id="XnE-KH-EnX" sceneMemberID="viewController">
+                <navigationController id="XnE-KH-EnX" userLabel="折线图Navigation" customClass="MGNavVC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" selectedImage="info.png" systemItem="featured" id="DKe-pK-en5"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eLe-rP-5GG">
@@ -109,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MO3-AK-ngU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606" y="1410"/>
+            <point key="canvasLocation" x="562" y="1410"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="q7q-0n-Vkp">
@@ -125,16 +125,17 @@
                         <segue destination="guD-Mp-7hr" kind="relationship" relationship="viewControllers" id="DAC-sl-gNP"/>
                         <segue destination="PMx-0B-Sdg" kind="relationship" relationship="viewControllers" id="2Sv-G7-9M6"/>
                         <segue destination="XnE-KH-EnX" kind="relationship" relationship="viewControllers" id="T9y-0u-TMq"/>
+                        <segue destination="69Y-8l-nlu" kind="relationship" relationship="viewControllers" id="CNF-1B-luZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOA-wt-W4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-261" y="719"/>
+            <point key="canvasLocation" x="-497" y="1215"/>
         </scene>
         <!--明哥-->
         <scene sceneID="Zvb-Ee-JsU">
             <objects>
-                <navigationController id="guD-Mp-7hr" sceneMemberID="viewController">
+                <navigationController id="guD-Mp-7hr" customClass="MGNavVC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="明哥" image="butterfly.png" id="u9w-AL-Siq"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sES-BW-vPT">
@@ -249,6 +250,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smn-xD-yQA" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="909" y="284"/>
+        </scene>
+        <!--转场动画Navigation-->
+        <scene sceneID="aoX-4R-gK4">
+            <objects>
+                <navigationController id="69Y-8l-nlu" userLabel="转场动画Navigation" customClass="MGNavVC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" selectedImage="info.png" systemItem="mostViewed" id="RAX-1a-mLg"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7oI-RL-0LK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="weE-6O-PkB" kind="relationship" relationship="rootViewController" id="yW2-jH-iWH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q5t-Ym-6gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="1961"/>
+        </scene>
+        <!--转场动画-->
+        <scene sceneID="XiT-Aq-ExG">
+            <objects>
+                <viewController id="weE-6O-PkB" customClass="MGAnimationVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JB7-Fp-cIh"/>
+                        <viewControllerLayoutGuide type="bottom" id="hsf-sO-T6P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iHX-H9-Xq3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="转场动画" id="vQ5-5m-fsr"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Pp-6P-TKY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="562" y="1961"/>
         </scene>
     </scenes>
     <resources>

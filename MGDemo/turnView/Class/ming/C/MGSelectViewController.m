@@ -57,6 +57,9 @@ static NSString *const ShopCellIdentifier = @"ShopCellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.hidesBarsWhenKeyboardAppears = YES;
+//    self.navigationController.hidesBarsWhenVerticallyCompact = YES;
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"可移动collect" style:UIBarButtonItemStyleDone target:self action:@selector(toCollection)];
     
     // 初始化选择view的数据

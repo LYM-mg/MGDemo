@@ -10,7 +10,8 @@
 #import "MGPolygonView.h"
 
 @interface MGPolygonVC ()
-
+/** 绘制折线图的View */
+@property (nonatomic,strong) MGPolygonView *drawView;
 @end
 
 @implementation MGPolygonVC
@@ -20,6 +21,40 @@
     
     MGPolygonView *drawView = [[MGPolygonView alloc] initWithFrame:CGRectMake(10, 200, self.view.width - 20, 250)];
     [self.view addSubview:drawView];
+    self.drawView = drawView;
+    
+    [self setCorrectBtn];
+}
+
+- (void)setCorrectBtn{
+    /*
+     * 指定了需要成为圆角的角。该参数是UIRectCorner类型的，可选的值有：
+     * UIRectCornerTopLeft
+     * UIRectCornerTopRight
+     * UIRectCornerBottomLeft
+     * UIRectCornerBottomRight
+     * UIRectCornerAllCorners
+     */
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.drawView.frame) + 20, self.view.width - 20, 50)];
+    [btn setTitle:@"开始绘制折线图" forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor redColor];
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:btn.bounds byRoundingCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(10, 10)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = btn.bounds;
+    maskLayer.path = maskPath.CGPath;
+    btn.layer.mask = maskLayer;
+    
+    [btn addTarget:self action:@selector(startDrawLine) forControlEvents:UIControlEventTouchUpInside];
+}
+// 监听按钮点击操作
+- (void)startDrawLine{
+    [self.drawView.lineChartLayer removeFromSuperlayer];
+    for (NSInteger i = 0; i < 12; i++) {
+        UILabel * label = (UILabel*)[self.drawView viewWithTag:300 + i];
+        [label removeFromSuperview];
+    }
+
+    [self.drawView drawLine];
 }
 
 - (void)didReceiveMemoryWarning {

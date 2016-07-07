@@ -1,14 +1,14 @@
 //
-//  CustomAnimateTransitionPush.m
+//  CustomAnimateTransitionPop.m
 //  animateTransition
 //
-//  Created by 战明 on 16/5/26.
-//  Copyright © 2016年 zhanming. All rights reserved.
+//  Created by ming on 16/6/26.
+//  Copyright © 2016年 ming. All rights reserved.
 //
 
 #import "CustomAnimateTransitionPush.h"
-#import "ViewController.h"
-#import "SecondViewController.h"
+#import "MGAnimationVC.h"
+#import "MGAnimationPushVC.h"
 
 @interface CustomAnimateTransitionPush()
 @property (nonatomic,strong)id<UIViewControllerContextTransitioning> transitionContext;
@@ -24,13 +24,11 @@
 
 -(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    
-    
-    self.transitionContext=transitionContext;
+    self.transitionContext = transitionContext;
     
     // 获取动画的源控制器和目标控制器
-    ViewController * fromVC = (ViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    SecondViewController *toVC = (SecondViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    MGAnimationVC * fromVC = (MGAnimationVC *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    MGAnimationPushVC *toVC = (MGAnimationPushVC *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
     //获取容器视图
     UIView *contView = [transitionContext containerView];

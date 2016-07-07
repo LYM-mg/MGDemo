@@ -204,6 +204,10 @@
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
     // update the filtered array based on the search text
     NSString *searchText = searchController.searchBar.text;
+    if (searchText.length <= 0){
+        [self.tableView reloadData];
+        return;
+    }
     NSMutableArray *searchResults = [self.dataList mutableCopy];
     
     // strip out all the leading and trailing spaces
@@ -245,7 +249,8 @@
                           options:NSCaseInsensitivePredicateOption];
         [searchItemsPredicate addObject:finalPredicate];
         
-        [searchItemsPredicate addObject:finalPredicate];
+//        finalPredicate = [NSComparisonPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
+//        [searchItemsPredicate addObject:finalPredicate];
 
         // at this OR predicate to our master AND predicate
         NSCompoundPredicate *orMatchPredicates = [NSCompoundPredicate orPredicateWithSubpredicates:searchItemsPredicate];
@@ -256,8 +261,34 @@
     NSCompoundPredicate *finalCompoundPredicate =
     [NSCompoundPredicate andPredicateWithSubpredicates:andMatchPredicates];
     self.searchList = [[searchResults filteredArrayUsingPredicate:finalCompoundPredicate] mutableCopy];
-    
+
+    if (self.searchList.count == 0) {
+        UILabel *tipLabel = [[UILabel alloc] init];
+        tipLabel.text = @"当前搜索没有结果";
+        [tipLabel sizeToFit];
+        tipLabel.center = self.view.center;
+        tipLabel.textColor = [UIColor redColor];
+        tipLabel.textAlignment = NSTextAlignmentCenter;
+        tipLabel.alpha = 0.0;
+        tipLabel.transform = CGAffineTransformMakeScale(0.5, 0.5);
+        tipLabel.transform = CGAffineTransformMakeTranslation(0, -100);
+        [self.view addSubview:tipLabel];
+        [UIView animateWithDuration:2.0 delay:0.0 usingSpringWithDamping:0.4 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            tipLabel.alpha = 1.0;
+            tipLabel.transform = CGAffineTransformIdentity;
+            tipLabel.transform = CGAffineTransformMakeScale(1.5, 1.5);
+        }completion:^(BOOL finished) {
+            [UIView animateWithDuration:1.0 delay:1.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                tipLabel.alpha = 0.0;
+                tipLabel.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1);
+            } completion:^(BOOL finished) {
+                [tipLabel removeFromSuperview];
+                searchController.searchBar.text = @"";
+            }];
+        }];
+    }
     [self.tableView reloadData];
+    
     
     /**
      1.BEGINSWITH ： 搜索结果的字符串是以搜索框里的字符开头的
@@ -285,6 +316,27 @@
 //    
 //    // 5.刷新表格
 //    [self.tableView reloadData];
+    
+//    if (searchController.searchBar.text.length)
+//    {
+//        [self.searchList removeAllObjects];
+//        
+//        [self.dataList enumerateObjectsUsingBlock:^(MGCarGroup *obj, NSUInteger idx, BOOL *stop) {
+//            
+//            NSArray *cars = obj.cars;
+//            
+//            [cars enumerateObjectsUsingBlock:^(id car, NSUInteger idx, BOOL *stop) {
+//                
+//                MGCar *carModel = (MGCar *)car;
+//                
+//                if ([carModel.name containsString:searchController.searchBar.text])
+//                {
+//                    [self.searchList addObject:car];
+//                }
+//            }];
+//        }];
+//        [self.tableView reloadData];
+//    }
 }
 
 #pragma mark - TableViewDelegate

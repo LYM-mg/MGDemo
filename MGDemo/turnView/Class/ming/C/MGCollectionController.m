@@ -11,7 +11,7 @@
 /** 重用标识符 */
 static NSString *const CellIdentifier = @"CellIdentifier";
 
-@interface MGCollectionController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface MGCollectionController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 /** 数据 */
 @property (nonatomic, strong) NSMutableArray *dataArr;
 /** collectionView */
@@ -38,6 +38,12 @@ static NSString *const CellIdentifier = @"CellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationController.hidesBarsOnSwipe = YES;
+    self.navigationController.hidesBarsWhenKeyboardAppears = YES;
+    self.navigationController.hidesBarsOnTap = YES;
+    self.navigationController.hidesBarsWhenVerticallyCompact = YES;
+    
     [self setUpLayout];
 }
 
@@ -53,6 +59,7 @@ static NSString *const CellIdentifier = @"CellIdentifier";
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     collectionView.backgroundColor = [UIColor whiteColor];
     collectionView.dataSource = self;
+    collectionView.delegate = self;
     [self.view addSubview:collectionView];
 //    self.collectionView.contentInset = UIEdgeInsetsMake(0, 10, 0, 10);
     self.collectionView.showsHorizontalScrollIndicator = NO;
@@ -155,12 +162,9 @@ static NSString *const CellIdentifier = @"CellIdentifier";
     }
 }
 
-//// 处理方法
-//- (instancetype)returnNil:(UILongPressGestureRecognizer *)lpGesture{
-//    NSIndexPath *selectedIndexPath =  [self.collectionView indexPathForItemAtPoint:[lpGesture locationInView:self.collectionView]];
-//    // 取出源item数据
-//    id objc = [self.dataArr objectAtIndex:selectedIndexPath.item];
-//    return objc;
+#pragma mark - scrollViewDelegate
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//    self.navigationController.hidesBarsOnSwipe = NO;
 //}
 
 @end

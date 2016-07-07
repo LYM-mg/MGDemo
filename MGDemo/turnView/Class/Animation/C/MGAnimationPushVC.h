@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MGAnimationPushVC : UIViewController
-
+/** image */
+@property (nonatomic,strong) UIImage *myImage;
+/** backImageView */
+@property (nonatomic,weak) UIImageView *backImageView;
 @end

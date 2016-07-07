@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MGAnimationVC : UIViewController
-
+/** 当前按钮 */
+@property(strong,nonatomic)UIButton *button;
 @end

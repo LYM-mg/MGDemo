@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MGPolygonView : UIView
+@property (nonatomic, strong) CAShapeLayer *lineChartLayer;
 /** 数据数组 */
 @property (nonatomic,strong)NSArray * dataArray;
+/** 画折线图 */
+- (void)drawLine;
 @end

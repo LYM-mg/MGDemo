@@ -2,13 +2,13 @@
 //  CustomAnimateTransitionPop.m
 //  animateTransition
 //
-//  Created by 战明 on 16/5/26.
-//  Copyright © 2016年 zhanming. All rights reserved.
+//  Created by ming on 16/6/26.
+//  Copyright © 2016年 ming. All rights reserved.
 //
 
 #import "CustomAnimateTransitionPop.h"
-#import "ViewController.h"
-#import "SecondViewController.h"
+#import "MGAnimationVC.h"
+#import "MGAnimationPushVC.h"
 @implementation CustomAnimateTransitionPop
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
     return 0.7f;
@@ -18,8 +18,8 @@
     
     self.transitionContext = transitionContext;
     
-    SecondViewController *fromVC = (SecondViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    ViewController *toVC   = (ViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    MGAnimationPushVC *fromVC = (MGAnimationPushVC *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    MGAnimationVC *toVC   = (MGAnimationVC *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *containerView = [transitionContext containerView];
     UIButton *button = toVC.button;
     
