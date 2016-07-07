@@ -43,6 +43,10 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
     [self.backImageView addGestureRecognizer:tap];
     
+    /// 长按
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+    [self.backImageView addGestureRecognizer:longPress];
+    
     /// 捏合
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinch:)];
     [self.backImageView addGestureRecognizer:pinch];
@@ -57,7 +61,10 @@
     [self.interactiveTransition finishInteractiveTransition];
     [self.navigationController popViewControllerAnimated:YES];
 }
-
+/// 长按
+- (void)longPress:(UILongPressGestureRecognizer *)longPress{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 /// 旋转
 - (void)rotation:(UIRotationGestureRecognizer *)rotate
 {

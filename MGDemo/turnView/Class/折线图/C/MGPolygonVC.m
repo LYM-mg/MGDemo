@@ -35,14 +35,15 @@
      * UIRectCornerBottomRight
      * UIRectCornerAllCorners
      */
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.drawView.frame) + 20, self.view.width - 20, 50)];
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.drawView.frame) + 30, self.view.width - 20, 50)];
     [btn setTitle:@"开始绘制折线图" forState:UIControlStateNormal];
     btn.backgroundColor = [UIColor redColor];
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:btn.bounds byRoundingCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(10, 10)];
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:btn.bounds byRoundingCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(5, 5)];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = btn.bounds;
     maskLayer.path = maskPath.CGPath;
     btn.layer.mask = maskLayer;
+    [self.view addSubview:btn];
     
     [btn addTarget:self action:@selector(startDrawLine) forControlEvents:UIControlEventTouchUpInside];
 }
