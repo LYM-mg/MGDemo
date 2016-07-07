@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606" y="313"/>
+            <point key="canvasLocation" x="562" y="284"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="4zj-u5-w6c">
@@ -55,11 +55,11 @@
             </objects>
             <point key="canvasLocation" x="606" y="852"/>
         </scene>
-        <!--other-->
+        <!--search-->
         <scene sceneID="nRq-SC-5uG">
             <objects>
                 <navigationController id="PMx-0B-Sdg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="other" image="gril.png" id="Mr1-pC-CA0"/>
+                    <tabBarItem key="tabBarItem" title="search" image="gril.png" id="Mr1-pC-CA0"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iGm-Kv-dLI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -71,7 +71,45 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P67-6Y-Kpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="182" y="852"/>
+            <point key="canvasLocation" x="182" y="827"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sMo-uG-l2i">
+            <objects>
+                <navigationController id="XnE-KH-EnX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" selectedImage="info.png" systemItem="featured" id="DKe-pK-en5"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eLe-rP-5GG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yz1-Mv-EYJ" kind="relationship" relationship="rootViewController" id="YZt-2q-STW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y4O-5g-L7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="182" y="1410"/>
+        </scene>
+        <!--折线图-->
+        <scene sceneID="SKJ-r1-A3B">
+            <objects>
+                <viewController id="yz1-Mv-EYJ" customClass="MGPolygonVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F1J-9K-BQg"/>
+                        <viewControllerLayoutGuide type="bottom" id="MXN-ZY-gSL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tSh-uq-RHr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="折线图" id="hzw-C7-dOP"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MO3-AK-ngU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="606" y="1410"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="q7q-0n-Vkp">
@@ -86,6 +124,7 @@
                     <connections>
                         <segue destination="guD-Mp-7hr" kind="relationship" relationship="viewControllers" id="DAC-sl-gNP"/>
                         <segue destination="PMx-0B-Sdg" kind="relationship" relationship="viewControllers" id="2Sv-G7-9M6"/>
+                        <segue destination="XnE-KH-EnX" kind="relationship" relationship="viewControllers" id="T9y-0u-TMq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOA-wt-W4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -119,7 +158,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FsF-Mo-Z5h"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mjS-sv-o2c">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXV-5s-2Zn">
@@ -137,7 +176,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zFc-Je-2bD">
-                                <rect key="frame" x="38" y="308" width="244" height="181"/>
+                                <rect key="frame" x="38" y="308" width="244" height="93"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频中间帧图片：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsR-Wr-K6V">
                                 <rect key="frame" x="38" y="250" width="204" height="21"/>
@@ -201,7 +240,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="标哥的技术博客" id="7dR-eX-KKf"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="centerFrameImageView" destination="zFc-Je-2bD" id="uXm-Ju-unw"/>
                         <outlet property="videoDurationLabel" destination="0H0-p2-9Ep" id="ZeM-yl-Ar0"/>
@@ -209,11 +248,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smn-xD-yQA" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="962" y="357"/>
+            <point key="canvasLocation" x="909" y="284"/>
         </scene>
     </scenes>
     <resources>
         <image name="butterfly.png" width="25" height="29"/>
         <image name="gril.png" width="25" height="37"/>
+        <image name="info.png" width="28" height="28"/>
     </resources>
 </document>

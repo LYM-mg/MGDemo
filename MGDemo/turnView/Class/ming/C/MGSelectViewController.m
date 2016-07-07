@@ -50,6 +50,11 @@ static NSString *const ShopCellIdentifier = @"ShopCellIdentifier";
 }
 
 #pragma mark - 系统方法
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor purpleColor]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"可移动collect" style:UIBarButtonItemStyleDone target:self action:@selector(toCollection)];

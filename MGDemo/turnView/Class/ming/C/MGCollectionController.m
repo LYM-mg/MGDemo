@@ -31,6 +31,10 @@ static NSString *const CellIdentifier = @"CellIdentifier";
     return _dataArr;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor blueColor]];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

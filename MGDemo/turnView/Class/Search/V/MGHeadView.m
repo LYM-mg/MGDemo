@@ -15,6 +15,10 @@
 
 /** 头部titke控件 */
 @property (nonatomic, strong) UILabel *titleLabel;
+
+
+/** 上一次的model */
+@property (nonatomic, strong) MGSectionModel *lastModel;
 @end
 
 
@@ -50,10 +54,10 @@
 
 // 重写model的setter方法
 - (void)setModel:(MGSectionModel *)model{
-    if (_model == model)
-        return;
+    if (_model != model) {
+        _model = model;
+    }
     
-    _model = model;
     if (model.isExpanded) { // 已经展开
         self.arrowImageView.transform = CGAffineTransformMakeRotation(M_PI);
     } else { // 未展开
@@ -76,12 +80,14 @@
 // 按钮点击
 - (void)buttonClickOnExpand:(UIButton *)btn{
     self.model.isExpanded = !self.model.isExpanded;
+
+//    self.lastModel.isExpanded = NO;
+//    self.model.isExpanded  = !self.model.isExpanded;
     
     // 判断模型是否展开
     [UIView animateWithDuration:0.28 animations:^{
         if (self.model.isExpanded) { // 展开
             self.arrowImageView.transform = CGAffineTransformMakeRotation(M_PI);
-            
         } else { // 未展开
             self.arrowImageView.transform = CGAffineTransformIdentity;
         }
@@ -90,6 +96,9 @@
     // 代码回调
     if (self.expandCallback) {
         self.expandCallback(self.model.isExpanded);
+        if (self.lastModel) {
+            self.expandCallback(self.lastModel.isExpanded);
+        }
     }
 }
 

@@ -27,6 +27,13 @@
 /** cell数据源不用设置，因为已经在头部设置了数据源 */
 //@property (nonatomic,strong) NSArray *dataSources;
 
+/** 上一个点击的头部 */
+@property (nonatomic,strong) MGSectionModel *lastSectionModel;
+/** 上一个点击的页数 */
+@property (nonatomic,assign) NSInteger lastSection;
+/** 上一个点击的页数 */
+@property (nonatomic,assign) MGHeadView *lastSectionHeader;
+
 @end
 
 
@@ -47,7 +54,7 @@ static NSString *const CellIdentfier = @"CellIdentfier";
             sectionModel.isExpanded = NO;
             sectionModel.sectionTitle = [NSString stringWithFormat:@"section: %ld", i];
             NSMutableArray *itemArray = [[NSMutableArray alloc] init];
-            for (NSUInteger j = 0; j < 10; ++j)
+            for (NSUInteger j = 0; j < 3; ++j)
             {
                 MGCellModel *cellModel = [[MGCellModel alloc] init];
                 cellModel.title = [NSString stringWithFormat:@"MG明明就是你：section=%ld, row=%ld", i, j];
@@ -87,6 +94,10 @@ static NSString *const CellIdentfier = @"CellIdentfier";
 
 #pragma mark- -createScaleHeaderView
 - (void)setUpScaleHeaderView {
+//    UIView *statusView = [[UIView alloc] initWithFrame:(CGRectMake(0, 0, MGSCREEN_WIDTH, 20))];
+//    statusView.backgroundColor = naBarTiniColor;
+//    [self.navigationController.view addSubview:statusView];
+//    [self.navigationController.view bringSubviewToFront:statusView];
     
     UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
     topView.backgroundColor = [UIColor clearColor];
@@ -136,11 +147,23 @@ static NSString *const CellIdentfier = @"CellIdentfier";
 #pragma mark - TableViewDelegate
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     MGHeadView *sectionHeadView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headViewIdentifier];
-    
+//    NSLog(@"%f",sectionHeadView.frame.origin.y);
     MGSectionModel *sectionModel = self.sectionDataSources[section];
     sectionHeadView.model = sectionModel;
-    
+
+    // 对当前的sectionHeaderView操作
     sectionHeadView.expandCallback = ^(BOOL isExpanded){
+        if (isExpanded) {
+            __block CGPoint offset = tableView.contentOffset;
+            CGFloat offsetY = sectionHeadView.frame.origin.y - offset.y;
+            if (offsetY > MGSCREEN_HEIGHT*0.5){
+                [UIView animateWithDuration:0.8 animations:^{
+                    offset.y += MGSCREEN_HEIGHT*0.5;
+                    tableView.contentOffset = offset;
+                }];
+            }
+        }
+        
         [tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationFade];
     };
     

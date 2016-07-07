@@ -16,19 +16,8 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lol" translatesAutoresizingMaskIntoConstraints="NO" id="69X-U5-C8c">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="69X-U5-C8c" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="7w8-hD-2A6"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="69X-U5-C8c" secondAttribute="bottom" id="LPg-8z-VIF"/>
-                            <constraint firstAttribute="trailing" secondItem="69X-U5-C8c" secondAttribute="trailing" id="Mbi-kU-bNe"/>
-                            <constraint firstItem="69X-U5-C8c" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="Mcz-7K-F3N"/>
-                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -37,7 +26,4 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="lol" width="500" height="391"/>
-    </resources>
 </document>

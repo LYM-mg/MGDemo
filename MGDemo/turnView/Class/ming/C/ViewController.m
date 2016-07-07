@@ -17,10 +17,55 @@
     UITableView *_leftView;
     UITableView *_rightnView;
     UIView *_topBgView;
+    BOOL isFirst;
 }
 @end
 
 @implementation ViewController
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    self.navigationController.navigationBar.hidden = YES;
+    
+    if (isFirst == NO) {
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        // 添加启动页的图片
+        UIImageView *welcomeImage = [[UIImageView alloc]initWithFrame:window.bounds];
+        welcomeImage.image = [self  getWelcomeImage];
+        [window addSubview:welcomeImage];
+        [window bringSubviewToFront:welcomeImage]; // 把背景图放在最上层
+        welcomeImage.alpha = 0.99;//这里alpha的值和下面alpha的值不能设置为相同的，否则动画相当于瞬间执行完，启动页之后动画瞬间消失。这里alpha设为0.99，动画就不会有一闪而过的效果，而是一种类似于静态背景的效果。设为0，动画就相当于是淡入的效果了。
+        
+        // UIViewAnimationOptionCurveEaseOut
+        [UIView animateKeyframesWithDuration:2.5 delay:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            welcomeImage.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.5);
+            //        welcomeImage.transform = CGAffineTransformMakeScale(1.3, 1.3);
+            welcomeImage.alpha = 0.0;
+        } completion:^(BOOL finished) {
+            [welcomeImage removeFromSuperview];
+        }];
+        isFirst = YES;
+    }
+}
+
+/**
+ *  获取启动页的图片
+ */
+- (UIImage *)getWelcomeImage{
+    CGSize viewSize = [[UIApplication sharedApplication]keyWindow].bounds.size;
+    // 竖屏
+    NSString *viewOrientation = @"Portrait";
+    NSString *launchImageName = nil;
+    NSArray* imagesDict = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
+    for (NSDictionary* dict in imagesDict) {
+        CGSize imageSize = CGSizeFromString(dict[@"UILaunchImageSize"]);
+        if (CGSizeEqualToSize(imageSize, viewSize) && [viewOrientation isEqualToString:dict[@"UILaunchImageOrientation"]]) {
+            launchImageName = dict[@"UILaunchImageName"];
+        }
+    }
+    return [UIImage imageNamed:launchImageName];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,12 +75,6 @@
 //    self.automaticallyAdjustsScrollViewInsets = NO;
 //    _leftView.contentInset = UIEdgeInsetsMake( 44, 0, 0, 0);
 //    _rightnView.contentInset = UIEdgeInsetsMake( 44, 0, 0, 0);
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:YES];
-    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
