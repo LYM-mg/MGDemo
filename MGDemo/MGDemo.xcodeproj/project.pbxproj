@@ -88,6 +88,9 @@
 		3AE9E4631CF92D03000DCB72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE9E4611CF92D03000DCB72 /* LaunchScreen.storyboard */; };
 		3AE9E46C1CF9CC81000DCB72 /* butterfly@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE9E46A1CF9CC81000DCB72 /* butterfly@2x.png */; settings = {ASSET_TAGS = (); }; };
 		3AE9E46D1CF9CC81000DCB72 /* gril@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE9E46B1CF9CC81000DCB72 /* gril@2x.png */; settings = {ASSET_TAGS = (); }; };
+		3AFE8BA21D2E61DE00512C3A /* cars_total.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE8BA11D2E61DE00512C3A /* cars_total.plist */; settings = {ASSET_TAGS = (); }; };
+		3AFE8BA51D2E620F00512C3A /* MGCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE8BA41D2E620F00512C3A /* MGCar.m */; settings = {ASSET_TAGS = (); }; };
+		3AFE8BA81D2E622C00512C3A /* MGCarGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE8BA71D2E622C00512C3A /* MGCarGroup.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -245,6 +248,11 @@
 		3AE9E4641CF92D03000DCB72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AE9E46A1CF9CC81000DCB72 /* butterfly@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "butterfly@2x.png"; sourceTree = "<group>"; };
 		3AE9E46B1CF9CC81000DCB72 /* gril@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gril@2x.png"; sourceTree = "<group>"; };
+		3AFE8BA11D2E61DE00512C3A /* cars_total.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cars_total.plist; sourceTree = "<group>"; };
+		3AFE8BA31D2E620F00512C3A /* MGCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCar.h; sourceTree = "<group>"; };
+		3AFE8BA41D2E620F00512C3A /* MGCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCar.m; sourceTree = "<group>"; };
+		3AFE8BA61D2E622C00512C3A /* MGCarGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCarGroup.h; sourceTree = "<group>"; };
+		3AFE8BA71D2E622C00512C3A /* MGCarGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCarGroup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -581,6 +589,10 @@
 				3A8501821D2E31A600E2CE67 /* MGCellModel.m */,
 				3A8501831D2E31A600E2CE67 /* MGSectionModel.h */,
 				3A8501841D2E31A600E2CE67 /* MGSectionModel.m */,
+				3AFE8BA31D2E620F00512C3A /* MGCar.h */,
+				3AFE8BA41D2E620F00512C3A /* MGCar.m */,
+				3AFE8BA61D2E622C00512C3A /* MGCarGroup.h */,
+				3AFE8BA71D2E622C00512C3A /* MGCarGroup.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -663,6 +675,7 @@
 		3AE9E4501CF92D03000DCB72 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3AFE8BA11D2E61DE00512C3A /* cars_total.plist */,
 				3A29D1111D1A459A004F1FDD /* 1.plist */,
 				3AA3371C1D199C0600DAAF32 /* MGDemo.pch */,
 				3AA3371D1D19A1A800DAAF32 /* up1.png */,
@@ -739,6 +752,7 @@
 				3A29D1121D1A459A004F1FDD /* 1.plist in Resources */,
 				3A3F4C531D0F021200311679 /* expend.png in Resources */,
 				3AE9E4631CF92D03000DCB72 /* LaunchScreen.storyboard in Resources */,
+				3AFE8BA21D2E61DE00512C3A /* cars_total.plist in Resources */,
 				3A8501941D2E31A600E2CE67 /* TableViewHead.xib in Resources */,
 				3AE9E4601CF92D03000DCB72 /* Assets.xcassets in Resources */,
 				3AE9E46C1CF9CC81000DCB72 /* butterfly@2x.png in Resources */,
@@ -782,6 +796,7 @@
 				3A29D1001D1A426E004F1FDD /* UIImageView+HighlightedWebCache.m in Sources */,
 				3A29D0E41D1A426E004F1FDD /* MJRefreshHeader.m in Sources */,
 				3A85016E1D2E308E00E2CE67 /* MGVideoViewController.m in Sources */,
+				3AFE8BA81D2E622C00512C3A /* MGCarGroup.m in Sources */,
 				3A29D0F81D1A426E004F1FDD /* SDWebImageDownloader.m in Sources */,
 				3A29D0FC1D1A426E004F1FDD /* UIButton+WebCache.m in Sources */,
 				3A29D0DA1D1A426E004F1FDD /* MJMethod.m in Sources */,
@@ -798,6 +813,7 @@
 				3AA3DA9E1D0FDB18008B96E2 /* SVRadialGradientLayer.m in Sources */,
 				3A29D0EB1D1A426E004F1FDD /* MJRefreshGifHeader.m in Sources */,
 				3A85016D1D2E308E00E2CE67 /* MGSelectViewController.m in Sources */,
+				3AFE8BA51D2E620F00512C3A /* MGCar.m in Sources */,
 				3A85016F1D2E308E00E2CE67 /* ViewController.m in Sources */,
 				3A29D0DF1D1A426E004F1FDD /* NSObject+MJMember.m in Sources */,
 				3A29D1021D1A426E004F1FDD /* UIView+WebCacheOperation.m in Sources */,

@@ -8,6 +8,8 @@
 
 #import "MGSearchViewController.h"
 #import "MGSearchCell.h"
+#import "MGCar.h"
+#import "MGCarGroup.h"
 
 #define headH 64
 #define LYMheadH 200
@@ -25,8 +27,6 @@
 /** 搜索控制器 */
 @property (nonatomic, strong) UISearchController *searchController;
 
-//@property (weak, nonatomic) UIView *contV;
-//@property (weak, nonatomic) UIImageView *headV;
 
 @end
 
@@ -34,31 +34,33 @@
 #pragma mark - 懒汉模式
 - (NSMutableArray *)dataList{
     if(_dataList == nil){
-        _dataList = [NSMutableArray arrayWithCapacity:100];
-        for (NSInteger i=0; i<100; i++) {
-            [_dataList addObject:[NSString stringWithFormat:@"%ld-LYM",(long)i]];
+        // 初始化
+        // 1.获得plist的全路径
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"cars_total" ofType:@"plist"];
+        
+        // 2.加载字典数组
+        NSArray *dictArray = [NSArray arrayWithContentsOfFile:path];
+        
+        // 3.将dictArray里面的所有字典转成模型对象,放到新的数组中
+        NSMutableArray *groupArray = [NSMutableArray array];
+        for (NSDictionary *dict in dictArray) {
+            // 3.1.创建模型对象
+            MGCarGroup *group = [MGCarGroup groupWithDict:dict];
+            
+            // 3.2.添加模型对象到数组中
+            [groupArray addObject:group];
         }
+        // 4.赋值
+        _dataList = groupArray;
     }
     return _dataList;
 }
 
+/**
+ * 搜索框🔍
+ */
 - (UISearchController *)searchController{
     if (_searchController == nil) {
-        // 设置头部图片
-//        UIView *contV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, LYMheadH + 44)];
-//        contV.backgroundColor = [UIColor redColor];
-//        
-//        UIImageView *headV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 44, [UIScreen mainScreen].bounds.size.width, LYMheadH)];
-//        headV.contentMode = UIViewContentModeScaleAspectFill;
-//        headV.clipsToBounds = YES;
-//        headV.image = [UIImage imageNamed:@"lol"];
-//        _headV = headV;
-//        [contV addSubview:headV];
-//        
-//        _contV = contV;
-//        
-//        self.tableView.tableHeaderView = contV;
-
         // iOS 8.0上
         _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
         _searchController.searchResultsUpdater = self;
@@ -97,32 +99,31 @@
 }
 - (void)editButtonItemClick{
     //获取导航栏右侧的按钮的标题
-    
     NSString*title=self.navigationItem.rightBarButtonItem.title;
     
     if([title isEqualToString:@"删除"])
         
     {
-        //进入表格的多选状态
+        // 进入表格的多选状态
         self.tableView.editing = YES;
         
-        //将导航栏的按钮改为确定
+        // 将导航栏的按钮改为确定
         self.navigationItem.rightBarButtonItem.title = @"确定";
     }else{
-        //执行删除操作
+        // 执行删除操作
         //--------将删除数组中的元素从数据源数组中删除- (void)removeObjectsInArray:(NSArray *)otherArray------------
         [self.dataList removeObjectsInArray:_deleteArray];
         
-        //清空删除数组
+        // 清空删除数组
         [_deleteArray removeAllObjects];
         
-        //取消表格的编辑状态
+        // 取消表格的编辑状态
         self.tableView.editing = NO;
         
-        //刷新表格
+        // 刷新表格
         [self.tableView reloadData];
         
-        //将导航栏按钮的标题恢复成“删除”
+        // 将导航栏按钮的标题恢复成“删除”
         self.navigationItem.rightBarButtonItem.title = @"删除";
     }
 }
@@ -133,15 +134,18 @@
 
 #pragma mark - TableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.searchController.active ? self.searchList.count : self.dataList.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // self.searchController.active进行判断即可，也就是UISearchController的active属性:
     if (self.searchController.active) {
-        return [self.searchList count];
+//        return [self.searchList count];
+        MGCarGroup *group = self.searchList[section];
+        return group.cars.count;
     }else{
-        return self.dataList.count;
+        MGCarGroup *group = self.dataList[section];
+        return group.cars.count;
     }
 }
 
@@ -154,38 +158,133 @@
     MGSearchCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         // 创建cell
-        cell = [[MGSearchCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[MGSearchCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
     if (self.searchController.active) { // 展示searchList数据
-        [cell.textLabel setText:self.searchList[indexPath.row]];
+//        [cell.textLabel setText:self.searchList[indexPath.row]];
+        MGCarGroup *group = self.searchList[indexPath.section];
+        MGCar *car = group.cars[indexPath.row];
+        
+        cell.imageView.image = [UIImage imageNamed:car.icon];
+        cell.textLabel.text = car.name;
+//        cell.detailTextLabel.text = [NSString stringWithFormat:@"3453%d",arc4random_uniform(200000)];
     }
     else{ // 展示dataList数据
-        [cell.textLabel setText:self.dataList[indexPath.row]];
+        // 4.设置数据
+        MGCarGroup *group = self.dataList[indexPath.section];
+        MGCar *car = group.cars[indexPath.row];
+        
+        cell.imageView.image = [UIImage imageNamed:car.icon];
+        cell.textLabel.text = car.name;
+//        cell.detailTextLabel.text = [NSString stringWithFormat:@"3453%d",arc4random_uniform(200000)];
     }
         
     return cell;
 }
 
+/**
+ *  第section组显示的头部标题
+ */
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    MGCarGroup *group = self.dataList[section];
+    return group.title;
+}
+
+/**
+ *  返回右边索引条显示的字符串数据
+ */
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
+    return [self.dataList valueForKeyPath:@"title"];
+}
+
+
 #pragma mark - UISearchBarDelegate,UISearchResultsUpdating
 // 具体调用的时候使用的方法也发生了改变，这个时候使用updateSearchResultsForSearchController进行结果过滤:
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
-    // 1.取得搜索框的文字
-    NSString *searchString = [self.searchController.searchBar text];
+    // update the filtered array based on the search text
+    NSString *searchText = searchController.searchBar.text;
+    NSMutableArray *searchResults = [self.dataList mutableCopy];
     
-    // 2.过滤
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
+    // strip out all the leading and trailing spaces
+    NSString *strippedString = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
-    // 3.移除上一次的数据
-    if (self.searchList != nil) {
-        [self.searchList removeAllObjects];
+    // break up the search terms (separated by spaces)
+    NSArray *searchItems = nil;
+    if (strippedString.length > 0) {
+        searchItems = [strippedString componentsSeparatedByString:@" "];
     }
     
-    // 4.过滤数据
-    self.searchList = [NSMutableArray arrayWithArray:[_dataList filteredArrayUsingPredicate:predicate]];
+    // build all the "AND" expressions for each value in the searchString
+    NSMutableArray *andMatchPredicates = [NSMutableArray array];
     
-    // 5.刷新表格
+    for (NSString *searchString in searchItems) {
+
+        NSMutableArray *searchItemsPredicate = [NSMutableArray array];
+        
+        
+        // friendName field matching
+        NSExpression *lhs = [NSExpression expressionForKeyPath:@"title"];
+        NSExpression *rhs = [NSExpression expressionForConstantValue:searchString];
+        NSPredicate *finalPredicate = [NSComparisonPredicate
+                                       predicateWithLeftExpression:lhs
+                                       rightExpression:rhs
+                                       modifier:NSDirectPredicateModifier
+                                       type:NSContainsPredicateOperatorType
+                                       options:NSCaseInsensitivePredicateOption];
+        [searchItemsPredicate addObject:finalPredicate];
+        
+        // friendId field matching
+        lhs = [NSExpression expressionForKeyPath:@"cars.name"];
+        rhs = [NSExpression expressionForConstantValue:searchString];
+        finalPredicate = [NSComparisonPredicate
+                          predicateWithLeftExpression:lhs
+                          rightExpression:rhs
+                          modifier:NSDirectPredicateModifier
+                          type:NSContainsPredicateOperatorType
+                          options:NSCaseInsensitivePredicateOption];
+        [searchItemsPredicate addObject:finalPredicate];
+        
+        [searchItemsPredicate addObject:finalPredicate];
+
+        // at this OR predicate to our master AND predicate
+        NSCompoundPredicate *orMatchPredicates = [NSCompoundPredicate orPredicateWithSubpredicates:searchItemsPredicate];
+        [andMatchPredicates addObject:orMatchPredicates];
+    }
+    
+    // match up the fields of the Product object
+    NSCompoundPredicate *finalCompoundPredicate =
+    [NSCompoundPredicate andPredicateWithSubpredicates:andMatchPredicates];
+    self.searchList = [[searchResults filteredArrayUsingPredicate:finalCompoundPredicate] mutableCopy];
+    
     [self.tableView reloadData];
+    
+    /**
+     1.BEGINSWITH ： 搜索结果的字符串是以搜索框里的字符开头的
+     2.ENDSWITH   ： 搜索结果的字符串是以搜索框里的字符结尾的
+     3.CONTAINS   ： 搜索结果的字符串包含搜索框里的字符
+     
+     [c]不区分大小写[d]不区分发音符号即没有重音符号[cd]既不区分大小写，也不区分发音符号。
+     
+     */
+    //    // 1.取得搜索框的文字
+//    NSString *searchString = [self.searchController.searchBar text];
+//    
+//    // 2.过滤
+//    searchString = [searchString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]; // 过滤空格
+//    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
+//    
+//    // 3.移除上一次的数据
+//    if (self.searchList != nil) {
+//        [self.searchList removeAllObjects];
+//    }
+//    
+//    // 4.过滤数据
+//    self.searchList = [NSMutableArray arrayWithArray:[_dataList filteredArrayUsingPredicate:predicate]];
+//    
+//    // 5.刷新表格
+//    [self.tableView reloadData];
 }
 
 #pragma mark - TableViewDelegate
