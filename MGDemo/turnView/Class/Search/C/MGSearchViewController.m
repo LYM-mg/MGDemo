@@ -201,6 +201,11 @@
 
 #pragma mark - UISearchBarDelegate,UISearchResultsUpdating
 // 具体调用的时候使用的方法也发生了改变，这个时候使用updateSearchResultsForSearchController进行结果过滤:
+/*
+ 2.进行过滤，有两种方法，
+ 一种是对数组进行过滤，把符合谓词条件的对象产生一个新的数组
+ 一种是单独判断一个对象是否满足谓词条件，返回值为BOOL
+ */
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
     // update the filtered array based on the search text
     NSString *searchText = searchController.searchBar.text;
@@ -223,11 +228,18 @@
     NSMutableArray *andMatchPredicates = [NSMutableArray array];
     
     for (NSString *searchString in searchItems) {
-
+        
         NSMutableArray *searchItemsPredicate = [NSMutableArray array];
         
         
         // friendName field matching
+        /**
+         lhs：左边的表达式。
+         rhs：右边的表达式。
+         modifier：应用的修改符。（ANY或者ALL）
+         type：谓词运算符类型。
+         options：要应用的选项。没有选项的话则为0。
+         */
         NSExpression *lhs = [NSExpression expressionForKeyPath:@"title"];
         NSExpression *rhs = [NSExpression expressionForConstantValue:searchString];
         NSPredicate *finalPredicate = [NSComparisonPredicate
@@ -249,9 +261,9 @@
                           options:NSCaseInsensitivePredicateOption];
         [searchItemsPredicate addObject:finalPredicate];
         
-//        finalPredicate = [NSComparisonPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
-//        [searchItemsPredicate addObject:finalPredicate];
-
+        //        finalPredicate = [NSComparisonPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
+        //        [searchItemsPredicate addObject:finalPredicate];
+        
         // at this OR predicate to our master AND predicate
         NSCompoundPredicate *orMatchPredicates = [NSCompoundPredicate orPredicateWithSubpredicates:searchItemsPredicate];
         [andMatchPredicates addObject:orMatchPredicates];
@@ -261,7 +273,7 @@
     NSCompoundPredicate *finalCompoundPredicate =
     [NSCompoundPredicate andPredicateWithSubpredicates:andMatchPredicates];
     self.searchList = [[searchResults filteredArrayUsingPredicate:finalCompoundPredicate] mutableCopy];
-
+    
     if (self.searchList.count == 0) {
         UILabel *tipLabel = [[UILabel alloc] init];
         tipLabel.text = @"当前搜索没有结果";
@@ -299,45 +311,46 @@
      
      */
     //    // 1.取得搜索框的文字
-//    NSString *searchString = [self.searchController.searchBar text];
-//    
-//    // 2.过滤
-//    searchString = [searchString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]; // 过滤空格
-//    
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
-//    
-//    // 3.移除上一次的数据
-//    if (self.searchList != nil) {
-//        [self.searchList removeAllObjects];
-//    }
-//    
-//    // 4.过滤数据
-//    self.searchList = [NSMutableArray arrayWithArray:[_dataList filteredArrayUsingPredicate:predicate]];
-//    
-//    // 5.刷新表格
-//    [self.tableView reloadData];
+    //    NSString *searchString = [self.searchController.searchBar text];
+    //
+    //    // 2.过滤
+    //    searchString = [searchString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]; // 过滤空格
+    //
+    //    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
+    //
+    //    // 3.移除上一次的数据
+    //    if (self.searchList != nil) {
+    //        [self.searchList removeAllObjects];
+    //    }
+    //
+    //    // 4.过滤数据
+    //    self.searchList = [NSMutableArray arrayWithArray:[_dataList filteredArrayUsingPredicate:predicate]];
+    //
+    //    // 5.刷新表格
+    //    [self.tableView reloadData];
     
-//    if (searchController.searchBar.text.length)
-//    {
-//        [self.searchList removeAllObjects];
-//        
-//        [self.dataList enumerateObjectsUsingBlock:^(MGCarGroup *obj, NSUInteger idx, BOOL *stop) {
-//            
-//            NSArray *cars = obj.cars;
-//            
-//            [cars enumerateObjectsUsingBlock:^(id car, NSUInteger idx, BOOL *stop) {
-//                
-//                MGCar *carModel = (MGCar *)car;
-//                
-//                if ([carModel.name containsString:searchController.searchBar.text])
-//                {
-//                    [self.searchList addObject:car];
-//                }
-//            }];
-//        }];
-//        [self.tableView reloadData];
-//    }
+    //    if (searchController.searchBar.text.length)
+    //    {
+    //        [self.searchList removeAllObjects];
+    //
+    //        [self.dataList enumerateObjectsUsingBlock:^(MGCarGroup *obj, NSUInteger idx, BOOL *stop) {
+    //
+    //            NSArray *cars = obj.cars;
+    //
+    //            [cars enumerateObjectsUsingBlock:^(id car, NSUInteger idx, BOOL *stop) {
+    //
+    //                MGCar *carModel = (MGCar *)car;
+    //
+    //                if ([carModel.name containsString:searchController.searchBar.text])
+    //                {
+    //                    [self.searchList addObject:car];
+    //                }
+    //            }];
+    //        }];
+    //        [self.tableView reloadData];
+    //    }
 }
+
 
 #pragma mark - TableViewDelegate
 //选择某一行时讲将该行的内容添加到删除数组
@@ -442,5 +455,142 @@
 //        self.headV.frame = frame;
 //    }
 //}
+
+- (void)updateSearchResultsForSearchController2222222:(UISearchController *)searchController{
+    //得到搜索框的文字
+    NSString * str = searchController.searchBar.text;
+    if (str.length==0) {
+        return;
+    }
+    
+    NSPredicate *namePredicate_2 = [NSPredicate predicateWithFormat:@"title CONTAINS[c] %@ ",str];
+    
+    //清空搜索数组
+    [self.searchList removeAllObjects];
+    
+    //    for (MGCarGroup *carGroup in self.dataList) {
+    //        self.searchList =  [NSMutableArray arrayWithArray:[carGroup.cars filteredArrayUsingPredicate:namePredicate_2]];
+    //    }
+    //过滤，这里可以换不同的谓词进行试验
+    self.searchList =  [NSMutableArray arrayWithArray:[self.dataList filteredArrayUsingPredicate:namePredicate_2]];
+    
+    
+    
+    if (self.searchList.count == 0) {
+        UILabel *tipLabel = [[UILabel alloc] init];
+        tipLabel.text = @"当前搜索没有结果";
+        [tipLabel sizeToFit];
+        tipLabel.center = self.view.center;
+        tipLabel.textColor = [UIColor redColor];
+        tipLabel.textAlignment = NSTextAlignmentCenter;
+        tipLabel.alpha = 0.0;
+        tipLabel.transform = CGAffineTransformMakeScale(0.5, 0.5);
+        tipLabel.transform = CGAffineTransformMakeTranslation(0, -100);
+        [self.view addSubview:tipLabel];
+        [UIView animateWithDuration:2.0 delay:0.0 usingSpringWithDamping:0.4 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            tipLabel.alpha = 1.0;
+            tipLabel.transform = CGAffineTransformIdentity;
+            tipLabel.transform = CGAffineTransformMakeScale(1.5, 1.5);
+        }completion:^(BOOL finished) {
+            [UIView animateWithDuration:1.0 delay:1.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                tipLabel.alpha = 0.0;
+                tipLabel.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1);
+            } completion:^(BOOL finished) {
+                [tipLabel removeFromSuperview];
+                searchController.searchBar.text = @"";
+            }];
+        }];
+    }
+    [self.tableView reloadData];
+}
+
+
+- (void)updateSearchResultsForSearchController3333333:(UISearchController *)searchController{
+    //得到搜索框的文字
+    NSString * searchText = searchController.searchBar.text;
+    if (searchText.length==0) {
+        return;
+    }
+    self.searchList = [NSMutableArray array];
+    //清空搜索数组
+    [self.searchList removeAllObjects];
+    
+    //加个多线程，否则数量量大的时候，有明显的卡顿现象
+    //这里最好放在数据库里面再进行搜索，效率会更快一些
+    dispatch_queue_t globalQueue = dispatch_get_global_queue(0, 0);
+    dispatch_async(globalQueue, ^{
+        if (searchText!= nil && searchText.length>0) {
+            
+            //遍历需要搜索的所有内容，其中self.dataArray为存放总数据的数组
+            for (MGCarGroup *model in self.dataList) {
+                for (MGCar *car in model.cars) {
+                    NSString *tempStr = car.name;
+                    //----------->把所有的搜索结果转成成拼音
+                    NSString *pinyin = [self transformToPinyin:tempStr];
+                    //                    NSLog(@"pinyin--%@",pinyin);
+                    
+                    if ([pinyin rangeOfString:searchText options:NSCaseInsensitiveSearch].length >0 ) {
+                        NSPredicate *namePredicate_2 = [NSPredicate predicateWithFormat:@"tempStr CONTAINS[c] %@ ",searchText];
+                        //过滤，这里可以换不同的谓词进行试验
+                        self.searchList =  [NSMutableArray arrayWithArray:[model.cars filteredArrayUsingPredicate:namePredicate_2]];
+                        //把搜索结果存放self.searchList数组
+                        //                        [self.searchList addObject:car];
+                    }
+                }
+            }
+        }else{
+            self.searchList = [NSMutableArray arrayWithArray:self.dataList];
+        }
+        //回到主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
+    [self.tableView reloadData];
+}
+// 转化为拼音
+- (NSString *)transformToPinyin:(NSString *)aString
+{
+    //转成了可变字符串
+    NSMutableString *str = [NSMutableString stringWithString:aString];
+    CFStringTransform((CFMutableStringRef)str,NULL, kCFStringTransformMandarinLatin,NO);
+    //再转换为不带声调的拼音
+    CFStringTransform((CFMutableStringRef)str,NULL, kCFStringTransformStripDiacritics,NO);
+    NSArray *pinyinArray = [str componentsSeparatedByString:@" "];
+    NSMutableString *allString = [NSMutableString new];
+    
+    int count = 0;
+    
+    for (int  i = 0; i < pinyinArray.count; i++)
+    {
+        
+        for(int i = 0; i < pinyinArray.count;i++)
+        {
+            if (i == count) {
+                [allString appendString:@"#"];//区分第几个字母
+            }
+            [allString appendFormat:@"%@",pinyinArray[i]];
+            
+        }
+        [allString appendString:@","];
+        count ++;
+        
+    }
+    
+    NSMutableString *initialStr = [NSMutableString new];//拼音首字母
+    
+    for (NSString *s in pinyinArray)
+    {
+        if (s.length > 0)
+        {
+            [initialStr appendString:  [s substringToIndex:1]];
+        }
+    }
+    
+    [allString appendFormat:@"#%@",initialStr];
+    [allString appendFormat:@",#%@",aString];
+    
+    return allString;
+}
 
 @end

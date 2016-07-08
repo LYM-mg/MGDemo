@@ -1,17 +1,6 @@
 {
   "images" : [
     {
-      "resizing" : {
-        "mode" : "3-part-horizontal",
-        "center" : {
-          "mode" : "tile",
-          "width" : 1
-        },
-        "cap-insets" : {
-          "right" : 100,
-          "left" : 99
-        }
-      },
       "idiom" : "universal",
       "filename" : "timo.jpg",
       "scale" : "1x"

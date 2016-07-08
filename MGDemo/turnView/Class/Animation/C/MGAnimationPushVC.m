@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     // 设置图片
     [self setImage];
     
@@ -26,6 +27,7 @@
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     [self.view addGestureRecognizer:pan];
 }
+
 
 /**
  *  设置图片
@@ -149,5 +151,9 @@
     }else{
         return nil;
     }
+}
+
+- (void)dealloc{
+    NSLog(@"%s",__func__);
 }
 @end

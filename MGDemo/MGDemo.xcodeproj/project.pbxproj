@@ -62,6 +62,14 @@
 		3A3F4C3B1D0EE9FC00311679 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F4C3A1D0EE9FC00311679 /* 12.png */; settings = {ASSET_TAGS = (); }; };
 		3A3F4C3F1D0EEC4200311679 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F4C3E1D0EEC4200311679 /* UIView+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		3A3F4C531D0F021200311679 /* expend.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F4C521D0F021200311679 /* expend.png */; settings = {ASSET_TAGS = (); }; };
+		3A5096151D2F6E7500580D2B /* CustomTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5096131D2F6E7500580D2B /* CustomTransitionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3A5096161D2F6E7500580D2B /* CustomTransitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5096141D2F6E7500580D2B /* CustomTransitionViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		3A5096201D2F6EA100580D2B /* HUTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5096191D2F6EA100580D2B /* HUTransitionAnimator.m */; settings = {ASSET_TAGS = (); }; };
+		3A5096211D2F6EA100580D2B /* HUTransitionGhostAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A50961B1D2F6EA100580D2B /* HUTransitionGhostAnimator.m */; settings = {ASSET_TAGS = (); }; };
+		3A5096221D2F6EA100580D2B /* HUTransitionHorizontalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A50961D1D2F6EA100580D2B /* HUTransitionHorizontalLinesAnimator.m */; settings = {ASSET_TAGS = (); }; };
+		3A5096231D2F6EA100580D2B /* HUTransitionVerticalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A50961F1D2F6EA100580D2B /* HUTransitionVerticalLinesAnimator.m */; settings = {ASSET_TAGS = (); }; };
+		3A5096291D2F703A00580D2B /* UIViewController+Animator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5096261D2F703A00580D2B /* UIViewController+Animator.m */; settings = {ASSET_TAGS = (); }; };
+		3A50962A1D2F703A00580D2B /* ZBFallenBricksAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5096281D2F703A00580D2B /* ZBFallenBricksAnimator.m */; settings = {ASSET_TAGS = (); }; };
 		3A85016C1D2E308E00E2CE67 /* MGCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8501451D2E308E00E2CE67 /* MGCollectionController.m */; settings = {ASSET_TAGS = (); }; };
 		3A85016D1D2E308E00E2CE67 /* MGSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8501471D2E308E00E2CE67 /* MGSelectViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3A85016E1D2E308E00E2CE67 /* MGVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8501491D2E308E00E2CE67 /* MGVideoViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -208,6 +216,21 @@
 		3A3F4C3D1D0EEC4200311679 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		3A3F4C3E1D0EEC4200311679 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		3A3F4C521D0F021200311679 /* expend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expend.png; sourceTree = "<group>"; };
+		3A5096121D2F6E7500580D2B /* CustomTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTransitionViewController.h; sourceTree = "<group>"; };
+		3A5096131D2F6E7500580D2B /* CustomTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTransitionViewController.m; sourceTree = "<group>"; };
+		3A5096141D2F6E7500580D2B /* CustomTransitionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTransitionViewController.xib; sourceTree = "<group>"; };
+		3A5096181D2F6EA100580D2B /* HUTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUTransitionAnimator.h; sourceTree = "<group>"; };
+		3A5096191D2F6EA100580D2B /* HUTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUTransitionAnimator.m; sourceTree = "<group>"; };
+		3A50961A1D2F6EA100580D2B /* HUTransitionGhostAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUTransitionGhostAnimator.h; sourceTree = "<group>"; };
+		3A50961B1D2F6EA100580D2B /* HUTransitionGhostAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUTransitionGhostAnimator.m; sourceTree = "<group>"; };
+		3A50961C1D2F6EA100580D2B /* HUTransitionHorizontalLinesAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUTransitionHorizontalLinesAnimator.h; sourceTree = "<group>"; };
+		3A50961D1D2F6EA100580D2B /* HUTransitionHorizontalLinesAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUTransitionHorizontalLinesAnimator.m; sourceTree = "<group>"; };
+		3A50961E1D2F6EA100580D2B /* HUTransitionVerticalLinesAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUTransitionVerticalLinesAnimator.h; sourceTree = "<group>"; };
+		3A50961F1D2F6EA100580D2B /* HUTransitionVerticalLinesAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUTransitionVerticalLinesAnimator.m; sourceTree = "<group>"; };
+		3A5096251D2F703A00580D2B /* UIViewController+Animator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Animator.h"; sourceTree = "<group>"; };
+		3A5096261D2F703A00580D2B /* UIViewController+Animator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Animator.m"; sourceTree = "<group>"; };
+		3A5096271D2F703A00580D2B /* ZBFallenBricksAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBFallenBricksAnimator.h; sourceTree = "<group>"; };
+		3A5096281D2F703A00580D2B /* ZBFallenBricksAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBFallenBricksAnimator.m; sourceTree = "<group>"; };
 		3A8501441D2E308E00E2CE67 /* MGCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCollectionController.h; sourceTree = "<group>"; };
 		3A8501451D2E308E00E2CE67 /* MGCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCollectionController.m; sourceTree = "<group>"; };
 		3A8501461D2E308E00E2CE67 /* MGSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSelectViewController.h; sourceTree = "<group>"; };
@@ -298,6 +321,9 @@
 				3A23A3AC1D2EB9FE00FFFF78 /* MGAnimationVC.m */,
 				3A23A3AE1D2EC0BA00FFFF78 /* MGAnimationPushVC.h */,
 				3A23A3AF1D2EC0BA00FFFF78 /* MGAnimationPushVC.m */,
+				3A5096121D2F6E7500580D2B /* CustomTransitionViewController.h */,
+				3A5096131D2F6E7500580D2B /* CustomTransitionViewController.m */,
+				3A5096141D2F6E7500580D2B /* CustomTransitionViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -312,6 +338,8 @@
 		3A23A3AA1D2EB9CD00FFFF78 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				3A5096241D2F703A00580D2B /* ZBCustomTransitions */,
+				3A5096171D2F6EA100580D2B /* HUAnimator */,
 				3A23A3B41D2EC6F800FFFF78 /* CustomAnimateTransitionPush.h */,
 				3A23A3B51D2EC6F800FFFF78 /* CustomAnimateTransitionPush.m */,
 				3A23A3B61D2EC6F800FFFF78 /* CustomAnimateTransitionPop.h */,
@@ -492,6 +520,32 @@
 			path = "UIView--Frame";
 			sourceTree = "<group>";
 		};
+		3A5096171D2F6EA100580D2B /* HUAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				3A5096181D2F6EA100580D2B /* HUTransitionAnimator.h */,
+				3A5096191D2F6EA100580D2B /* HUTransitionAnimator.m */,
+				3A50961A1D2F6EA100580D2B /* HUTransitionGhostAnimator.h */,
+				3A50961B1D2F6EA100580D2B /* HUTransitionGhostAnimator.m */,
+				3A50961C1D2F6EA100580D2B /* HUTransitionHorizontalLinesAnimator.h */,
+				3A50961D1D2F6EA100580D2B /* HUTransitionHorizontalLinesAnimator.m */,
+				3A50961E1D2F6EA100580D2B /* HUTransitionVerticalLinesAnimator.h */,
+				3A50961F1D2F6EA100580D2B /* HUTransitionVerticalLinesAnimator.m */,
+			);
+			path = HUAnimator;
+			sourceTree = "<group>";
+		};
+		3A5096241D2F703A00580D2B /* ZBCustomTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				3A5096251D2F703A00580D2B /* UIViewController+Animator.h */,
+				3A5096261D2F703A00580D2B /* UIViewController+Animator.m */,
+				3A5096271D2F703A00580D2B /* ZBFallenBricksAnimator.h */,
+				3A5096281D2F703A00580D2B /* ZBFallenBricksAnimator.m */,
+			);
+			path = ZBCustomTransitions;
+			sourceTree = "<group>";
+		};
 		3A8501411D2E308E00E2CE67 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -619,9 +673,9 @@
 		3A85017A1D2E31A600E2CE67 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				3A85017B1D2E31A600E2CE67 /* C */,
 				3A8501801D2E31A600E2CE67 /* M */,
 				3A8501851D2E31A600E2CE67 /* V */,
+				3A85017B1D2E31A600E2CE67 /* C */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -812,6 +866,7 @@
 				3AFE8BA21D2E61DE00512C3A /* cars_total.plist in Resources */,
 				3A8501941D2E31A600E2CE67 /* TableViewHead.xib in Resources */,
 				3AE9E4601CF92D03000DCB72 /* Assets.xcassets in Resources */,
+				3A5096161D2F6E7500580D2B /* CustomTransitionViewController.xib in Resources */,
 				3AE9E46C1CF9CC81000DCB72 /* butterfly@2x.png in Resources */,
 				3A29D0EE1D1A426E004F1FDD /* MJRefresh.bundle in Resources */,
 				3AE9E45B1CF92D03000DCB72 /* Main.storyboard in Resources */,
@@ -827,7 +882,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5096211D2F6EA100580D2B /* HUTransitionGhostAnimator.m in Sources */,
 				3A8501921D2E31A600E2CE67 /* MGSearchCell.m in Sources */,
+				3A5096221D2F6EA100580D2B /* HUTransitionHorizontalLinesAnimator.m in Sources */,
 				3A29D0E51D1A426E004F1FDD /* MJRefreshAutoGifFooter.m in Sources */,
 				3A29D0EA1D1A426E004F1FDD /* MJRefreshBackStateFooter.m in Sources */,
 				3A8501971D2E362500E2CE67 /* MGPolygonVC.m in Sources */,
@@ -847,12 +904,14 @@
 				3A29D0D71D1A426E004F1FDD /* MJFoundation.m in Sources */,
 				3A29D0F01D1A426E004F1FDD /* UIScrollView+MJExtension.m in Sources */,
 				3A29D0F41D1A426E004F1FDD /* NSData+ImageContentType.m in Sources */,
+				3A5096231D2F6EA100580D2B /* HUTransitionVerticalLinesAnimator.m in Sources */,
 				3A23A3AD1D2EB9FE00FFFF78 /* MGAnimationVC.m in Sources */,
 				3A29D0DB1D1A426E004F1FDD /* MJType.m in Sources */,
 				3A29D0E71D1A426E004F1FDD /* MJRefreshAutoStateFooter.m in Sources */,
 				3A23A3B31D2EC18400FFFF78 /* MGNavVC.m in Sources */,
 				3A8501701D2E308E00E2CE67 /* MGShopCell.m in Sources */,
 				3A29D0DC1D1A426E004F1FDD /* MJTypeEncoding.m in Sources */,
+				3A5096201D2F6EA100580D2B /* HUTransitionAnimator.m in Sources */,
 				3A29D1001D1A426E004F1FDD /* UIImageView+HighlightedWebCache.m in Sources */,
 				3A29D0E41D1A426E004F1FDD /* MJRefreshHeader.m in Sources */,
 				3A85016E1D2E308E00E2CE67 /* MGVideoViewController.m in Sources */,
@@ -879,6 +938,7 @@
 				3A29D0DF1D1A426E004F1FDD /* NSObject+MJMember.m in Sources */,
 				3A29D1021D1A426E004F1FDD /* UIView+WebCacheOperation.m in Sources */,
 				3A29D0F51D1A426E004F1FDD /* SDImageCache.m in Sources */,
+				3A5096151D2F6E7500580D2B /* CustomTransitionViewController.m in Sources */,
 				3A29D0FA1D1A426E004F1FDD /* SDWebImageManager.m in Sources */,
 				3A29D0E61D1A426E004F1FDD /* MJRefreshAutoNormalFooter.m in Sources */,
 				3A29D0FB1D1A426E004F1FDD /* SDWebImagePrefetcher.m in Sources */,
@@ -892,6 +952,7 @@
 				3A29D0ED1D1A426E004F1FDD /* MJRefreshStateHeader.m in Sources */,
 				3AA3DA9B1D0FDB18008B96E2 /* SVIndefiniteAnimatedView.m in Sources */,
 				3A85019A1D2E364D00E2CE67 /* MGPolygonView.m in Sources */,
+				3A50962A1D2F703A00580D2B /* ZBFallenBricksAnimator.m in Sources */,
 				3A29D0F31D1A426E004F1FDD /* MKAnnotationView+WebCache.m in Sources */,
 				3A85018E1D2E31A600E2CE67 /* MGTableController.m in Sources */,
 				3A29D0EF1D1A426E004F1FDD /* MJRefreshConst.m in Sources */,
@@ -900,6 +961,7 @@
 				3A85018D1D2E31A600E2CE67 /* MGSearchViewController.m in Sources */,
 				3A29D0FD1D1A426E004F1FDD /* UIImage+GIF.m in Sources */,
 				3A85018F1D2E31A600E2CE67 /* MGCellModel.m in Sources */,
+				3A5096291D2F703A00580D2B /* UIViewController+Animator.m in Sources */,
 				3A29D0EC1D1A426E004F1FDD /* MJRefreshNormalHeader.m in Sources */,
 				3A29D0E21D1A426E004F1FDD /* MJRefreshComponent.m in Sources */,
 			);
