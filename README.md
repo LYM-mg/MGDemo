@@ -15,3 +15,7 @@
 - 后来又整合了UICollectionView的使用
 
 ![MGDemo3.gif](http://upload-images.jianshu.io/upload_images/1429890-31e82c56bd6d792f.gif?imageMogr2/auto-orient/strip)
+
+![refresh](https://j.gifs.com/L9myG4.gif)
+
+![Animation](https://j.gifs.com/L9myD4.gif)

@@ -12,12 +12,16 @@
 @interface MGBodyCell ()
 /** 背景imageView */
 @property (weak, nonatomic) IBOutlet UIImageView *imageV;
+
 /** 名字按钮 */
 @property (weak, nonatomic) IBOutlet UIButton *nameBtn;
+
 /** 总数按钮 */
 @property (weak, nonatomic) IBOutlet UIButton *countBtn;
+
 /** 标题Label */
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
 
 @end
 

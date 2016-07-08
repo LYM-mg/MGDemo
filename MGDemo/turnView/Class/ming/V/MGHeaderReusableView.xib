@@ -7,12 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="JHHeaderReusableView" id="U6b-Vx-4bR" customClass="JHHeaderReusableView">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KHeaderReusableViewIdentifier" id="U6b-Vx-4bR" customClass="MGHeaderReusableView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jok-Y3-S3y">
-                    <rect key="frame" x="5" y="5" width="42" height="40"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="明哥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jok-Y3-S3y">
+                    <rect key="frame" x="5" y="5" width="34" height="40"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -23,37 +23,27 @@
                         <constraint firstAttribute="width" constant="40" id="lMl-wU-Ize"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPb-4k-X0L">
-                    <rect key="frame" x="228" y="5" width="42" height="40"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19个赞" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPb-4k-X0L">
+                    <rect key="frame" x="218" y="5" width="52" height="40"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zcp-Pu-aCI">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                    <connections>
-                        <action selector="clickHeader:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="PwH-8t-1e5"/>
-                    </connections>
-                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="jok-Y3-S3y" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="5" id="25X-pt-QI2"/>
                 <constraint firstAttribute="bottom" secondItem="jok-Y3-S3y" secondAttribute="bottom" constant="5" id="26b-ya-7Sd"/>
                 <constraint firstAttribute="trailing" secondItem="FvZ-EP-zwL" secondAttribute="trailing" id="7Y9-Qt-Wtu"/>
-                <constraint firstAttribute="trailing" secondItem="Zcp-Pu-aCI" secondAttribute="trailing" id="DVl-zq-qBi"/>
                 <constraint firstItem="jok-Y3-S3y" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="5" id="DqV-NV-Cso"/>
-                <constraint firstItem="Zcp-Pu-aCI" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="Eyu-O6-wWP"/>
                 <constraint firstItem="vPb-4k-X0L" firstAttribute="bottom" secondItem="FvZ-EP-zwL" secondAttribute="bottom" id="JaV-wX-rhJ"/>
-                <constraint firstItem="Zcp-Pu-aCI" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="LFq-LY-eKZ"/>
                 <constraint firstItem="FvZ-EP-zwL" firstAttribute="leading" secondItem="vPb-4k-X0L" secondAttribute="trailing" constant="10" id="R71-Hh-6N1"/>
                 <constraint firstAttribute="bottom" secondItem="FvZ-EP-zwL" secondAttribute="bottom" constant="5" id="TWt-BU-TtW"/>
                 <constraint firstItem="FvZ-EP-zwL" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="5" id="ale-hM-jTA"/>
-                <constraint firstAttribute="bottom" secondItem="Zcp-Pu-aCI" secondAttribute="bottom" id="mz3-xI-CJU"/>
                 <constraint firstItem="vPb-4k-X0L" firstAttribute="top" secondItem="FvZ-EP-zwL" secondAttribute="top" id="wuo-yU-6OE"/>
             </constraints>
             <connections>
-                <outlet property="countLabel" destination="vPb-4k-X0L" id="v2O-N8-GPO"/>
-                <outlet property="nameLabel" destination="jok-Y3-S3y" id="F5e-Wq-EhW"/>
+                <outlet property="countLabel" destination="vPb-4k-X0L" id="2bY-2K-kJh"/>
+                <outlet property="nameLabel" destination="jok-Y3-S3y" id="Ztn-m4-kuE"/>
             </connections>
         </collectionReusableView>
     </objects>

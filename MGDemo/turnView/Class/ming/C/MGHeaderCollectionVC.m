@@ -24,7 +24,7 @@
 
 @implementation MGHeaderCollectionVC
 #pragma mark -循环利用标识符
-static NSString * const KBodyCellIdentifier = @"BodyCellIdentifier";
+static NSString * const KBodyCellIdentifier = @"KBodyCellIdentifier";
 static NSString * const KHeaderReusableViewIdentifier = @"KHeaderReusableViewIdentifier";
 
 
@@ -124,6 +124,8 @@ static NSString * const KHeaderReusableViewIdentifier = @"KHeaderReusableViewIde
     self.navigationItem.title = @"collectionView的头部视图漂浮";
     
     self.navigationController.navigationBar.translucent = NO;
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 /* 设置collectionView */
@@ -138,7 +140,8 @@ static NSString * const KHeaderReusableViewIdentifier = @"KHeaderReusableViewIde
     layout.headerReferenceSize = CGSizeMake(MGSCREEN_WIDTH, MGSCREEN_HEIGHT * 0.085);
     
     
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, MGNavHeight, MGSCREEN_WIDTH, MGSCREEN_HEIGHT) collectionViewLayout:layout];
+    
     collectionView.showsVerticalScrollIndicator = NO;
     //    self.automaticallyAdjustsScrollViewInsets = NO;
     collectionView.bounces = NO;
@@ -150,7 +153,8 @@ static NSString * const KHeaderReusableViewIdentifier = @"KHeaderReusableViewIde
     [self.view addSubview:collectionView];
     
     //注册
-    [self.collectionView registerClass:[MGBodyCell class] forCellWithReuseIdentifier:KBodyCellIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MGBodyCell class]) bundle:nil] forCellWithReuseIdentifier:KBodyCellIdentifier];
+//    [self.collectionView registerClass:[MGBodyCell class] forCellWithReuseIdentifier:KBodyCellIdentifier];
     //注册头部视图
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MGHeaderReusableView class]) bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:KHeaderReusableViewIdentifier];
 }

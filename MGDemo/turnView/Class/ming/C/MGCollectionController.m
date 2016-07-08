@@ -49,10 +49,10 @@ static NSString *const CellIdentifier = @"CellIdentifier";
 
 #pragma mark - Nav
 - (void)setUpNav{
-    self.navigationController.hidesBarsOnSwipe = YES;
-    self.navigationController.hidesBarsWhenKeyboardAppears = YES;
-    self.navigationController.hidesBarsOnTap = YES;
-    self.navigationController.hidesBarsWhenVerticallyCompact = YES;
+//    self.navigationController.hidesBarsOnSwipe = YES;
+//    self.navigationController.hidesBarsWhenKeyboardAppears = YES;
+//    self.navigationController.hidesBarsOnTap = YES;
+//    self.navigationController.hidesBarsWhenVerticallyCompact = YES;
     
     UIBarButtonItem *mingItem = [[UIBarButtonItem alloc] initWithTitle:@"明哥" style:UIBarButtonItemStylePlain target:self action:@selector(mingItemClick:)];
     UIBarButtonItem *headItem = [[UIBarButtonItem alloc] initWithTitle:@"headItem" style:UIBarButtonItemStylePlain target:self action:@selector(headItemClick:)];

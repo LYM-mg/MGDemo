@@ -30,7 +30,7 @@
 
 + (instancetype)cellWithTableView:(UITableView *)tableView model:(MGBodyModel *)model
 {
-    static NSString *ID = @"rmndCell";
+    static NSString *ID = @"MGRmndCell";
     MGRmndCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([MGRmndCell class]) owner:nil options:nil] lastObject];

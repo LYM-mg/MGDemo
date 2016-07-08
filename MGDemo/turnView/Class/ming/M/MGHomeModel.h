@@ -25,4 +25,7 @@
  *  快速字典转模型
  */
 + (instancetype)homeWithDict:(NSDictionary *)dict;
+
+- (instancetype)initWithDict:(NSDictionary *)dict;
+
 @end

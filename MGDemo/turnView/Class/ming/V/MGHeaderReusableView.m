@@ -17,6 +17,15 @@
 @end
 @implementation MGHeaderReusableView
 
++ (instancetype)headViewWith:(MGHomeModel *)headModel
+{
+    MGHeaderReusableView *headView = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
+    
+    headView.homeModel = headModel;
+    
+    return headView;
+}
+
 - (void)awakeFromNib {
 
 
@@ -33,6 +42,7 @@
     self.backgroundColor = [UIColor colorWithHexString:homeModel.color];
 //    self.backgroundColor = MGRandomColor;
 }
+
 /** 点击头部视图的跳转 */
 - (IBAction)clickHeader:(UIButton *)sender {
     

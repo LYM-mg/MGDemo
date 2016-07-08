@@ -13,5 +13,7 @@
 
 /** 头部模型属性  */
 @property (nonatomic, strong) MGHomeModel *homeModel;
+//便利构造方法
++ (instancetype)headViewWith:(MGHomeModel *)headModel;
 
 @end

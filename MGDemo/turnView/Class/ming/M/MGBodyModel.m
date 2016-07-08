@@ -12,14 +12,14 @@
 
 + (instancetype)bodyWithDict:(NSDictionary *)dict
 {
-    MGBodyModel *body = [[MGBodyModel alloc] init];
-//    body.poi_name = dict[@"poi_name"];
-//    body.imageURL = dict[@"imageURL"];
-//    body.section_title = dict[@"section_title"];
-//    body.fav_count = dict[@"fav_count"];
-    [body setKeyValues:dict];
-    
-    return body;
+    return [[self alloc] initWithDict:dict];
+}
+
+- (instancetype)initWithDict:(NSDictionary *)dict{
+    if (self = [super init]) {
+        [self setValuesForKeysWithDictionary:dict];
+    }
+    return self;
 }
 
 @end

@@ -22,4 +22,6 @@
  *  快速字典转模型
  */
 + (instancetype)bodyWithDict:(NSDictionary *)dict;
+
+- (instancetype)initWithDict:(NSDictionary *)dict;
 @end

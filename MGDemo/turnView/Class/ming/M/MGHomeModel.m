@@ -12,21 +12,27 @@
 @implementation MGHomeModel
 + (instancetype)homeWithDict:(NSDictionary *)dict
 {
-    MGHomeModel *home = [[MGHomeModel alloc] init];
-//    home.tag_name = dict[@"tag_name"];
-//    home.section_count  = dict[@"section_count"];
-//    home.color = dict[@"color"];
-//    
-//    //字典数组转模型
-//    //保存模型的临时数组
-//    NSMutableArray *tempArray = [NSMutableArray array];
-//    for (NSDictionary *dict in dict[@"body"]) {
-//        MGBodyModel *body = [MGBodyModel bodyWithDict:dict];
-//        [tempArray addObject:body];
-//    }
-//    home.body = tempArray;
-    [home setKeyValues:dict];
-    
-    return home;
+    return [[self alloc] initWithDict:dict];
 }
+
+- (instancetype)initWithDict:(NSDictionary *)dict{
+    if (self = [super init]) {
+//        self.tag_name = dict[@"tag_name"];
+//        self.section_count  = dict[@"section_count"];
+//        self.color = dict[@"color"];
+        [self setValuesForKeysWithDictionary:dict];
+        
+        //字典数组转模型
+        //保存模型的临时数组
+        NSMutableArray *tempArray = [NSMutableArray array];
+        NSArray *dictArr = dict[@"body"];
+        for (NSDictionary *dict in dictArr) {
+            MGBodyModel *body = [MGBodyModel bodyWithDict:dict];
+            [tempArray addObject:body];
+        }
+        self.body = tempArray;
+    }
+    return self;
+}
+
 @end
