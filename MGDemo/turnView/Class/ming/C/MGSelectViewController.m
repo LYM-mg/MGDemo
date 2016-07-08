@@ -11,8 +11,6 @@
 #import "MGWaterflowLayout.h"
 #import "MGShopCell.h"
 #import "MGShopModel.h"
-#import "MJRefresh.h"
-#import "MJExtension.h"
 
 /** 重用标识符 */
 static NSString *const ShopCellIdentifier = @"ShopCellIdentifier";
@@ -57,8 +55,6 @@ static NSString *const ShopCellIdentifier = @"ShopCellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.hidesBarsWhenKeyboardAppears = YES;
-//    self.navigationController.hidesBarsWhenVerticallyCompact = YES;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"可移动collect" style:UIBarButtonItemStyleDone target:self action:@selector(toCollection)];
     

@@ -7,6 +7,8 @@
 //
 
 #import "MGCollectionController.h"
+#import "MGHeaderCollectionVC.h"
+#import "SVProgressHUD.h"
 
 /** 重用标识符 */
 static NSString *const CellIdentifier = @"CellIdentifier";
@@ -19,7 +21,7 @@ static NSString *const CellIdentifier = @"CellIdentifier";
 @end
 
 @implementation MGCollectionController
-#pragma mark -懒汉模式
+#pragma mark - 懒汉模式
 - (NSMutableArray *)dataArr{
     if (_dataArr == nil) {
         _dataArr = [NSMutableArray array];
@@ -31,22 +33,43 @@ static NSString *const CellIdentifier = @"CellIdentifier";
     return _dataArr;
 }
 
+#pragma mark - 生命周期方法
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor blueColor]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setUpNav];
+    
+    [self setUpLayout];
+}
+
+#pragma mark - Nav
+- (void)setUpNav{
     self.navigationController.hidesBarsOnSwipe = YES;
     self.navigationController.hidesBarsWhenKeyboardAppears = YES;
     self.navigationController.hidesBarsOnTap = YES;
     self.navigationController.hidesBarsWhenVerticallyCompact = YES;
     
-    [self setUpLayout];
+    UIBarButtonItem *mingItem = [[UIBarButtonItem alloc] initWithTitle:@"明哥" style:UIBarButtonItemStylePlain target:self action:@selector(mingItemClick:)];
+    UIBarButtonItem *headItem = [[UIBarButtonItem alloc] initWithTitle:@"headItem" style:UIBarButtonItemStylePlain target:self action:@selector(headItemClick:)];
+    self.navigationItem.rightBarButtonItems = @[mingItem,headItem];
 }
 
+- (void)mingItemClick:(UIBarButtonItem *)item{
+    [SVProgressHUD showImage:[UIImage imageNamed:@"12"] status:@"明哥"];
+}
+
+- (void)headItemClick:(UIBarButtonItem *)item{
+    MGHeaderCollectionVC *headVC = [[MGHeaderCollectionVC alloc] init];
+    headVC.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:headVC animated:NO];
+}
+
+#pragma mark - collectionView
 /// 初始化collectionView
 - (void)setUpLayout{
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];

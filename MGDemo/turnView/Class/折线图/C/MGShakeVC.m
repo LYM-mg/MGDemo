@@ -87,7 +87,7 @@
 //            self.imgGif.hidden = NO;
 //            [self.imgGif startAnimating];
 //        }];
-        NSString *soundFielPath= [[NSBundle mainBundle]pathForResource:@"buyao" ofType:@"wav"];
+        NSString *soundFielPath= [[NSBundle mainBundle]pathForResource:@"normal" ofType:@"aac"];
         NSURL *fileURL=[[NSURL alloc]initFileURLWithPath:soundFielPath];
         AVAudioPlayer *newPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:fileURL error:nil];
         self.player = newPlayer;
@@ -132,7 +132,7 @@
 //            }
 //            label.text = [NSString stringWithFormat:@"摇一摇有惊喜, 今日剩余%ld次", (long)num];
 //        }];
-        NSString *soundFielPath= [[NSBundle mainBundle]pathForResource:@"buyao" ofType:@"wav"];
+        NSString *soundFielPath= [[NSBundle mainBundle]pathForResource:@"lose" ofType:@"aac"];
         NSURL *fileURL=[[NSURL alloc] initFileURLWithPath:soundFielPath];
         AVAudioPlayer *newPlayer=[[AVAudioPlayer alloc]initWithContentsOfURL:fileURL error:nil];
         self.player=newPlayer;

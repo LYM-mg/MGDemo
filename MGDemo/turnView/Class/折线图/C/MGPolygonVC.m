@@ -97,6 +97,7 @@
 
 - (void)shake{
     MGShakeVC *vc = [[MGShakeVC alloc] init];
+    vc.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController pushViewController:vc animated:NO];
 }
 

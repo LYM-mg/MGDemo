@@ -9,14 +9,39 @@
 #ifndef MGDemo_pch
 #define MGDemo_pch
 
+// 导入框架
 #import "UIView+Extension.h"
+#import "UIImageView+WebCache.h"
+#import "SVProgressHUD.h"
+#import "MJExtension.h"
+#import "UIColor+HexColor.h"
+#import "MJRefresh.h"
 
+
+// 导航仪颜色
 #define naBarTiniColor [UIColor colorWithRed:174/255.0f green:42/255.0f blue:44/255.0f alpha:1]
 
-#define MGSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define MGSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
-
+// 颜色
+/** 随机色 */
 #define MGColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define MGrandomColor MGColor(arc4random_uniform(255),arc4random_uniform(255),arc4random_uniform(255))
+
+//屏幕的高度和宽度
+#define MGSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define MGSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+//默认导航栏的高度
+#define MGNavHeight 64
+
+// 快速创建弱指针
+#define __weakSelf __weak typeof(self) weakSelf = self;
+
+//日志输出
+#ifdef DEBUG  //log
+#define MGLog(...) NSLog(__VA_ARGS__)
+// 方法输出
+#define MGLogFunc MGLog(@"%s", __func__)
+#else // 发布阶段-上线阶段:移除Log
+#define MGLogLog(...)
+#endif
 
 #endif /* MGDemo_pch */
