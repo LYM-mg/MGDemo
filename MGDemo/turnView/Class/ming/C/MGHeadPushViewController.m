@@ -6,6 +6,8 @@
 #import "MGBodyModel.h"
 #import "MGRmndCell.h"
 
+#import "PMElasticRefresh.h"
+
 @interface MGHeadPushViewController ()<UITableViewDataSource, UITableViewDelegate>
 /** 数据源 */
 @property (nonatomic, strong) NSMutableArray *datas;
@@ -17,7 +19,7 @@
 - (NSMutableArray *)datas
 {
     if (_datas == nil) {
-        _datas = (NSMutableArray *)[MGBodyModel objectArrayWithFilename:@"cellDatas.plist"];
+        _datas = [NSMutableArray array];
     }
     return _datas;
 }
@@ -27,6 +29,17 @@
     
     //初始化UI
     [self setUI];
+    
+    // 模拟刷新
+    self.tableView.header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
+         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+             self.datas = (NSMutableArray *)[MGBodyModel objectArrayWithFilename:@"cellDatas.plist"];
+             [self.tableView reloadData];
+             [self.tableView endRefresh];
+         });
+    }];
+    
+    [self.tableView.header beginRefreshing];
 }
 
 //设置导航条

@@ -37,14 +37,14 @@ static NSString * const KHeaderReusableViewIdentifier = @"KHeaderReusableViewIde
 //        NSArray *dictArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"HomeDatas" ofType:@"plist"]];
         
         //保存模型的数组
-        NSMutableArray *temp = [NSMutableArray array];
-        //字典转模型
-        NSArray *dictArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"homeDatas" ofType:@"plist"]];
-        for (NSDictionary *dict in dictArray) {
-            MGHomeModel *home = [MGHomeModel homeWithDict:dict];
-            [temp addObject:home];
-        }
-        _bodyArray = temp;
+//        NSMutableArray *temp = [NSMutableArray array];
+//        //字典转模型
+//        NSArray *dictArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"homeDatas" ofType:@"plist"]];
+//        for (NSDictionary *dict in dictArray) {
+//            MGHomeModel *home = [MGHomeModel homeWithDict:dict];
+//            [temp addObject:home];
+//        }
+//        _bodyArray = temp;
     }
     
     return _bodyArray;
@@ -79,8 +79,8 @@ static NSString * const KHeaderReusableViewIdentifier = @"KHeaderReusableViewIde
     // 下拉刷新
     self.collectionView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            NSArray *shops = [MGHomeModel objectArrayWithFilename:@"homeDatas.plist"];
-//            [self.bodyArray addObjectsFromArray:shops];
+            NSArray *shops = [MGHomeModel objectArrayWithFilename:@"homeDatas.plist"];
+            [self.bodyArray addObjectsFromArray:shops];
             //保存模型的数组
             NSMutableArray *tempArray = [NSMutableArray array];
             //字典转模型
@@ -113,9 +113,9 @@ static NSString * const KHeaderReusableViewIdentifier = @"KHeaderReusableViewIde
     //设置collectionView
     [self setUpCollectionView];
     
-//    [self setupRefresh];
-//    // 第一次刷新手动调用
-//    [self.collectionView.header beginRefreshing];
+    [self setupRefresh];
+    // 第一次刷新手动调用
+    [self.collectionView.header beginRefreshing];
 }
 
 /** 设置导航栏 */
