@@ -11,6 +11,8 @@
 #import "MGCar.h"
 #import "MGCarGroup.h"
 
+#import "PMElasticRefresh.h"
+
 #define headH 64
 #define LYMheadH 200
 
@@ -79,6 +81,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 模拟刷新
+    [self.tableView pm_RefreshHeaderWithBlock:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.tableView endRefresh];
+        });
+    }];
+    
     // 初始化导航栏
     [self setUpNav];
     

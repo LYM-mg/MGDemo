@@ -11,6 +11,7 @@
 #import "CustomAnimateTransitionPush.h"
 
 #import "CustomTransitionViewController.h"
+#import "MGShakeVC.h"
 
 @interface MGAnimationVC ()<UINavigationControllerDelegate>
 
@@ -118,6 +119,8 @@
     self.arrayBtn=@[btnA,btnB,btnC,btnD];
 }
 
+
+#pragma mark - 使用了CoreAnimation进行跳转
 /**
  *  监听按钮点击
  */
@@ -244,8 +247,6 @@
 }
 
 
-
-#pragma mark - 使用了CoreAnimation进行跳转
 
 
 
