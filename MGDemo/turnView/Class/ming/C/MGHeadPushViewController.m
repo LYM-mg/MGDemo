@@ -26,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
     //初始化UI
     [self setUI];
@@ -33,9 +34,17 @@
     // 模拟刷新
     self.tableView.header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-             self.datas = (NSMutableArray *)[MGBodyModel objectArrayWithFilename:@"cellDatas.plist"];
-             [self.tableView reloadData];
-             [self.tableView endRefresh];
+             
+             NSArray *tempArray = [MGBodyModel objectArrayWithFilename:@"cellDatas.plist"];
+             
+             [self.datas removeAllObjects];
+             [self.datas addObjectsFromArray:tempArray];
+             
+             [UIView animateWithDuration:0.3 animations:^{
+                 [self.tableView reloadData];
+                 
+                 [self.tableView.header endRefreshing];
+             }];
          });
     }];
     
@@ -53,11 +62,11 @@
 
 - (void)setUI
 {
-    //设置tableView的frame把系统
-    self.tableView.frame = CGRectMake(0, 64, MGSCREEN_WIDTH, MGSCREEN_HEIGHT - 64);
-    
+   
     //添加tableView
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_WIDTH, MGSCREEN_HEIGHT) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, MGNavHeight, MGSCREEN_WIDTH, MGSCREEN_HEIGHT) style:UITableViewStylePlain];
+    //设置tableView的frame把系统
+    self.tableView.frame = CGRectMake(0, MGNavHeight, MGSCREEN_WIDTH, MGSCREEN_HEIGHT);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
