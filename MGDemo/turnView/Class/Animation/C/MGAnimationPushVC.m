@@ -39,6 +39,7 @@
     [self.view addSubview:backImageView];
     self.backImageView = backImageView;
     [self.view bringSubviewToFront:self.backImageView];
+    self.backImageView.userInteractionEnabled = YES;
     
     // 2.添加双击手势
     /// 点按
