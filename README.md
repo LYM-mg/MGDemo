@@ -14,8 +14,7 @@
 ![升级版.gif](http://upload-images.jianshu.io/upload_images/1429890-7bae8c691794d2ca.gif?imageMogr2/auto-orient/strip)
 
 
-- #再后来补充
-  -#tableView 的一些常用知识点，还有搜索框的使用
+- #tableView 的一些常用知识点，还有搜索框的使用
 ![MGDemo.gif](http://upload-images.jianshu.io/upload_images/1429890-6f56391e07bceb4d.gif?imageMogr2/auto-orient/strip)
 ![MGDemo.gif](http://upload-images.jianshu.io/upload_images/1429890-a29772a16c575d79.gif?imageMogr2/auto-orient/strip)
 
