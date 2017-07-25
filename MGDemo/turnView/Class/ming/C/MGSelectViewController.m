@@ -140,7 +140,7 @@ static NSString *const ShopCellIdentifier = @"ShopCellIdentifier";
         [itemBtn addTarget:self action:@selector(btnHandled:) forControlEvents:(UIControlEventTouchUpInside)];
         [headView addSubview:itemBtn];
         
-        UILabel *titleLabel=[[UILabel alloc] initWithFrame:CGRectMake(MGSCREEN_WIDTH/count*i-10, itemBtn.orgin.y,MGSCREEN_WIDTH/count/count*2, 35)];
+        UILabel *titleLabel=[[UILabel alloc] initWithFrame:CGRectMake(MGSCREEN_WIDTH/count*i-10, itemBtn.y,MGSCREEN_WIDTH/count/count*2, 35)];
         titleLabel.font=[UIFont systemFontOfSize:17];
         titleLabel.textColor = [UIColor whiteColor];
         titleLabel.textAlignment=NSTextAlignmentRight;
