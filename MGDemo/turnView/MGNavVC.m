@@ -50,7 +50,8 @@
     
     if (self.childViewControllers.count != 0) {
         // 判断当前控制器是否为根控制器，如果不是，就执行下列代码
-        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(leftBtnClick)];
+        UIBarButtonItem *leftItem = [UIBarButtonItem itemWithImage:@"navigationButtonReturn"  highImage:nil title:@"返回" target:self action:@selector(leftBtnClick)];
+    
         [viewController.navigationItem setLeftBarButtonItem:leftItem animated:YES];
         
         // 隐藏下面的TabBar

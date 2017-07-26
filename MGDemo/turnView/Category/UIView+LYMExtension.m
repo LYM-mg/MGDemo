@@ -166,20 +166,15 @@
     unsigned char pixel[4] = {0};
     
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    
     CGContextRef context = CGBitmapContextCreate(pixel, 1, 1, 8, 4, colorSpace, kCGBitmapAlphaInfoMask & kCGImageAlphaPremultipliedLast);
-    
     CGContextTranslateCTM(context, -point.x, -point.y);
-    
     [self.layer renderInContext:context];
     
     CGContextRelease(context);
     CGColorSpaceRelease(colorSpace);
     
     //NSLog(@"pixel: %d %d %d %d", pixel[0], pixel[1], pixel[2], pixel[3]);
-    
     UIColor *color = [UIColor colorWithRed:pixel[0]/255.0 green:pixel[1]/255.0 blue:pixel[2]/255.0 alpha:pixel[3]/255.0];
-    
     return color;
 }
 
@@ -199,10 +194,8 @@
 - (UIViewController *)viewController {
     UIViewController *viewController = nil;
     UIResponder *next = self.nextResponder;
-    while (next)
-    {
-        if ([next isKindOfClass:[UIViewController class]])
-        {
+    while (next) {
+        if ([next isKindOfClass:[UIViewController class]]) {
             viewController = (UIViewController *)next;
             break;
         }
@@ -211,7 +204,7 @@
     return viewController;
 }
 
-+ (UIViewController *)findCurrentResponderViewController{
+- (UIViewController *)findCurrentResponderViewController{
     UIViewController *currentVC = nil;
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
     if (window.windowLevel != UIWindowLevelNormal) {
@@ -227,8 +220,7 @@
     id nextResponder = [frontView nextResponder];
     if ([nextResponder isKindOfClass:[UIViewController class]])
         currentVC = nextResponder;
-    else
-    {
+    else {
         UIViewController *topVC = window.rootViewController.presentedViewController;
         if (topVC) {
             currentVC = topVC;
@@ -283,16 +275,16 @@
 }
 
 // 开始动画 抖动 类似与长按删除App的动画
-- (void)beginWobble{
+- (void)beginWobble:(float)rotateValue{
     srand([[NSDate date] timeIntervalSince1970]);
     float rand=(float)random();
     CFTimeInterval t=rand*0.0000000001;
     
     [UIView animateWithDuration:0.1 delay:t options:0  animations:^{
-         self.transform=CGAffineTransformMakeRotation(-0.05);
+         self.transform=CGAffineTransformMakeRotation(-rotateValue);
      } completion:^(BOOL finished){
          [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction  animations:^{
-             self.transform=CGAffineTransformMakeRotation(0.05);
+             self.transform=CGAffineTransformMakeRotation(rotateValue);
           } completion:^(BOOL finished) {}];
      }];
 }

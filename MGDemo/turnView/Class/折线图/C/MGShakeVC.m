@@ -57,9 +57,10 @@
 //    // 将 imgGif 放到最下面
 //    [self.view insertSubview:[arr lastObject] belowSubview:[arr firstObject]];
     
-    
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.title = @"摇一摇";
     // 摇一摇
-    [[UIApplication sharedApplication]setApplicationSupportsShakeToEdit:YES];
+    [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
     [self becomeFirstResponder];
 }
 

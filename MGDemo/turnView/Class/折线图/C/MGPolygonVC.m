@@ -24,7 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.title = @"绘图";
     [self setUpShake];
     
     

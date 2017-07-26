@@ -14,8 +14,7 @@
  *
  *  @param info 要提醒的内容
  */
-- (void)showInfo:(NSString *)info
-{
+- (void)showInfo:(NSString *)info{
     // 只有是控制器的话才会弹框
     if ([self isKindOfClass:[UIViewController class]] || [self isKindOfClass:[UIView class]]) {
         UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:info message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -42,8 +41,7 @@ void enumerateFonts() {
 - (void)setStatusBarBackgroundColor:(UIColor *)color {
     UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
     
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)])
-    {
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
         statusBar.backgroundColor = color;
     }
 }
@@ -51,7 +49,7 @@ void enumerateFonts() {
 #pragma mark - iOS在当前屏幕获取第一响应
 - (id)getFirstResponder {
     UIWindow * keyWindow = [[UIApplication sharedApplication] keyWindow];
-    UIView * firstResponder = [keyWindow performSelector:@selector(firstResponder)];
+    UIView *firstResponder = [keyWindow.subviews[0] performSelector:@selector(firstResponder)];
     return firstResponder;
 }
 

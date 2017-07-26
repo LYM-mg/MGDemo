@@ -57,7 +57,7 @@
 - (BOOL)intersectsOtherView:(UIView *)otherView;
 
 #pragma mark - 获取查找
-/** 获取图片某一点的颜色 */
+/** 获取某一点的颜色 */
 - (UIColor *) colorOfPoint:(CGPoint)point;
 
 /** 查找一个视图的所有子视图 */
@@ -65,6 +65,9 @@
 
 /** 获取某个view所在的控制器 */
 - (UIViewController *)viewController;
+
+/** 查找视图当前控制器 */
+- (UIViewController *)findCurrentResponderViewController;
 
 #pragma mark - 动画
 /** iOS动画，左右(移动)效果。 */
@@ -75,7 +78,7 @@
 
 
 // 开始动画 抖动 类似与长按删除App的动画
-- (void)beginWobble;
+- (void)beginWobble:(float)rotateValue;
 // 结束动画
 - (void)endWobble;
 

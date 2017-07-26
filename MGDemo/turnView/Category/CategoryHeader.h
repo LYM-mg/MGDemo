@@ -17,5 +17,6 @@
 #import "UIDevice+Extension.h"
 #import "UIColor+Extension.h"
 #import "UITextField+Shake.h"
+#import "NSObject+HUD.h"
 #import "UIViewController+SLExtension.h"
 
