@@ -239,7 +239,7 @@
                             <constraint firstItem="dsR-Wr-K6V" firstAttribute="top" secondItem="0H0-p2-9Ep" secondAttribute="bottom" constant="8" symbolic="YES" id="yu6-JS-h2b"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="标哥的技术博客" id="7dR-eX-KKf" userLabel="MG的技术博客"/>
+                    <navigationItem key="navigationItem" title="MG的技术博客" id="7dR-eX-KKf" userLabel="MG的技术博客"/>
                     <connections>
                         <outlet property="centerFrameImageView" destination="zFc-Je-2bD" id="uXm-Ju-unw"/>
                         <outlet property="videoDurationLabel" destination="0H0-p2-9Ep" id="ZeM-yl-Ar0"/>

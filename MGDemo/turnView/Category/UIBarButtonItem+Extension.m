@@ -11,7 +11,7 @@
 @implementation UIBarButtonItem (Extension)
 /** 设置图片和文字 */
 + (UIBarButtonItem *)itemWithImage:(NSString *)image  highImage:(NSString *)highImage title:(NSString *)title target:(id)target action:(SEL)action {
-    return [UIBarButtonItem itemWithBackgroundImage:nil BackgroundhighImage:nil image:image highImage:highImage norColor:nil selColor:nil title:title target:target action:action];
+    return [UIBarButtonItem itemWithBackgroundImage:nil BackgroundhighImage:nil image:image highImage:highImage norColor:[UIColor lightGrayColor] selColor:[UIColor blackColor] title:title target:target action:action];
 }
 
 + (UIBarButtonItem *)itemWithBackgroundImage:(NSString *)image highImage:(NSString *)highImage  target:(id)target action:(SEL)action{

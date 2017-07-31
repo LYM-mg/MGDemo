@@ -23,14 +23,19 @@
     return true;
 }
 
-// 支持哪些转屏方向
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-    return UIInterfaceOrientationMaskAll;
-}
+//// 支持哪些转屏方向
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+//    return UIInterfaceOrientationMaskAll;
+//}
+//
+//// 页面展示的时候默认屏幕方向（当前ViewController必须是通过模态ViewController（模态带导航的无效）方式展现出来的，才会调用这个方法）
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+//    return UIInterfaceOrientationPortrait;
+//}
 
-// 页面展示的时候默认屏幕方向（当前ViewController必须是通过模态ViewController（模态带导航的无效）方式展现出来的，才会调用这个方法）
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationPortrait;
+- (void)viewWillAppear:(BOOL)animated{
+    AppDelegate *KAppDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    KAppDelegate.isLandscape = true;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -41,9 +46,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    AppDelegate *KAppDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    KAppDelegate.isLandscape = true;
-    
     [self.view setBGImage:@"ming3"];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"RunTime" style:UIBarButtonItemStylePlain target:self action:@selector(runtimeClick)];
 }
