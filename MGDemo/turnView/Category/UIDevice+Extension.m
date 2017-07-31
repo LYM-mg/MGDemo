@@ -67,4 +67,63 @@
     return platform;
 }
 
+- (BOOL)isLandscape {
+    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+    return UIDeviceOrientationIsLandscape(orientation);
+}
+
+#pragma mark - 屏幕旋转相关
+/**
+ *  强制屏幕转屏
+ *
+ *  @param orientation 屏幕方向
+ */
++ (void)interfaceOrientation:(UIInterfaceOrientation)orientation {
+    // arc下
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector             = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        int val                  = orientation;
+        // 从2开始是因为0 1 两个参数已经被selector和target占用
+        [invocation setArgument:&val atIndex:2];
+        [invocation invoke];
+    }
+    
+    // 非arc下
+//    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+//        [[UIDevice currentDevice] performSelector:@selector(setOrientation:)
+//                                       withObject:@(orientation)];
+//    }
+}
+
++ (void)setOrientationLandscapeRight{
+    [UIDevice interfaceOrientation:UIInterfaceOrientationLandscapeRight];
+}
+
++ (void)setOrientationPortrait{
+    [UIDevice interfaceOrientation:UIInterfaceOrientationPortrait];
+}
+
+//
+void addObserverDeviceOrientationDidChange(id target, SEL method) {
+    // 监测设备方向
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver:target
+                                             selector:method
+                                                 name:UIDeviceOrientationDidChangeNotification
+                                               object:nil];
+//     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+//    if (orientation == UIDeviceOrientationFaceUp || orientation == UIDeviceOrientationFaceDown || orientation == UIDeviceOrientationUnknown || orientation == UIDeviceOrientationPortraitUpsideDown) { return; }
+//    if ([isLandscape]) {
+//    }
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(onStatusBarOrientationChange)
+//                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
+//                                               object:nil];
+    // 获取到当前状态条的方向
+    UIInterfaceOrientation currentOrientation = [UIApplication sharedApplication].statusBarOrientation;
+}
+
 @end

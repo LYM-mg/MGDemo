@@ -430,8 +430,8 @@
 		C0D980E91F2738FC0070382C /* UITextField+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Shake.m"; sourceTree = "<group>"; };
 		C0D980EA1F2738FC0070382C /* UIView+LYMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LYMExtension.h"; sourceTree = "<group>"; };
 		C0D980EB1F2738FC0070382C /* UIView+LYMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LYMExtension.m"; sourceTree = "<group>"; };
-		C0D980EC1F2738FC0070382C /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = "<group>"; };
-		C0D980ED1F2738FC0070382C /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
+		C0D980EC1F2738FC0070382C /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+HUD.h"; path = "../UIViewController+HUD.h"; sourceTree = "<group>"; };
+		C0D980ED1F2738FC0070382C /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+HUD.m"; path = "../UIViewController+HUD.m"; sourceTree = "<group>"; };
 		C0D980EF1F2738FC0070382C /* UIViewController+SLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SLExtension.h"; sourceTree = "<group>"; };
 		C0D980F01F2738FC0070382C /* UIViewController+SLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SLExtension.m"; sourceTree = "<group>"; };
 		C0D981001F2739310070382C /* CategoryHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryHeader.h; sourceTree = "<group>"; };
@@ -1059,6 +1059,8 @@
 				C0D980EE1F2738FC0070382C /* ViewController */,
 				C0D980D11F2738FC0070382C /* MGRefreshGifHeader.h */,
 				C0D980D21F2738FC0070382C /* MGRefreshGifHeader.m */,
+				C0D980E11F2738FC0070382C /* UIDevice+Extension.h */,
+				C0D980E21F2738FC0070382C /* UIDevice+Extension.m */,
 				C0D980D31F2738FC0070382C /* MGTopWindow.h */,
 				C0D980D41F2738FC0070382C /* MGTopWindow.m */,
 				C0D980D51F2738FC0070382C /* NSObject+FileManager.h */,
@@ -1073,16 +1075,12 @@
 				C0D980DE1F2738FC0070382C /* UIButton+Extension.m */,
 				C0D980DF1F2738FC0070382C /* UIColor+Extension.h */,
 				C0D980E01F2738FC0070382C /* UIColor+Extension.m */,
-				C0D980E11F2738FC0070382C /* UIDevice+Extension.h */,
-				C0D980E21F2738FC0070382C /* UIDevice+Extension.m */,
 				C0D980E31F2738FC0070382C /* UIImage+Extension.h */,
 				C0D980E41F2738FC0070382C /* UIImage+Extension.m */,
 				C0D980E81F2738FC0070382C /* UITextField+Shake.h */,
 				C0D980E91F2738FC0070382C /* UITextField+Shake.m */,
 				C0D980EA1F2738FC0070382C /* UIView+LYMExtension.h */,
 				C0D980EB1F2738FC0070382C /* UIView+LYMExtension.m */,
-				C0D980EC1F2738FC0070382C /* UIViewController+HUD.h */,
-				C0D980ED1F2738FC0070382C /* UIViewController+HUD.m */,
 				C036A3051F2C732500EE45DE /* UINavigationBar+Extension.h */,
 				C036A3061F2C732500EE45DE /* UINavigationBar+Extension.m */,
 				C036A3081F2C7FC200EE45DE /* UIGestureRecognizer+Block.h */,
@@ -1103,6 +1101,8 @@
 		C0D980EE1F2738FC0070382C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C0D980EC1F2738FC0070382C /* UIViewController+HUD.h */,
+				C0D980ED1F2738FC0070382C /* UIViewController+HUD.m */,
 				C0D980EF1F2738FC0070382C /* UIViewController+SLExtension.h */,
 				C0D980F01F2738FC0070382C /* UIViewController+SLExtension.m */,
 			);
@@ -1214,7 +1214,8 @@
 				TargetAttributes = {
 					3AE9E44C1CF92D03000DCB72 = {
 						CreatedOnToolsVersion = 7.0;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = H54L47S422;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1510,12 +1511,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H54L47S422;
 				GCC_PREFIX_HEADER = turnView/MGDemo.pch;
 				INFOPLIST_FILE = turnView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView1;
 				PRODUCT_NAME = MGDemo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1527,12 +1528,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H54L47S422;
 				GCC_PREFIX_HEADER = turnView/MGDemo.pch;
 				INFOPLIST_FILE = turnView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView1;
 				PRODUCT_NAME = MGDemo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
