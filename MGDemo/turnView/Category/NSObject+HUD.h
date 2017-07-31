@@ -25,4 +25,15 @@ void enumerateFonts();
 
 /** iOS在当前屏幕获取第一响应 */
 - (id)getFirstResponder;
+
+/**
+ RunTime交换方法
+
+ @param cls 当前类
+ @param originalSel 原方法
+ @param swizzledSel 要交换的方法
+ */
++ (void)mg_SwitchMethod:(Class)cls originalSelector: (SEL)originalSel swizzledSelector:(SEL)swizzledSel;
+
+void Swizzle(Class c, SEL orig, SEL new);
 @end

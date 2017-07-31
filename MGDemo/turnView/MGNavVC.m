@@ -13,6 +13,16 @@
 @end
 
 @implementation MGNavVC
+
++ (void)load {
+    /// 1.UINavigationBar
+    UINavigationBar *navBarAppearence = [UINavigationBar appearance];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[NSFontAttributeName] = [UIFont systemFontOfSize:17];
+//    [navBarAppearence setBackgroundImage:[UIImage imageNamed:@"timo"] forBarMetrics:UIBarMetricsDefault];
+    [navBarAppearence setTitleTextAttributes:dict];
+}
+
 #pragma mark ========= 添加全屏滑动手势 ==========
 - (void)viewDidLoad {
     [super viewDidLoad];

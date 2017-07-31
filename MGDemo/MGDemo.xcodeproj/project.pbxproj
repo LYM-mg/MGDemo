@@ -130,6 +130,11 @@
 		3AF551D91D2FCC3800333D2E /* MGShakeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF551D81D2FCC3800333D2E /* MGShakeVC.m */; };
 		3AFE8BA51D2E620F00512C3A /* MGCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE8BA41D2E620F00512C3A /* MGCar.m */; };
 		3AFE8BA81D2E622C00512C3A /* MGCarGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE8BA71D2E622C00512C3A /* MGCarGroup.m */; };
+		C036A3041F2C605000EE45DE /* MGRunTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C036A3031F2C605000EE45DE /* MGRunTimeVC.m */; };
+		C036A3071F2C732500EE45DE /* UINavigationBar+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C036A3061F2C732500EE45DE /* UINavigationBar+Extension.m */; };
+		C036A30A1F2C7FC200EE45DE /* UIGestureRecognizer+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = C036A3091F2C7FC200EE45DE /* UIGestureRecognizer+Block.m */; };
+		C036A30D1F2C893900EE45DE /* MGPhotoFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C036A30C1F2C893900EE45DE /* MGPhotoFlowLayout.m */; };
+		C036A3101F2C8C3700EE45DE /* MGPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C036A30F1F2C8C3700EE45DE /* MGPhotoCollectionViewController.m */; };
 		C0D980F11F2738FC0070382C /* MGRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D980D21F2738FC0070382C /* MGRefreshGifHeader.m */; };
 		C0D980F21F2738FC0070382C /* MGTopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D980D41F2738FC0070382C /* MGTopWindow.m */; };
 		C0D980F31F2738FC0070382C /* NSObject+FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D980D61F2738FC0070382C /* NSObject+FileManager.m */; };
@@ -389,6 +394,16 @@
 		3AFE8BA41D2E620F00512C3A /* MGCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCar.m; sourceTree = "<group>"; };
 		3AFE8BA61D2E622C00512C3A /* MGCarGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCarGroup.h; sourceTree = "<group>"; };
 		3AFE8BA71D2E622C00512C3A /* MGCarGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCarGroup.m; sourceTree = "<group>"; };
+		C036A3021F2C605000EE45DE /* MGRunTimeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGRunTimeVC.h; sourceTree = "<group>"; };
+		C036A3031F2C605000EE45DE /* MGRunTimeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGRunTimeVC.m; sourceTree = "<group>"; };
+		C036A3051F2C732500EE45DE /* UINavigationBar+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Extension.h"; sourceTree = "<group>"; };
+		C036A3061F2C732500EE45DE /* UINavigationBar+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Extension.m"; sourceTree = "<group>"; };
+		C036A3081F2C7FC200EE45DE /* UIGestureRecognizer+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Block.h"; sourceTree = "<group>"; };
+		C036A3091F2C7FC200EE45DE /* UIGestureRecognizer+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Block.m"; sourceTree = "<group>"; };
+		C036A30B1F2C893900EE45DE /* MGPhotoFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGPhotoFlowLayout.h; sourceTree = "<group>"; };
+		C036A30C1F2C893900EE45DE /* MGPhotoFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGPhotoFlowLayout.m; sourceTree = "<group>"; };
+		C036A30E1F2C8C3700EE45DE /* MGPhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGPhotoCollectionViewController.h; sourceTree = "<group>"; };
+		C036A30F1F2C8C3700EE45DE /* MGPhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGPhotoCollectionViewController.m; sourceTree = "<group>"; };
 		C0D980D11F2738FC0070382C /* MGRefreshGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGRefreshGifHeader.h; sourceTree = "<group>"; };
 		C0D980D21F2738FC0070382C /* MGRefreshGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGRefreshGifHeader.m; sourceTree = "<group>"; };
 		C0D980D31F2738FC0070382C /* MGTopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTopWindow.h; sourceTree = "<group>"; };
@@ -1068,6 +1083,10 @@
 				C0D980EB1F2738FC0070382C /* UIView+LYMExtension.m */,
 				C0D980EC1F2738FC0070382C /* UIViewController+HUD.h */,
 				C0D980ED1F2738FC0070382C /* UIViewController+HUD.m */,
+				C036A3051F2C732500EE45DE /* UINavigationBar+Extension.h */,
+				C036A3061F2C732500EE45DE /* UINavigationBar+Extension.m */,
+				C036A3081F2C7FC200EE45DE /* UIGestureRecognizer+Block.h */,
+				C036A3091F2C7FC200EE45DE /* UIGestureRecognizer+Block.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1146,6 +1165,10 @@
 			children = (
 				C0D9812D1F273D600070382C /* MGWanWanViewController.h */,
 				C0D9812E1F273D600070382C /* MGWanWanViewController.m */,
+				C036A3021F2C605000EE45DE /* MGRunTimeVC.h */,
+				C036A3031F2C605000EE45DE /* MGRunTimeVC.m */,
+				C036A30E1F2C8C3700EE45DE /* MGPhotoCollectionViewController.h */,
+				C036A30F1F2C8C3700EE45DE /* MGPhotoCollectionViewController.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1153,6 +1176,8 @@
 		C0D9812C1F273D430070382C /* V */ = {
 			isa = PBXGroup;
 			children = (
+				C036A30B1F2C893900EE45DE /* MGPhotoFlowLayout.h */,
+				C036A30C1F2C893900EE45DE /* MGPhotoFlowLayout.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1295,6 +1320,7 @@
 				3A23A3B31D2EC18400FFFF78 /* MGNavVC.m in Sources */,
 				3A8501701D2E308E00E2CE67 /* MGShopCell.m in Sources */,
 				3A29D0DC1D1A426E004F1FDD /* MJTypeEncoding.m in Sources */,
+				C036A30D1F2C893900EE45DE /* MGPhotoFlowLayout.m in Sources */,
 				3A5096201D2F6EA100580D2B /* HUTransitionAnimator.m in Sources */,
 				C0D981271F273BDD0070382C /* View+MASAdditions.m in Sources */,
 				3A29D1001D1A426E004F1FDD /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -1309,6 +1335,7 @@
 				3AA3DA9D1D0FDB18008B96E2 /* SVProgressHUD.m in Sources */,
 				C0D980F41F2738FC0070382C /* NSObject+HUD.m in Sources */,
 				3A29D0D81D1A426E004F1FDD /* MJIvar.m in Sources */,
+				C036A3101F2C8C3700EE45DE /* MGPhotoCollectionViewController.m in Sources */,
 				3A29D0DE1D1A426E004F1FDD /* NSObject+MJKeyValue.m in Sources */,
 				3A8501931D2E31A600E2CE67 /* TableViewHead.m in Sources */,
 				3A29D0D61D1A426E004F1FDD /* MJConst.m in Sources */,
@@ -1340,6 +1367,7 @@
 				3A427A2C1D30250E008880EE /* MGHeadPushViewController.m in Sources */,
 				3A29D0E61D1A426E004F1FDD /* MJRefreshAutoNormalFooter.m in Sources */,
 				3A29D0FB1D1A426E004F1FDD /* SDWebImagePrefetcher.m in Sources */,
+				C036A30A1F2C7FC200EE45DE /* UIGestureRecognizer+Block.m in Sources */,
 				C0D980F21F2738FC0070382C /* MGTopWindow.m in Sources */,
 				3A4279FE1D2FF709008880EE /* PMElasticView.m in Sources */,
 				C0D981211F273BDD0070382C /* MASConstraintMaker.m in Sources */,
@@ -1348,6 +1376,7 @@
 				3A29D0D91D1A426E004F1FDD /* MJMember.m in Sources */,
 				C0D980FB1F2738FC0070382C /* UIImageView+Extension.m in Sources */,
 				C0D9812F1F273D600070382C /* MGWanWanViewController.m in Sources */,
+				C036A3071F2C732500EE45DE /* UINavigationBar+Extension.m in Sources */,
 				3A427A071D300EB0008880EE /* MGHeaderCollectionVC.m in Sources */,
 				3A29D0DD1D1A426E004F1FDD /* NSObject+MJCoding.m in Sources */,
 				3A29D0D51D1A426E004F1FDD /* MJArgument.m in Sources */,
@@ -1370,6 +1399,7 @@
 				3AE9E4521CF92D03000DCB72 /* main.m in Sources */,
 				C0D980FF1F2738FC0070382C /* UIViewController+SLExtension.m in Sources */,
 				3A85018D1D2E31A600E2CE67 /* MGSearchViewController.m in Sources */,
+				C036A3041F2C605000EE45DE /* MGRunTimeVC.m in Sources */,
 				C0D980FA1F2738FC0070382C /* UIImage+Extension.m in Sources */,
 				C0D980F61F2738FC0070382C /* UIBarButtonItem+Extension.m in Sources */,
 				3A29D0FD1D1A426E004F1FDD /* UIImage+GIF.m in Sources */,

@@ -19,4 +19,6 @@
 #import "UITextField+Shake.h"
 #import "NSObject+HUD.h"
 #import "UIViewController+SLExtension.h"
+#import "UINavigationBar+Extension.h"
+#import "UIGestureRecognizer+Block.h"
 

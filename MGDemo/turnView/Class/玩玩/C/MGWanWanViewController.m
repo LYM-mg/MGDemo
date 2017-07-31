@@ -8,6 +8,7 @@
 
 #import "MGWanWanViewController.h"
 #import "MGPolygonVC.h"
+#import "MGRunTimeVC.h"
 
 @interface MGWanWanViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *shakeBtn;
@@ -20,6 +21,11 @@
     [super viewDidLoad];
 
     [self.view setBGImage:@"ming3"];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"RunTime" style:UIBarButtonItemStylePlain target:self action:@selector(runtimeClick)];
+}
+
+- (void)runtimeClick {
+    [self showViewController:[MGRunTimeVC new] sender:nil];
 }
 
 - (void)didReceiveMemoryWarning {
