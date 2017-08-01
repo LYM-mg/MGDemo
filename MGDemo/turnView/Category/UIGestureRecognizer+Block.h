@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^MGGestureBlock)(id);
+typedef void(^MGGestureBlock)(id gesture);
 
 @interface UIGestureRecognizer (Block)
 /// Creates and returns a new NSTimer object initialized with the specified block object.

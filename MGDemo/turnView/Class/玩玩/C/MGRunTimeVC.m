@@ -15,12 +15,32 @@
 
 @implementation MGRunTimeVC
 
+- (void)dealloc {
+    NSLog(@"%s",__func__);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBGImage:@"lol"];
 //    self.navigationController.navigationBar.mg_hideStatusBarBackgroungView = YES;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"photo布局" style:UIBarButtonItemStylePlain target:self action:@selector(rightClick)];
+    
+    UILabel *tapLabel = [[UILabel alloc] initWithFrame:CGRectMake(100,100, 100, 30)];
+    tapLabel.text = @"点我啊";
+    tapLabel.userInteractionEnabled = YES;
+
+    
+    __weakSelf;
+    [tapLabel addGestureRecognizer:[UITapGestureRecognizer mg_gestureRecognizerWithActionBlock:^(id gesture) {
+        [weakSelf showHint:@"响应tap手势点击"];
+    }]];
+    [self.view addSubview:tapLabel];
 }
+
+- (void)tapClick {
+     [self showHint:@"响应tap -- init 手势点击"];
+}
+
 
 - (void)rightClick {
     [self showViewController:[MGPhotoCollectionViewController new] sender:nil];

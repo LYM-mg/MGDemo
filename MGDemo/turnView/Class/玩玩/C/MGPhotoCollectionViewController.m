@@ -44,7 +44,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)dealloc {
-    NSLog(@"%@--%s", self,__func__);
+    NSLog(@"%s",__func__);
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIDeviceOrientationDidChangeNotification
                                                   object:nil];
