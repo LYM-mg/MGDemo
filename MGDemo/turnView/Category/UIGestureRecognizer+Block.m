@@ -9,7 +9,7 @@
 #import "UIGestureRecognizer+Block.h"
 
 // 动态绑定，参照NSTimer
-static NSString *const target_key = @"mg_target_key";
+static NSString *const target_key = @"mg_gesTarget_key";
 
 @implementation UIGestureRecognizer (Block)
 

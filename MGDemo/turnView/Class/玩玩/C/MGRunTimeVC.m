@@ -25,16 +25,21 @@
 //    self.navigationController.navigationBar.mg_hideStatusBarBackgroungView = YES;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"photo布局" style:UIBarButtonItemStylePlain target:self action:@selector(rightClick)];
     
+    __weakSelf;
     UILabel *tapLabel = [[UILabel alloc] initWithFrame:CGRectMake(100,100, 100, 30)];
     tapLabel.text = @"点我啊";
     tapLabel.userInteractionEnabled = YES;
-
-    
-    __weakSelf;
     [tapLabel addGestureRecognizer:[UITapGestureRecognizer mg_gestureRecognizerWithActionBlock:^(id gesture) {
         [weakSelf showHint:@"响应tap手势点击"];
     }]];
     [self.view addSubview:tapLabel];
+    
+    // 按钮测试
+    UIButton *btn = [UIButton ButtonWithTitle:@"嘿嘿" actionBlock:^(id btn) {
+        [weakSelf showHint:@"响应按钮事件的点击"];
+    }];
+    btn.origin = CGPointMake(220, 100);
+    [self.view addSubview:btn];
 }
 
 - (void)tapClick {
