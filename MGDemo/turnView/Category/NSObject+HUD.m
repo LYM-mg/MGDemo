@@ -71,7 +71,6 @@ void enumerateFonts() {
     }else{ //否则交换两个方法的实现
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
-    
 }
 
 void Swizzle(Class c, SEL orig, SEL new) {

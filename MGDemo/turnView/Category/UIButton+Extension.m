@@ -1,10 +1,8 @@
 //
 //  UIButton+Extension.m
-//  
-//
-//  Created by 花菜ChrisCai on 2016/9/20.
-//  Copyright © 2016年 花菜ChrisCai. All rights reserved.
-//
+
+//  Created by i-Techsys.com on 2017/7/29.
+//  Copyright © 2017年 ming. All rights reserved.
 
 #import "UIButton+Extension.h"
 
@@ -68,6 +66,20 @@ static NSString *const target_key = @"mg_btnTarget_key";
     [self addActionBlock:block];
     [self addTarget:self action:@selector(invoke:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+- (void)addActionBlock:(MGBtnBlock)block {
+    if (block) {
+        objc_setAssociatedObject(self, &target_key, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    }
+}
+
+- (void)invoke:(id)sender {
+    MGBtnBlock block = objc_getAssociatedObject(self, &target_key);
+    if (block) {
+        block(sender);
+    }
+}
+
 - (instancetype)initWithWithFrame:(CGRect)frame title:(NSString *)title imageName:(NSString*)imageName actionBlock:(MGBtnBlock)block {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.titleLabel.font = [UIFont systemFontOfSize:17.0];
@@ -133,20 +145,6 @@ static NSString *const target_key = @"mg_btnTarget_key";
     UIButton * button = [[self alloc] initWithWithFrame:CGRectZero title:title imageName:nil actionBlock:block];
     [button sizeToFit];
     return button;
-}
-
-
-- (void)addActionBlock:(MGGestureBlock)block {
-    if (block) {
-        objc_setAssociatedObject(self, &target_key, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    }
-}
-
-- (void)invoke:(id)sender {
-    MGGestureBlock block = objc_getAssociatedObject(self, &target_key);
-    if (block) {
-        block(sender);
-    }
 }
 
 @end

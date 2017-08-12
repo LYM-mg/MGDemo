@@ -1,10 +1,8 @@
 //
-//  UIButton+XXExtension.h
-//  
-//
-//  Created by 花菜ChrisCai on 2016/9/20.
-//  Copyright © 2016年 花菜ChrisCai. All rights reserved.
-//
+//  UIButton+Extension.m
+
+//  Created by i-Techsys.com on 2017/7/29.
+//  Copyright © 2017年 ming. All rights reserved.
 
 #import <UIKit/UIKit.h>
 
