@@ -16,6 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    application.applicationIconBadgeNumber = 0;
     // 防止短时间点击两个按钮
     [[UIView appearance] setExclusiveTouch: YES];
     
@@ -23,6 +24,12 @@
     
         self.window.rootViewController = [UIStoryboard storyboardWithName:@"Main" bundle:nil].instantiateInitialViewController;
     [self.window makeKeyAndVisible];
+    
+    if ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0) {
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+        [application registerUserNotificationSettings:settings];
+    }
+    [self sendLocalNotification];
     
     return YES;
 }
@@ -58,6 +65,101 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+- (void)sendLocalNotification {
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
+    // 设置一个按照固定时间的本地推送
+    NSDate *now = [NSDate date];
+    //取得系统时间
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.timeZone = [NSTimeZone defaultTimeZone];
+    NSInteger unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    components = [calendar components:unitFlags fromDate:now];
+    NSInteger year = [components year];
+    NSInteger month = [components month];
+    NSInteger day = [components day];
+    NSInteger hour = [components hour];
+    NSInteger min = [components minute];
+    NSInteger sec = [components second];
+    NSInteger week = [components weekday];
+    NSString *weekStr = [NSString new];
+    if(week==1){
+        weekStr=@"星期天";
+    }else if(week==2){
+        weekStr=@"星期一";
+        
+    }else if(week==3){
+        weekStr=@"星期二";
+        
+    }else if(week==4){
+        weekStr=@"星期三";
+        
+    }else if(week==5){
+        weekStr=@"星期四";
+        
+    }else if(week==6){
+        weekStr=@"星期五";
+        
+    }else if(week==7){
+        weekStr=@"星期六";
+        
+    }else {
+        NSLog(@"error!");
+    }
+   
+    NSString *dateStr = [NSString stringWithFormat:@"现在是%ld年%ld月%ld日 %@,%02ld：%02ld：%02ld,",(long)year,(long)month,(long)day,weekStr,(long)hour,(long)min,(long)sec];
+     MGLog(@"%@", dateStr);
+    
+    // 初始化本地通知对象
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    if (notification) {
+        // 设置通知的提醒时间
+//        NSDate *currentDate   = [NSDate date]; [currentDate dateByAddingTimeInterval:15.0];
+        notification.timeZone = [NSTimeZone defaultTimeZone]; // 使用本地时区
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"HH:mm:ss"];
+        NSDate *date = [formatter dateFromString:@"10:08:00"];
+        notification.fireDate = date;
+        
+        // 设置重复间隔
+        notification.repeatInterval = kCFCalendarUnitDay;
+        
+        // 设置提醒的文字内容
+        notification.alertBody   = @"大笨蛋大傻瓜 Wake up, woman";
+        notification.alertTitle  = dateStr;
+        notification.alertAction = NSLocalizedString(@"起床了", nil);
+        // 2.决定alertAction是否生效
+        notification.hasAction = YES;
+        
+        // 通知提示音 使用默认的
+        notification.soundName= UILocalNotificationDefaultSoundName;
+        
+        // 设置应用程序右上角的提醒个数
+        notification.applicationIconBadgeNumber++;
+        
+        // 设置额外信息
+        notification.userInfo = @{@"type" : @1,@"date": dateStr};
+        
+        // 将通知添加到系统中
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    // 必须要监听--应用程序在后台的时候进行的跳转
+    if (application.applicationState == UIApplicationStateInactive){ // 后台
+        MGLog(@"后台");
+    }else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"傻瓜笨蛋起床啦" message:notification.alertTitle delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
+        [alert show];
+        MGLog(@"前台");
+    }
+    MGLog(@"%@", notification.userInfo);
+    notification.applicationIconBadgeNumber = 0;
+    application.applicationIconBadgeNumber = 0;
 }
 
 #pragma mark - Core Data stack

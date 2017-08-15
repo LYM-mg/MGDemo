@@ -175,8 +175,8 @@
                                     <action selector="onSelectLocalVideo:" destination="NR4-Lp-vqY" eventType="touchUpInside" id="0fI-ZB-HWf"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zFc-Je-2bD">
-                                <rect key="frame" x="38" y="308" width="244" height="93"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zFc-Je-2bD">
+                                <rect key="frame" x="38" y="308" width="299" height="280"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="视频中间帧图片：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsR-Wr-K6V">
                                 <rect key="frame" x="38" y="250" width="204" height="21"/>

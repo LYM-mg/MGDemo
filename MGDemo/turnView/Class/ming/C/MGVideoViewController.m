@@ -32,7 +32,48 @@ static NSString *const MGAssetCollectionName = @"MG的视频集";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"截屏" style:UIBarButtonItemStylePlain target:self action:@selector(snap)];
 }
+
+- (void)snap {
+    _centerFrameImageView.image = [self snapshotScreenInView:self.view];
+}
+
+-(UIImage *)snapshotScreenInView:(UIView *)contentView {
+    
+    CGSize size = contentView.bounds.size;
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    
+    CGRect rect = contentView.frame;
+    
+    //  自iOS7开始，UIView类提供了一个方法-drawViewHierarchyInRect:afterScreenUpdates: 它允许你截取一个UIView或者其子类中的内容，并且以位图的形式（bitmap）保存到UIImage中
+    for (UIWindow *window in [[UIApplication sharedApplication] windows])
+    {
+        [window drawViewHierarchyInRect:rect afterScreenUpdates:YES];
+    }
+//    [contentView drawViewHierarchyInRect:rect afterScreenUpdates:YES];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+//- (UIImage *)snapImage {
+//    CGRect screenFrame = [UIApplication sharedApplication].keyWindow.frame;
+//    UIGraphicsBeginImageContextWithOptions(imageSize, YES, [UIScreen mainScreen].scale);
+//    for (UIWindow *window in [[UIApplication sharedApplication] windows])
+//    {
+//        [window drawViewHierarchyInRect:screenFrame afterScreenUpdates:YES];
+//    }
+//    
+//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    
+//    return UIImagePNGRepresentation(image);
+//}
 
 // 录制视频
 - (IBAction)onRecordVideo:(id)sender {
