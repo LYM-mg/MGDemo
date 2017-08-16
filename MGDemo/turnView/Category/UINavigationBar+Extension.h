@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UINavigationBar (Extension)
-@property (nonatomic,assign) BOOL mg_hideStatusBarBackgroungView;
+//@property (nonatomic,assign) BOOL mg_hideStatusBarBackgroungView;
 @end

@@ -8,6 +8,7 @@
 
 #import "MGRunTimeVC.h"
 #import "MGPhotoCollectionViewController.h"
+#import "MGHeTableViewController.h"
 
 @interface MGRunTimeVC ()
 
@@ -31,6 +32,8 @@
     tapLabel.userInteractionEnabled = YES;
     [tapLabel addGestureRecognizer:[UITapGestureRecognizer mg_gestureRecognizerWithActionBlock:^(id gesture) {
         [weakSelf showHint:@"响应tap手势点击"];
+        [weakSelf.navigationController pushViewController:[MGHeTableViewController new] animated:true ];
+//        [weakSelf showDetailViewController:[MGHeTableViewController new] sender:nil];
     }]];
     [self.view addSubview:tapLabel];
     
@@ -73,7 +76,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.mg_hideStatusBarBackgroungView = YES;
+//    self.navigationController.navigationBar.mg_hideStatusBarBackgroungView = YES;
 }
 
 - (void)mg_layoutSubviews {

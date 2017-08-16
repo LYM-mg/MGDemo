@@ -128,7 +128,7 @@
         notification.repeatInterval = kCFCalendarUnitDay;
         
         // 设置提醒的文字内容
-        notification.alertBody   = @"大笨蛋大傻瓜 Wake up, woman";
+        notification.alertBody   = @"佳莉大笨蛋大傻瓜 Wake up, woman";
         notification.alertTitle  = dateStr;
         notification.alertAction = NSLocalizedString(@"起床了", nil);
         // 2.决定alertAction是否生效
