@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   # s.platform     = :ios
   s.platform     = :ios, "5.0"
   s.source       = { :git => "https://github.com/LYM-mg/MGDemo.git", :tag => "#{s.version}" }
-  s.source_files  = "MGCategory", "MGCategory/*.{h,m}"
+  s.source_files  = "MGDemo", "MGDemo/**/MGCategory/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
   s.requires_arc = true
   s.frameworks = 'UIKit'
