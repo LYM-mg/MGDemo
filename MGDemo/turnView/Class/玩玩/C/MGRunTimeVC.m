@@ -66,7 +66,7 @@
     view1.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:view1];
     
-    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 70)];
     view2.backgroundColor = [UIColor redColor];
     
     view2.mg_canDrag = YES;
@@ -74,7 +74,7 @@
     view2.mg_isAdsorb = YES;
     [view1 addSubview:view2];
     
-    UIView *view3 = [[UIView alloc] initWithFrame:CGRectMake(250, 0, 50, 50)];
+    UIView *view3 = [[UIView alloc] initWithFrame:CGRectMake(250, 0, 40, 50)];
     view3.backgroundColor = [UIColor greenColor];
     view3.mg_canDrag = YES;
     view3.mg_bounces = YES;

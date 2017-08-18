@@ -9,7 +9,7 @@
 #import "UIView+Drag.h"
 
 @interface UIView ()
-@property (nonatomic,weak)UIPanGestureRecognizer *panG;
+@property (nonatomic,weak) UIPanGestureRecognizer *panG;
 
 @property (nonatomic,assign)CGFloat mg_x;
 
@@ -32,13 +32,13 @@ static char *static_mg_bounces = "static_mg_bounces";
 static char *static_mg_adsorb = "static_mg_adsorb";
 static char *static_mg_panG = "static_mg_panG";
 /**
- *  @author gitKong
+ *  @author ming
  *
  *  控件当前的下标
  */
 static NSUInteger _currentIndex;
 /**
- *  @author gitKong
+ *  @author ming
  *
  *  防止先设置bounces 再设置 mg_canDrag 而重置mg_bounces的值
  */
@@ -52,8 +52,7 @@ BOOL _absorb = YES;
         self.mg_bounces = _bounces;
         self.mg_isAdsorb = _absorb;
         _currentIndex = [self.superview.subviews indexOfObject:self];
-    }
-    else{
+    }else{
         [self mg_removePanGesture];
     }
 }
@@ -139,7 +138,7 @@ BOOL _absorb = YES;
         case UIGestureRecognizerStateEnded:{
             [self layoutIfNeeded];
             if (y < self.mg_height / 2) {
-                y = self.mg_width / 2;
+                y = self.mg_height / 2;
             }
             else if(y > self.superview.mg_height - self.mg_height / 2){
                 y = self.superview.mg_height - self.mg_height / 2;
@@ -158,13 +157,11 @@ BOOL _absorb = YES;
             }
             else{
                 // 此时需要加上父类的x值，比较的应该是绝对位置，而不是相对位置
-                if (gesR.view.mg_centerX + self.superview.mg_x > self.superview.mg_centerX) {
+                if (gesR.view.mg_centerX + self.superview.mg_x > self.superview.mg_centerX) { // 右边 居右
                     [UIView animateWithDuration:0.25 animations:^{
                         gesR.view.center = CGPointMake(self.superview.mg_width - self.mg_width / 2, y);
                     }];
-                    
-                }
-                else{
+                }else{ // 左边 居左
                     [UIView animateWithDuration:0.25 animations:^{
                         gesR.view.center = CGPointMake(self.mg_width / 2, y);
                     }];

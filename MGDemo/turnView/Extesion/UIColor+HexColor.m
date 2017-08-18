@@ -11,14 +11,6 @@
 @implementation UIColor (HexColor)
 
 
-//随机颜色
-+ (UIColor *)randomColor{
-    CGFloat r = arc4random_uniform(256)/255.0;
-    CGFloat g = arc4random_uniform(256)/255.0;
-    CGFloat b = arc4random_uniform(256)/255.0;
-    return [UIColor colorWithRed:r green:g blue:b alpha:1];
-}
-
 
 /**
  *  16进制自动转换RGB颜色

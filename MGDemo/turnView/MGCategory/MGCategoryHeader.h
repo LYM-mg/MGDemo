@@ -1,11 +1,12 @@
-//
-//  CategoryHeader.h
-//  MGDemo
-//
-//  Created by i-Techsys.com on 2017/7/25.
-//  Copyright © 2017年 ming. All rights reserved.
-//
-
+/*
+ @header CategoryHeader.h
+ 
+ @abstract MGMiaoBo 关于源代码文件的一些基本描述
+ 
+ @author Created by ming on 16/9/10.
+ 
+ Copyright © 2016年 ming. All rights reserved.
+ */
 
 #import "UIView+LYMExtension.h"
 #import "UIButton+Extension.h"
