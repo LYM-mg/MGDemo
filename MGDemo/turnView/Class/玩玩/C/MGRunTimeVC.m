@@ -10,6 +10,7 @@
 #import "MGPhotoCollectionViewController.h"
 #import "MGHeTableViewController.h"
 #import "UIView+Drag.h"
+#import "MGScrollViewLabel.h"
 
 @interface MGRunTimeVC ()
 @property (nonatomic,weak)UIView *firstView;
@@ -108,7 +109,6 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -122,6 +122,19 @@
 
 - (void)__layoutSubviews {
      NSLog(@"我是来替换__layoutSubviews的");
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    MGScrollViewLabel *sl = [[MGScrollViewLabel alloc] initWithFrame:CGRectMake(20, 200, MGSCREEN_WIDTH-40, 22)];
+    sl.scrollStr = @"  喜欢这首情思幽幽的曲子，仿佛多么遥远，在感叹着前世的情缘，又是那么柔软，在祈愿着来世的缠绵。《莲的心事》，你似琉璃一样的晶莹，柔柔地拨动我多情的心弦。我，莲的心事，有谁知？我，莲的矜持，又有谁懂？  ";
+    sl.direction = Vertical;
+    [self.view addSubview:sl];
+//    NSString *num = @"1234";
+//    NSLog(@"%014ld",(long)num.integerValue);
+//    
+//    NSString *num1 = @"1234512345123";
+//    NSLog(@"%@", [NSString stringWithFormat:@"%014lld",num1.longLongValue]);
 }
 
 @end

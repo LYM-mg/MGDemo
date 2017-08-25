@@ -152,6 +152,7 @@
 		C0B8CF831F46BCB600DBD937 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B8CF6F1F46BCB600DBD937 /* UIViewController+HUD.m */; };
 		C0B8CF841F46BCB600DBD937 /* UIViewController+SLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B8CF721F46BCB600DBD937 /* UIViewController+SLExtension.m */; };
 		C0B8CF881F46C4DC00DBD937 /* UIView+Drag.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B8CF871F46C4DC00DBD937 /* UIView+Drag.m */; };
+		C0D763EF1F4ECE7600E029D9 /* MGScrollViewLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D763EE1F4ECE7600E029D9 /* MGScrollViewLabel.m */; };
 		C0D9811E1F273BDD0070382C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C0D981021F273BDD0070382C /* LICENSE */; };
 		C0D9811F1F273BDD0070382C /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D981051F273BDD0070382C /* MASCompositeConstraint.m */; };
 		C0D981201F273BDD0070382C /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D981081F273BDD0070382C /* MASConstraint.m */; };
@@ -441,6 +442,8 @@
 		C0B8CF721F46BCB600DBD937 /* UIViewController+SLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SLExtension.m"; sourceTree = "<group>"; };
 		C0B8CF861F46C4DC00DBD937 /* UIView+Drag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Drag.h"; sourceTree = "<group>"; };
 		C0B8CF871F46C4DC00DBD937 /* UIView+Drag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Drag.m"; sourceTree = "<group>"; };
+		C0D763ED1F4ECE7600E029D9 /* MGScrollViewLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGScrollViewLabel.h; sourceTree = "<group>"; };
+		C0D763EE1F4ECE7600E029D9 /* MGScrollViewLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGScrollViewLabel.m; sourceTree = "<group>"; };
 		C0D981021F273BDD0070382C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C0D981041F273BDD0070382C /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		C0D981051F273BDD0070382C /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
@@ -1196,6 +1199,8 @@
 			children = (
 				C036A30B1F2C893900EE45DE /* MGPhotoFlowLayout.h */,
 				C036A30C1F2C893900EE45DE /* MGPhotoFlowLayout.m */,
+				C0D763ED1F4ECE7600E029D9 /* MGScrollViewLabel.h */,
+				C0D763EE1F4ECE7600E029D9 /* MGScrollViewLabel.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1345,6 +1350,7 @@
 				3A29D0DC1D1A426E004F1FDD /* MJTypeEncoding.m in Sources */,
 				C0B8CF741F46BCB600DBD937 /* MGTopWindow.m in Sources */,
 				C036A30D1F2C893900EE45DE /* MGPhotoFlowLayout.m in Sources */,
+				C0D763EF1F4ECE7600E029D9 /* MGScrollViewLabel.m in Sources */,
 				3A5096201D2F6EA100580D2B /* HUTransitionAnimator.m in Sources */,
 				C0D981271F273BDD0070382C /* View+MASAdditions.m in Sources */,
 				3A29D1001D1A426E004F1FDD /* UIImageView+HighlightedWebCache.m in Sources */,

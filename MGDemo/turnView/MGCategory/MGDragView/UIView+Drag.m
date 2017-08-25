@@ -7,6 +7,7 @@
 //
 
 #import "UIView+Drag.h"
+#import <objc/runtime.h>
 
 @interface UIView ()
 @property (nonatomic,weak) UIPanGestureRecognizer *panG;
