@@ -11,8 +11,14 @@
 #import "MGHeTableViewController.h"
 #import "UIView+Drag.h"
 #import "MGScrollViewLabel.h"
+#import "MGScrollLabelView.h"
 
-@interface MGRunTimeVC ()
+@interface MGRunTimeVC ()<MGScrollLabelViewDelegate>
+{
+    MGScrollLabelView *scrollLabelView;
+    MGScrollViewLabel *sl;
+}
+
 @property (nonatomic,weak)UIView *firstView;
 @end
 
@@ -47,6 +53,7 @@
     [self.view addSubview:btn];
     
     [self DragView];
+    [self set];
 }
 
 - (void)DragView {
@@ -125,16 +132,47 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
-    MGScrollViewLabel *sl = [[MGScrollViewLabel alloc] initWithFrame:CGRectMake(20, 200, MGSCREEN_WIDTH-40, 22)];
-    sl.scrollStr = @"  喜欢这首情思幽幽的曲子，仿佛多么遥远，在感叹着前世的情缘，又是那么柔软，在祈愿着来世的缠绵。《莲的心事》，你似琉璃一样的晶莹，柔柔地拨动我多情的心弦。我，莲的心事，有谁知？我，莲的矜持，又有谁懂？  ";
-    sl.direction = Vertical;
-    [self.view addSubview:sl];
 //    NSString *num = @"1234";
 //    NSLog(@"%014ld",(long)num.integerValue);
 //    
 //    NSString *num1 = @"1234512345123";
 //    NSLog(@"%@", [NSString stringWithFormat:@"%014lld",num1.longLongValue]);
+     NSArray *titles = @[@"哈哈",@"她好美好美😍",@"喜欢她",@"真的喜欢"];
+    scrollLabelView.titleArray = titles;
+    
+    [sl stopScolling];
 }
+
+- (void)set {
+    sl = [[MGScrollViewLabel alloc] initWithFrame:CGRectMake(20, 550, MGSCREEN_WIDTH-40, 40)];
+    sl.scrollStr = @"  喜欢这首情思幽幽的曲子，仿佛多么遥远，在感叹着前世的情缘，又是那么柔软，在祈愿着来世的缠绵。《莲的心事》，你似琉璃一样的晶莹，柔柔地拨动我多情的心弦。我，莲的心事，有谁知？我，莲的矜持，又有谁懂？  ";
+    sl.direction = Vertical;
+    [self.view addSubview:sl];
+    [sl beginScolling];
+    
+    NSArray *titles = @[@"有一个隔壁公司的人",@"她好美好美😍",@"从见到她的第一眼",@"便注定难以忘记"];
+    
+    scrollLabelView = [[MGScrollLabelView alloc] initWithFrame:CGRectMake(50,170, 250, 20)];
+    scrollLabelView.backgroundColor = [UIColor whiteColor];
+    scrollLabelView.delegate = self;
+    scrollLabelView.titleArray = titles;
+    //设置label的字体
+    scrollLabelView.titleFont = [UIFont systemFontOfSize:15];
+    //设置文字颜色
+    scrollLabelView.titleColor = [UIColor redColor];
+    //设置停留时间
+    scrollLabelView.stayInterval = 3.f;
+    //设置滚动动画时间
+    scrollLabelView.animationDuration = 1.f;
+    [self.view addSubview:scrollLabelView];
+    //开始滚动
+    [scrollLabelView beginScrolling];
+}
+
+- (void)scrollLabelView:(MGScrollLabelView *)scrollLabelView didClickAtIndex:(NSInteger)index
+{
+    NSLog(@"点击%zd",index);
+}
+
 
 @end

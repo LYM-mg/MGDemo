@@ -20,6 +20,7 @@
         UIScrollView *showView = [[UIScrollView alloc] initWithFrame:self.frame];
         [self addSubview:showView];
         [showView addSubview:self.textLabel];
+        showView.userInteractionEnabled = false;
         _showView = showView;
     }
     return _showView;
@@ -30,6 +31,7 @@
         UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         textLabel.numberOfLines = 0;
         textLabel.textColor     = [UIColor cyanColor];
+        textLabel.backgroundColor = [UIColor redColor];
         _textLabel = textLabel;
     }
     return _textLabel;
@@ -37,7 +39,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self == [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor yellowColor];
         self.direction = Horizontal;
         [self addSubview:self.showView];
     }
@@ -45,22 +46,15 @@
     return self;
 }
 
-//- (void)setDirection:(MGDirection)direction {
-//    _direction = direction;
-//    if (_scrollStr != nil || ![_scrollStr  isEqual: @""] || _scrollStr != NULL) {
-//        [self addScrollViewLabel];
-//    }
-//}
 
 - (void)setScrollStr:(NSString *)scrollStr {
     _scrollStr = scrollStr;
-    if (_scrollStr != nil || ![_scrollStr  isEqual: @""] || _scrollStr != NULL) {
-        [self addScrollViewLabel];
-    }
 }
 
-
-- (void)addScrollViewLabel {
+- (void)beginScolling {
+    if (_scrollStr == nil || [_scrollStr  isEqual: @""] || _scrollStr == NULL) {
+        return;
+    }
      self.textLabel.text = @"";
     // 获取文本
 //    NSString *string = @"  喜欢这首情思幽幽的曲子，仿佛多么遥远，在感叹着前世的情缘，又是那么柔软，在祈愿着来世的缠绵。《莲的心事》，你似琉璃一样的晶莹，柔柔地拨动我多情的心弦。我，莲的心事，有谁知？我，莲的矜持，又有谁懂？  ";
@@ -77,7 +71,7 @@
         self.showView.contentOffset = CGPointMake(-self.showView.frame.size.width/2, 0);
     }else { // 垂直
         rect = [self.textLabel textRectForBounds:CGRectMake(0, 0, MGSCREEN_WIDTH-40, MAXFLOAT) limitedToNumberOfLines:0];
-        self.showView.frame = CGRectMake(0, 0, MGSCREEN_WIDTH-40, 22);
+        self.showView.frame = CGRectMake(0, 0, MGSCREEN_WIDTH-40, self.frame.size.height);
         self.showView.clipsToBounds = true;
         self.showView.contentSize   = CGSizeMake(rect.size.width, rect.size.height+self.showView.frame.size.height/2);
         self.showView.contentOffset = CGPointMake(0, -self.showView.frame.size.height/2);
@@ -87,8 +81,6 @@
    
     
     [UIView beginAnimations:@"parent" context:nil];
-//    [UIView setAnimationDelay:1.0];
-    [UIView setAnimationDuration:20.0f];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationRepeatCount:MAXFLOAT];
     [UIView setAnimationCurve:UIViewAnimationCurveLinear];
@@ -98,8 +90,10 @@
     // 计算移动的距离
     CGPoint point = self.showView.contentOffset;
     if (self.direction == Horizontal) {
+        [UIView setAnimationDuration:20.0f];
         point.x = rect.size.width + self.showView.frame.size.width/2;
     }else {
+        [UIView setAnimationDuration:10.0f];
         point.y = rect.size.height + self.showView.frame.size.height/2;
     }
     self.showView.contentOffset = point;
@@ -118,6 +112,10 @@
             self.showView.contentOffset = CGPointMake(0, -self.showView.frame.size.height/2);
         }
     }];
+}
+
+- (void)stopScolling {
+    [self.showView.layer removeAllAnimations];
 }
 
 @end

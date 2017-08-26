@@ -21,4 +21,10 @@ typedef enum : NSUInteger {
 @interface MGScrollViewLabel: UIView
 @property (nonatomic,assign) MGDirection direction;
 @property (nonatomic,copy) NSString *scrollStr;
+
+/** 开始滚动 */
+- (void)beginScolling;
+
+/** 停止滚动 */
+- (void)stopScolling;
 @end

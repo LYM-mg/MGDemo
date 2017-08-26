@@ -124,6 +124,7 @@
     sl.scrollStr = @"  喜欢这首情思幽幽的曲子，仿佛多么遥远，在感叹着前世的情缘，又是那么柔软，在祈愿着来世的缠绵。《莲的心事》，你似琉璃一样的晶莹，柔柔地拨动我多情的心弦。我，莲的心事，有谁知？我，莲的矜持，又有谁懂？  ";
     sl.direction = Horizontal;
     [self.view addSubview:sl];
+    [sl beginScolling];
 }
 //    UILabel *tapLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 //    // 获取文本
