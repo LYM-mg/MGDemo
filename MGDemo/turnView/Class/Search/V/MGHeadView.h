@@ -21,4 +21,14 @@
 @property (nonatomic, strong) void (^expandCallback)(BOOL isExpanded);
 /** 回调  */
 //@property (nonatomic, strong) void (^expandCallback)(MGSectionModel *model);
+
+
+
+@property (nonatomic, strong) void (^closeBlock)();
+
+
+@property (nonatomic, strong) void (^btnCLickBlock)();
+
+
 @end
+

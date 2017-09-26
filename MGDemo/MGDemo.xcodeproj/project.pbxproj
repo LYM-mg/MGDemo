@@ -133,6 +133,11 @@
 		C036A3041F2C605000EE45DE /* MGRunTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C036A3031F2C605000EE45DE /* MGRunTimeVC.m */; };
 		C036A30D1F2C893900EE45DE /* MGPhotoFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C036A30C1F2C893900EE45DE /* MGPhotoFlowLayout.m */; };
 		C036A3101F2C8C3700EE45DE /* MGPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C036A30F1F2C8C3700EE45DE /* MGPhotoCollectionViewController.m */; };
+		C05B45CB1F79E856003B77D3 /* MGHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B45CA1F79E856003B77D3 /* MGHViewController.m */; };
+		C05B45CE1F79E91F003B77D3 /* MGHFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B45CD1F79E91F003B77D3 /* MGHFlowLayout.m */; };
+		C05B45D11F7A327D003B77D3 /* MGListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B45D01F7A327D003B77D3 /* MGListViewController.m */; };
+		C05B45D51F7A332A003B77D3 /* MGApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B45D41F7A332A003B77D3 /* MGApplication.m */; };
+		C0665D411F5546E600429A61 /* OSSImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C0665D401F5546E600429A61 /* OSSImage.m */; };
 		C0B8CF441F44258100DBD937 /* MGHeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B8CF431F44258100DBD937 /* MGHeTableViewController.m */; };
 		C0B8CF731F46BCB600DBD937 /* MGRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B8CF4E1F46BCB600DBD937 /* MGRefreshGifHeader.m */; };
 		C0B8CF741F46BCB600DBD937 /* MGTopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B8CF501F46BCB600DBD937 /* MGTopWindow.m */; };
@@ -404,6 +409,16 @@
 		C036A30C1F2C893900EE45DE /* MGPhotoFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGPhotoFlowLayout.m; sourceTree = "<group>"; };
 		C036A30E1F2C8C3700EE45DE /* MGPhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGPhotoCollectionViewController.h; sourceTree = "<group>"; };
 		C036A30F1F2C8C3700EE45DE /* MGPhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGPhotoCollectionViewController.m; sourceTree = "<group>"; };
+		C05B45C91F79E856003B77D3 /* MGHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHViewController.h; sourceTree = "<group>"; };
+		C05B45CA1F79E856003B77D3 /* MGHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHViewController.m; sourceTree = "<group>"; };
+		C05B45CC1F79E91F003B77D3 /* MGHFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHFlowLayout.h; sourceTree = "<group>"; };
+		C05B45CD1F79E91F003B77D3 /* MGHFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHFlowLayout.m; sourceTree = "<group>"; };
+		C05B45CF1F7A327D003B77D3 /* MGListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGListViewController.h; sourceTree = "<group>"; };
+		C05B45D01F7A327D003B77D3 /* MGListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGListViewController.m; sourceTree = "<group>"; };
+		C05B45D31F7A332A003B77D3 /* MGApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGApplication.h; sourceTree = "<group>"; };
+		C05B45D41F7A332A003B77D3 /* MGApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGApplication.m; sourceTree = "<group>"; };
+		C0665D3F1F5546E600429A61 /* OSSImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSImage.h; sourceTree = "<group>"; };
+		C0665D401F5546E600429A61 /* OSSImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSImage.m; sourceTree = "<group>"; };
 		C0B8CF421F44258100DBD937 /* MGHeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHeTableViewController.h; sourceTree = "<group>"; };
 		C0B8CF431F44258100DBD937 /* MGHeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHeTableViewController.m; sourceTree = "<group>"; };
 		C0B8CF4C1F46BCB600DBD937 /* MGCategoryHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCategoryHeader.h; sourceTree = "<group>"; };
@@ -1034,6 +1049,8 @@
 		3AE9E44F1CF92D03000DCB72 /* MGDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C0665D3F1F5546E600429A61 /* OSSImage.h */,
+				C0665D401F5546E600429A61 /* OSSImage.m */,
 				3AE9E4531CF92D03000DCB72 /* AppDelegate.h */,
 				3AE9E4541CF92D03000DCB72 /* AppDelegate.m */,
 				3A23A3B11D2EC18400FFFF78 /* MGNavVC.h */,
@@ -1061,6 +1078,15 @@
 				3AE9E4511CF92D03000DCB72 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C05B45D21F7A3316003B77D3 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				C05B45D31F7A332A003B77D3 /* MGApplication.h */,
+				C05B45D41F7A332A003B77D3 /* MGApplication.m */,
+			);
+			path = M;
 			sourceTree = "<group>";
 		};
 		C0B8CF4B1F46BCB600DBD937 /* MGCategory */ = {
@@ -1176,6 +1202,7 @@
 		C0D9812A1F273D430070382C /* 玩玩 */ = {
 			isa = PBXGroup;
 			children = (
+				C05B45D21F7A3316003B77D3 /* M */,
 				C0D9812B1F273D430070382C /* C */,
 				C0D9812C1F273D430070382C /* V */,
 			);
@@ -1193,6 +1220,10 @@
 				C036A30F1F2C8C3700EE45DE /* MGPhotoCollectionViewController.m */,
 				C0B8CF421F44258100DBD937 /* MGHeTableViewController.h */,
 				C0B8CF431F44258100DBD937 /* MGHeTableViewController.m */,
+				C05B45C91F79E856003B77D3 /* MGHViewController.h */,
+				C05B45CA1F79E856003B77D3 /* MGHViewController.m */,
+				C05B45CF1F7A327D003B77D3 /* MGListViewController.h */,
+				C05B45D01F7A327D003B77D3 /* MGListViewController.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1206,6 +1237,8 @@
 				C0D763EE1F4ECE7600E029D9 /* MGScrollViewLabel.m */,
 				C0D763F41F5111EF00E029D9 /* MGScrollLabelView.h */,
 				C0D763F51F5111EF00E029D9 /* MGScrollLabelView.m */,
+				C05B45CC1F79E91F003B77D3 /* MGHFlowLayout.h */,
+				C05B45CD1F79E91F003B77D3 /* MGHFlowLayout.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1334,6 +1367,7 @@
 				C0D981221F273BDD0070382C /* MASLayoutConstraint.m in Sources */,
 				3A427A181D30178F008880EE /* MGBodyModel.m in Sources */,
 				3A29D0F61D1A426E004F1FDD /* SDWebImageCompat.m in Sources */,
+				C0665D411F5546E600429A61 /* OSSImage.m in Sources */,
 				C0D9811F1F273BDD0070382C /* MASCompositeConstraint.m in Sources */,
 				3A427A121D301648008880EE /* MGBodyCell.m in Sources */,
 				3A427A271D301CB4008880EE /* UIColor+HexColor.m in Sources */,
@@ -1352,6 +1386,7 @@
 				C0B8CF781F46BCB600DBD937 /* UIBarButtonItem+Extension.m in Sources */,
 				3A23A3B31D2EC18400FFFF78 /* MGNavVC.m in Sources */,
 				3A8501701D2E308E00E2CE67 /* MGShopCell.m in Sources */,
+				C05B45CE1F79E91F003B77D3 /* MGHFlowLayout.m in Sources */,
 				3A29D0DC1D1A426E004F1FDD /* MJTypeEncoding.m in Sources */,
 				C0B8CF741F46BCB600DBD937 /* MGTopWindow.m in Sources */,
 				C036A30D1F2C893900EE45DE /* MGPhotoFlowLayout.m in Sources */,
@@ -1379,6 +1414,7 @@
 				3A29D0D61D1A426E004F1FDD /* MJConst.m in Sources */,
 				3A29D0F11D1A426E004F1FDD /* UIScrollView+MJRefresh.m in Sources */,
 				3A29D0F91D1A426E004F1FDD /* SDWebImageDownloaderOperation.m in Sources */,
+				C05B45CB1F79E856003B77D3 /* MGHViewController.m in Sources */,
 				3A29D0E91D1A426E004F1FDD /* MJRefreshBackNormalFooter.m in Sources */,
 				3A29D0E11D1A426E004F1FDD /* MJRefreshBackFooter.m in Sources */,
 				3A427A0D1D301567008880EE /* MGHeaderFlowLayout.m in Sources */,
@@ -1397,6 +1433,7 @@
 				3A29D0F51D1A426E004F1FDD /* SDImageCache.m in Sources */,
 				3A5096151D2F6E7500580D2B /* CustomTransitionViewController.m in Sources */,
 				C0D981281F273BDD0070382C /* ViewController+MASAdditions.m in Sources */,
+				C05B45D11F7A327D003B77D3 /* MGListViewController.m in Sources */,
 				3A29D0FA1D1A426E004F1FDD /* SDWebImageManager.m in Sources */,
 				C0D981201F273BDD0070382C /* MASConstraint.m in Sources */,
 				3A427A2C1D30250E008880EE /* MGHeadPushViewController.m in Sources */,
@@ -1439,6 +1476,7 @@
 				3A85018F1D2E31A600E2CE67 /* MGCellModel.m in Sources */,
 				3A5096291D2F703A00580D2B /* UIViewController+Animator.m in Sources */,
 				3A29D0EC1D1A426E004F1FDD /* MJRefreshNormalHeader.m in Sources */,
+				C05B45D51F7A332A003B77D3 /* MGApplication.m in Sources */,
 				3A29D0E21D1A426E004F1FDD /* MJRefreshComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,7 @@
 #import "UIView+Drag.h"
 #import "MGScrollViewLabel.h"
 #import "MGScrollLabelView.h"
+#import "MGHViewController.h"
 
 @interface MGRunTimeVC ()<MGScrollLabelViewDelegate>
 {
@@ -48,6 +49,8 @@
     // 按钮测试
     UIButton *btn = [UIButton ButtonWithTitle:@"嘿嘿" actionBlock:^(id btn) {
         [weakSelf showHint:@"响应按钮事件的点击"];
+         weakSelf.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:[MGHViewController new] animated:true ];
     }];
     btn.origin = CGPointMake(220, 100);
     [self.view addSubview:btn];
