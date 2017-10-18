@@ -7,6 +7,7 @@
 //
 
 #import "MGScrollViewLabel.h"
+#import "CALayer+PauseAimate.h"
 
 @interface MGScrollViewLabel ()
 @property (nonatomic,strong) UIScrollView *showView;
@@ -115,9 +116,20 @@
 }
 
 - (void)stopScolling {
-    [self.showView.layer removeAllAnimations];
+//    [self.showView.layer removeAllAnimations];
+//    [self.layer removeAllAnimations];
 }
 
+- (void)pauseScolling {
+    [self.showView.layer pauseAnimate];
+    [self.layer pauseAnimate];
+}
+
+- (void)resumeScolling {
+    [self.showView.layer resumeAnimate];
+//     [self.layer resumeAnimate];
+//    [self beginScolling];
+}
 
 @end
 

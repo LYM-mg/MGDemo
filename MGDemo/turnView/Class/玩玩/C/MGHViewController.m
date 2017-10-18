@@ -39,6 +39,7 @@ static NSString * const HCellID = @"HCellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.navigationItem.title = @"自定义布局";
     self.view.backgroundColor = [UIColor orangeColor];
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:HCellID];
     [self.view addSubview:self.collectionView];

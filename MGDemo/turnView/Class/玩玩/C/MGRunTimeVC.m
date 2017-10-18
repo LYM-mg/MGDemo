@@ -110,28 +110,30 @@
 
 #pragma mark - Navigation
 + (void)load {
-    [self mg_SwitchMethod:self originalSelector:@selector(viewWillAppear:) swizzledSelector:@selector(mg_layoutSubviews)];
-    [self mg_SwitchMethod:self originalSelector:@selector(viewDidAppear:) swizzledSelector:@selector(__layoutSubviews)];
+    [self mg_SwitchMethod:self originalSelector:@selector(viewWillAppear:) swizzledSelector:@selector(mg_viewWillAppear)];
+    [self mg_SwitchMethod:self originalSelector:@selector(viewDidAppear:) swizzledSelector:@selector(__viewDidAppear)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
+      [super viewWillAppear:animated];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    if (sl)
+        [sl pauseScolling];
 //    self.navigationController.navigationBar.mg_hideStatusBarBackgroungView = YES;
 }
 
-- (void)mg_layoutSubviews {
-    NSLog(@"我是来替换layoutSubviews的");
+
+- (void)mg_viewWillAppear {
+//    if (sl)
+//        [sl resumeScolling];
+    NSLog(@"我是来替换viewWillAppear的");
 }
 
-- (void)__layoutSubviews {
-     NSLog(@"我是来替换__layoutSubviews的");
+- (void)__viewDidAppear {
+     NSLog(@"我是来替换viewDidAppear的");
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -140,10 +142,10 @@
 //    
 //    NSString *num1 = @"1234512345123";
 //    NSLog(@"%@", [NSString stringWithFormat:@"%014lld",num1.longLongValue]);
-     NSArray *titles = @[@"哈哈",@"她好美好美😍",@"喜欢她",@"真的喜欢"];
+    NSArray *titles = @[@"哈哈",@"她好美好美😍",@"喜欢她",@"真的喜欢"];
     scrollLabelView.titleArray = titles;
     
-    [sl stopScolling];
+    [sl pauseScolling];
 }
 
 - (void)set {

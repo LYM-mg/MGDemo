@@ -137,6 +137,7 @@
 		C05B45CE1F79E91F003B77D3 /* MGHFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B45CD1F79E91F003B77D3 /* MGHFlowLayout.m */; };
 		C05B45D11F7A327D003B77D3 /* MGListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B45D01F7A327D003B77D3 /* MGListViewController.m */; };
 		C05B45D51F7A332A003B77D3 /* MGApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B45D41F7A332A003B77D3 /* MGApplication.m */; };
+		C05B45D81F7A3DBC003B77D3 /* CALayer+PauseAimate.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B45D71F7A3DBC003B77D3 /* CALayer+PauseAimate.m */; };
 		C0665D411F5546E600429A61 /* OSSImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C0665D401F5546E600429A61 /* OSSImage.m */; };
 		C0B8CF441F44258100DBD937 /* MGHeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B8CF431F44258100DBD937 /* MGHeTableViewController.m */; };
 		C0B8CF731F46BCB600DBD937 /* MGRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B8CF4E1F46BCB600DBD937 /* MGRefreshGifHeader.m */; };
@@ -417,6 +418,8 @@
 		C05B45D01F7A327D003B77D3 /* MGListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGListViewController.m; sourceTree = "<group>"; };
 		C05B45D31F7A332A003B77D3 /* MGApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGApplication.h; sourceTree = "<group>"; };
 		C05B45D41F7A332A003B77D3 /* MGApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGApplication.m; sourceTree = "<group>"; };
+		C05B45D61F7A3DBC003B77D3 /* CALayer+PauseAimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+PauseAimate.h"; sourceTree = "<group>"; };
+		C05B45D71F7A3DBC003B77D3 /* CALayer+PauseAimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+PauseAimate.m"; sourceTree = "<group>"; };
 		C0665D3F1F5546E600429A61 /* OSSImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSImage.h; sourceTree = "<group>"; };
 		C0665D401F5546E600429A61 /* OSSImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSImage.m; sourceTree = "<group>"; };
 		C0B8CF421F44258100DBD937 /* MGHeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHeTableViewController.h; sourceTree = "<group>"; };
@@ -1093,6 +1096,8 @@
 			isa = PBXGroup;
 			children = (
 				C0B8CF4C1F46BCB600DBD937 /* MGCategoryHeader.h */,
+				C05B45D61F7A3DBC003B77D3 /* CALayer+PauseAimate.h */,
+				C05B45D71F7A3DBC003B77D3 /* CALayer+PauseAimate.m */,
 				C0B8CF851F46C4DC00DBD937 /* MGDragView */,
 				C0B8CF631F46BCB600DBD937 /* UIImageView */,
 				C0B8CF701F46BCB600DBD937 /* ViewController */,
@@ -1453,6 +1458,7 @@
 				3AE9E4551CF92D03000DCB72 /* AppDelegate.m in Sources */,
 				3A23A3B91D2EC6F800FFFF78 /* CustomAnimateTransitionPop.m in Sources */,
 				3A29D1011D1A426E004F1FDD /* UIImageView+WebCache.m in Sources */,
+				C05B45D81F7A3DBC003B77D3 /* CALayer+PauseAimate.m in Sources */,
 				3A29D0ED1D1A426E004F1FDD /* MJRefreshStateHeader.m in Sources */,
 				C0B8CF761F46BCB600DBD937 /* NSObject+HUD.m in Sources */,
 				3AA3DA9B1D0FDB18008B96E2 /* SVIndefiniteAnimatedView.m in Sources */,

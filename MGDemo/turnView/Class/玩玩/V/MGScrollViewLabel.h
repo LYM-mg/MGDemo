@@ -25,6 +25,9 @@ typedef enum : NSUInteger {
 /** 开始滚动 */
 - (void)beginScolling;
 
+/** 恢复滚动 */
+- (void)resumeScolling;
+
 /** 停止滚动 */
-- (void)stopScolling;
+- (void)pauseScolling;
 @end

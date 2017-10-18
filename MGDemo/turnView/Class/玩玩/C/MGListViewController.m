@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"已安装App";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"测试" style:UIBarButtonItemStylePlain target:self action:@selector(test)];
 }
 
