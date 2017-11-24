@@ -58,7 +58,7 @@
  */
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     
-    if (self.childViewControllers.count != 0) {
+    if (self.childViewControllers.count > 0) {
         // 判断当前控制器是否为根控制器，如果不是，就执行下列代码
         UIBarButtonItem *leftItem = [UIBarButtonItem itemWithImage:@"navigationButtonReturn"  highImage:nil title:@"返回" target:self action:@selector(leftBtnClick)];
     
@@ -66,9 +66,10 @@
         
         // 隐藏下面的TabBar
         viewController.hidesBottomBarWhenPushed = YES;
-    }else{
-        viewController.hidesBottomBarWhenPushed = NO;
     }
+//    else{
+//        viewController.hidesBottomBarWhenPushed = NO;
+//    }
     
     // 这句super的push要放在后面, 让viewController可以覆盖上面设置的leftBarButtonItem
     [super pushViewController:viewController animated:animated];
