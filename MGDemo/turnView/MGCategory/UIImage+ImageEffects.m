@@ -58,15 +58,15 @@
 {
     // Check pre-conditions.
     if (self.size.width < 1 || self.size.height < 1) {
-        FLLOG (@"*** error: invalid size: (%.2f x %.2f). Both dimensions must be >= 1: %@", self.size.width, self.size.height, self);
+        MGLog(@"*** error: invalid size: (%.2f x %.2f). Both dimensions must be >= 1: %@", self.size.width, self.size.height, self);
         return nil;
     }
     if (!self.CGImage) {
-        FLLOG (@"*** error: image must be backed by a CGImage: %@", self);
+        MGLog (@"*** error: image must be backed by a CGImage: %@", self);
         return nil;
     }
     if (maskImage && !maskImage.CGImage) {
-        FLLOG (@"*** error: maskImage must be backed by a CGImage: %@", maskImage);
+        MGLog (@"*** error: maskImage must be backed by a CGImage: %@", maskImage);
         return nil;
     }
     

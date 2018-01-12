@@ -31,7 +31,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"可移动的View";
     [self.view setBGImage:@"lol"];
+    
+    [self.view addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithActionBlock:^(id gesture) {
+        if (sl)
+            [sl pauseScolling];
+    }]];
 //    self.navigationController.navigationBar.mg_hideStatusBarBackgroungView = YES;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"photo布局" style:UIBarButtonItemStylePlain target:self action:@selector(rightClick)];
     
@@ -110,12 +116,14 @@
 
 #pragma mark - Navigation
 + (void)load {
-    [self mg_SwitchMethod:self originalSelector:@selector(viewWillAppear:) swizzledSelector:@selector(mg_viewWillAppear)];
-    [self mg_SwitchMethod:self originalSelector:@selector(viewDidAppear:) swizzledSelector:@selector(__viewDidAppear)];
+//    [self mg_SwitchMethod:self originalSelector:@selector(viewWillAppear:) swizzledSelector:@selector(mg_viewWillAppear)];
+//    [self mg_SwitchMethod:self originalSelector:@selector(viewDidAppear:) swizzledSelector:@selector(__viewDidAppear)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-      [super viewWillAppear:animated];
+    [super viewWillAppear:animated];
+    if (sl)
+        [sl resumeScolling];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -127,8 +135,8 @@
 
 
 - (void)mg_viewWillAppear {
-//    if (sl)
-//        [sl resumeScolling];
+    if (sl)
+        [sl resumeScolling];
     NSLog(@"我是来替换viewWillAppear的");
 }
 
@@ -145,7 +153,9 @@
     NSArray *titles = @[@"哈哈",@"她好美好美😍",@"喜欢她",@"真的喜欢"];
     scrollLabelView.titleArray = titles;
     
-    [sl pauseScolling];
+    
+    if (sl)
+        [sl resumeScolling];
 }
 
 - (void)set {

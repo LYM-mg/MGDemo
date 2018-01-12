@@ -50,7 +50,7 @@
     [self.view setBGImage:@"ming3"];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"RunTime" style:UIBarButtonItemStylePlain target:self action:@selector(runtimeClick)];
     
-    self.navigationController.toolbarHidden = NO;
+//    self.navigationController.toolbarHidden = NO;
     [self addScrollViewLabel];
 }
 

@@ -186,7 +186,7 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
         return [point CGPointValue];
     }
     
-    FLLOG(@"Warning: Invalid position for toast.");
+    MGLog(@"Warning: Invalid position for toast.");
     return [self centerPointForPosition:CSToastDefaultPosition withToast:toast];
 }
 

@@ -21,8 +21,9 @@ static NSString * const HCellID = @"HCellID";
     if (!_collectionView) {
         _collectionView = ({
             MGHFlowLayout *layout = [MGHFlowLayout new];
+            layout.scrollDirection = UICollectionViewScrollDirectionVertical;
             layout.delegate = self;
-            UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+            UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
             collectionView.dataSource = self;
             collectionView.backgroundColor = [UIColor redColor];
             //            collectionView.delegate = self;
@@ -44,9 +45,10 @@ static NSString * const HCellID = @"HCellID";
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:HCellID];
     [self.view addSubview:self.collectionView];
     
-    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
+//    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.right.bottom.equalTo(self.view);
+//        make.top.equalTo(self.view).offset(64);
+//    }];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"测试安装App" style:UIBarButtonItemStylePlain target:self action:@selector(test)];
 }
 

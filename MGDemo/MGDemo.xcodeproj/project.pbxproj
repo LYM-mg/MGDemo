@@ -176,13 +176,13 @@
 		F426CFD220089D3E00DE032D /* LLGifImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFCF20089D3E00DE032D /* LLGifImageView.m */; };
 		F426CFD320089D3E00DE032D /* LLGifView.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFD120089D3E00DE032D /* LLGifView.m */; };
 		F426CFD620089DEF00DE032D /* MGGIFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFD520089DEF00DE032D /* MGGIFViewController.m */; };
-		F426CFD82008A4E100DE032D /* weibo.gif in Resources */ = {isa = PBXBuildFile; fileRef = F426CFD72008A4E100DE032D /* weibo.gif */; };
 		F426CFDA2008A53D00DE032D /* plane.gif in Resources */ = {isa = PBXBuildFile; fileRef = F426CFD92008A53D00DE032D /* plane.gif */; };
 		F426CFDD2008ABE700DE032D /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFDC2008ABE600DE032D /* UIButton+EnlargeTouchArea.m */; };
 		F426CFE02008AEEF00DE032D /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFDF2008AEEF00DE032D /* Toast+UIView.m */; };
 		F426CFE32008AF5000DE032D /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFE12008AF4F00DE032D /* UIImage+ImageEffects.m */; };
 		F426CFE62008B11C00DE032D /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFE52008B11C00DE032D /* UIViewController+Utils.m */; };
 		F426CFE92008B14E00DE032D /* UINavigationBar+ChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFE72008B14D00DE032D /* UINavigationBar+ChangeColor.m */; };
+		F426CFEB2008B56A00DE032D /* example.gif in Resources */ = {isa = PBXBuildFile; fileRef = F426CFEA2008B56A00DE032D /* example.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -510,7 +510,6 @@
 		F426CFD120089D3E00DE032D /* LLGifView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLGifView.m; sourceTree = "<group>"; };
 		F426CFD420089DEF00DE032D /* MGGIFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGGIFViewController.h; sourceTree = "<group>"; };
 		F426CFD520089DEF00DE032D /* MGGIFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGGIFViewController.m; sourceTree = "<group>"; };
-		F426CFD72008A4E100DE032D /* weibo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = weibo.gif; sourceTree = "<group>"; };
 		F426CFD92008A53D00DE032D /* plane.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plane.gif; sourceTree = "<group>"; };
 		F426CFDB2008ABE600DE032D /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
 		F426CFDC2008ABE600DE032D /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
@@ -522,6 +521,7 @@
 		F426CFE52008B11C00DE032D /* UIViewController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utils.m"; sourceTree = "<group>"; };
 		F426CFE72008B14D00DE032D /* UINavigationBar+ChangeColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+ChangeColor.m"; sourceTree = "<group>"; };
 		F426CFE82008B14E00DE032D /* UINavigationBar+ChangeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+ChangeColor.h"; sourceTree = "<group>"; };
+		F426CFEA2008B56A00DE032D /* example.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = example.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1098,7 +1098,7 @@
 				3AE9E4641CF92D03000DCB72 /* Info.plist */,
 				3AE9E45C1CF92D03000DCB72 /* MGDemo.xcdatamodeld */,
 				F426CFD92008A53D00DE032D /* plane.gif */,
-				F426CFD72008A4E100DE032D /* weibo.gif */,
+				F426CFEA2008B56A00DE032D /* example.gif */,
 				3AE9E4501CF92D03000DCB72 /* Supporting Files */,
 			);
 			name = MGDemo;
@@ -1383,10 +1383,10 @@
 				3A8595BA1D30F8F300D7720C /* normal.aac in Resources */,
 				3A427A371D30350E008880EE /* Contents.json in Resources */,
 				3A8595B61D30F8F300D7720C /* expend.png in Resources */,
-				F426CFD82008A4E100DE032D /* weibo.gif in Resources */,
 				3A29D0EE1D1A426E004F1FDD /* MJRefresh.bundle in Resources */,
 				F426CFDA2008A53D00DE032D /* plane.gif in Resources */,
 				3A8595B21D30F8F300D7720C /* butterfly@2x.png in Resources */,
+				F426CFEB2008B56A00DE032D /* example.gif in Resources */,
 				3AE9E45B1CF92D03000DCB72 /* Main.storyboard in Resources */,
 				3A8501711D2E308E00E2CE67 /* MGShopCell.xib in Resources */,
 			);

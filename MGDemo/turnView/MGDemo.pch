@@ -34,6 +34,9 @@
 //默认导航栏的高度
 #define MGNavHeight 64
 
+#define ScreenWidthRatio    MGSCREEN_WIDTH / 375.0
+#define ScreenHeightRatio   MGSCREEN_HEIGHT / 667.0
+
 // 快速创建弱指针
 #define __weakSelf __weak typeof(self) weakSelf = self;
 

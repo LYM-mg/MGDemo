@@ -102,6 +102,7 @@ static NSString *const CellIdentfier = @"CellIdentfier";
 //    [self.navigationController.view bringSubviewToFront:statusView];
     
     UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
+    topView.clipsToBounds = NO;
     topView.backgroundColor = [UIColor clearColor];
     _topImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
     _topImageView.layer.anchorPoint = CGPointMake(0.5, 0);
@@ -116,17 +117,15 @@ static NSString *const CellIdentfier = @"CellIdentfier";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"GIF展示" style:UIBarButtonItemStylePlain target:self action:@selector(gifClick)];
 }
 
-// 导航栏右边搜索的点击
+// 导航栏左边搜索的点击
 - (void)gifClick{
     MGGIFViewController *gifVC = [[MGGIFViewController alloc] init];
-//    gifVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:gifVC animated:YES];
 }
 
 // 导航栏右边搜索的点击
 - (void)searchClick{
     MGSearchViewController *searchVC = [[MGSearchViewController alloc] init];
-//    searchVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:searchVC animated:YES];
 }
 

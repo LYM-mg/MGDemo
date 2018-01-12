@@ -154,9 +154,38 @@ static const UIEdgeInsets MGDefaultEdgeInsets = {0, 0, 0, 0};
 
 
 -(CGSize)collectionViewContentSize{
-    CGSize size = self.collectionView.bounds.size;
+    if (self.columnHeights.count == 0) {
+        return CGSizeMake(0, 0);
+    }
     
-    return size;
+    // 获得最高的列
+    NSInteger maxColum = [self maxHeightColumn];
+    
+    CGFloat height = [self.columnHeights[maxColum] floatValue] + MGDefaultEdgeInsets.bottom;
+    CGFloat width = self.collectionView.frame.size.width;
+    
+//    CGSize size = self.collectionView.bounds.size;
+    return CGSizeMake(width, height);
+    
+    
+//    return size;
+}
+
+/// 取得所有列中高度最高的列
+- (NSInteger)maxHeightColumn{
+    // 找出columnHeights的最小值
+    NSInteger maxHeightColumn = 0;
+    CGFloat maxColumnHeight = [self.columnHeights[0] floatValue];
+    
+    for (NSInteger i = 1; i < self.columnHeights.count; i++) {
+        CGFloat tempHeight = [self.columnHeights[i] floatValue];
+        
+        if (tempHeight > maxColumnHeight) {
+            maxHeightColumn = i;
+            maxColumnHeight = tempHeight;
+        }
+    }
+    return maxHeightColumn;
 }
 
 /// 取得所有列中高度最短的列

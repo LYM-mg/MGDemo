@@ -116,8 +116,8 @@
 }
 
 - (void)stopScolling {
-//    [self.showView.layer removeAllAnimations];
-//    [self.layer removeAllAnimations];
+    [self.showView.layer removeAllAnimations];
+    [self.layer removeAllAnimations];
 }
 
 - (void)pauseScolling {

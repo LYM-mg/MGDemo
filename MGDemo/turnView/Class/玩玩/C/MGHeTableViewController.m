@@ -32,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"点我啊";
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view addSubview:self.tableView];
     // 上拉刷新
