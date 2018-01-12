@@ -15,6 +15,8 @@
 #import "MGSectionModel.h"
 #import "MGCellModel.h"
 
+#import "MGGIFViewController.h"
+
 
 @interface MGTableController ()
 
@@ -111,12 +113,20 @@ static NSString *const CellIdentfier = @"CellIdentfier";
     self.navigationItem.titleView = topView;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchClick)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"GIF展示" style:UIBarButtonItemStylePlain target:self action:@selector(gifClick)];
+}
+
+// 导航栏右边搜索的点击
+- (void)gifClick{
+    MGGIFViewController *gifVC = [[MGGIFViewController alloc] init];
+//    gifVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:gifVC animated:YES];
 }
 
 // 导航栏右边搜索的点击
 - (void)searchClick{
     MGSearchViewController *searchVC = [[MGSearchViewController alloc] init];
-    searchVC.hidesBottomBarWhenPushed = YES;
+//    searchVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:searchVC animated:YES];
 }
 
