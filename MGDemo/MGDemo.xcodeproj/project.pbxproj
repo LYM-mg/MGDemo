@@ -178,6 +178,11 @@
 		F426CFD620089DEF00DE032D /* MGGIFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFD520089DEF00DE032D /* MGGIFViewController.m */; };
 		F426CFD82008A4E100DE032D /* weibo.gif in Resources */ = {isa = PBXBuildFile; fileRef = F426CFD72008A4E100DE032D /* weibo.gif */; };
 		F426CFDA2008A53D00DE032D /* plane.gif in Resources */ = {isa = PBXBuildFile; fileRef = F426CFD92008A53D00DE032D /* plane.gif */; };
+		F426CFDD2008ABE700DE032D /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFDC2008ABE600DE032D /* UIButton+EnlargeTouchArea.m */; };
+		F426CFE02008AEEF00DE032D /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFDF2008AEEF00DE032D /* Toast+UIView.m */; };
+		F426CFE32008AF5000DE032D /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFE12008AF4F00DE032D /* UIImage+ImageEffects.m */; };
+		F426CFE62008B11C00DE032D /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFE52008B11C00DE032D /* UIViewController+Utils.m */; };
+		F426CFE92008B14E00DE032D /* UINavigationBar+ChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFE72008B14D00DE032D /* UINavigationBar+ChangeColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -507,6 +512,16 @@
 		F426CFD520089DEF00DE032D /* MGGIFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGGIFViewController.m; sourceTree = "<group>"; };
 		F426CFD72008A4E100DE032D /* weibo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = weibo.gif; sourceTree = "<group>"; };
 		F426CFD92008A53D00DE032D /* plane.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plane.gif; sourceTree = "<group>"; };
+		F426CFDB2008ABE600DE032D /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
+		F426CFDC2008ABE600DE032D /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
+		F426CFDE2008AEEF00DE032D /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		F426CFDF2008AEEF00DE032D /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
+		F426CFE12008AF4F00DE032D /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		F426CFE22008AF5000DE032D /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		F426CFE42008B11C00DE032D /* UIViewController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utils.h"; sourceTree = "<group>"; };
+		F426CFE52008B11C00DE032D /* UIViewController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utils.m"; sourceTree = "<group>"; };
+		F426CFE72008B14D00DE032D /* UINavigationBar+ChangeColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+ChangeColor.m"; sourceTree = "<group>"; };
+		F426CFE82008B14E00DE032D /* UINavigationBar+ChangeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+ChangeColor.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1149,6 +1164,16 @@
 				C0B8CF6D1F46BCB600DBD937 /* UIView+LYMExtension.m */,
 				C0B8CF6E1F46BCB600DBD937 /* UIViewController+HUD.h */,
 				C0B8CF6F1F46BCB600DBD937 /* UIViewController+HUD.m */,
+				F426CFDB2008ABE600DE032D /* UIButton+EnlargeTouchArea.h */,
+				F426CFDC2008ABE600DE032D /* UIButton+EnlargeTouchArea.m */,
+				F426CFDE2008AEEF00DE032D /* Toast+UIView.h */,
+				F426CFDF2008AEEF00DE032D /* Toast+UIView.m */,
+				F426CFE22008AF5000DE032D /* UIImage+ImageEffects.h */,
+				F426CFE12008AF4F00DE032D /* UIImage+ImageEffects.m */,
+				F426CFE42008B11C00DE032D /* UIViewController+Utils.h */,
+				F426CFE52008B11C00DE032D /* UIViewController+Utils.m */,
+				F426CFE82008B14E00DE032D /* UINavigationBar+ChangeColor.h */,
+				F426CFE72008B14D00DE032D /* UINavigationBar+ChangeColor.m */,
 			);
 			path = MGCategory;
 			sourceTree = "<group>";
@@ -1397,6 +1422,7 @@
 				3A29D0FE1D1A426E004F1FDD /* UIImage+MultiFormat.m in Sources */,
 				C0B8CF7B1F46BCB600DBD937 /* UIDevice+Extension.m in Sources */,
 				3A29D0FF1D1A426E004F1FDD /* UIImage+WebP.m in Sources */,
+				F426CFE32008AF5000DE032D /* UIImage+ImageEffects.m in Sources */,
 				3A427A301D3028B9008880EE /* MGRmndCell.m in Sources */,
 				3A4279FF1D2FF709008880EE /* PMLineLayer.m in Sources */,
 				3A427A001D2FF709008880EE /* UIScrollView+ElasticRefresh.m in Sources */,
@@ -1418,6 +1444,7 @@
 				3A5096231D2F6EA100580D2B /* HUTransitionVerticalLinesAnimator.m in Sources */,
 				3A23A3AD1D2EB9FE00FFFF78 /* MGAnimationVC.m in Sources */,
 				C0D981291F273BDD0070382C /* README.md in Sources */,
+				F426CFE02008AEEF00DE032D /* Toast+UIView.m in Sources */,
 				3A29D0DB1D1A426E004F1FDD /* MJType.m in Sources */,
 				3A29D0E71D1A426E004F1FDD /* MJRefreshAutoStateFooter.m in Sources */,
 				C0B8CF7A1F46BCB600DBD937 /* UIColor+Extension.m in Sources */,
@@ -1496,11 +1523,14 @@
 				C0B8CF761F46BCB600DBD937 /* NSObject+HUD.m in Sources */,
 				3AA3DA9B1D0FDB18008B96E2 /* SVIndefiniteAnimatedView.m in Sources */,
 				C0D763F61F5111EF00E029D9 /* MGScrollLabelView.m in Sources */,
+				F426CFDD2008ABE700DE032D /* UIButton+EnlargeTouchArea.m in Sources */,
 				3A85019A1D2E364D00E2CE67 /* MGPolygonView.m in Sources */,
 				3A8595C11D30F93E00D7720C /* MBProgressHUD+Add.m in Sources */,
 				3A50962A1D2F703A00580D2B /* ZBFallenBricksAnimator.m in Sources */,
+				F426CFE62008B11C00DE032D /* UIViewController+Utils.m in Sources */,
 				C0D981251F273BDD0070382C /* NSArray+MASAdditions.m in Sources */,
 				3A29D0F31D1A426E004F1FDD /* MKAnnotationView+WebCache.m in Sources */,
+				F426CFE92008B14E00DE032D /* UINavigationBar+ChangeColor.m in Sources */,
 				3A85018E1D2E31A600E2CE67 /* MGTableController.m in Sources */,
 				C0D981231F273BDD0070382C /* MASViewAttribute.m in Sources */,
 				C0B8CF7E1F46BCB600DBD937 /* UIImageView+Extension.m in Sources */,
