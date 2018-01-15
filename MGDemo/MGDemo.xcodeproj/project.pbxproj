@@ -173,6 +173,7 @@
 		C0D981281F273BDD0070382C /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D9811C1F273BDD0070382C /* ViewController+MASAdditions.m */; };
 		C0D981291F273BDD0070382C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C0D9811D1F273BDD0070382C /* README.md */; };
 		C0D9812F1F273D600070382C /* MGWanWanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D9812E1F273D600070382C /* MGWanWanViewController.m */; };
+		F4078B24200C7DB50049DD5F /* MGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4078B23200C7DB50049DD5F /* MGMapViewController.m */; };
 		F426CFD220089D3E00DE032D /* LLGifImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFCF20089D3E00DE032D /* LLGifImageView.m */; };
 		F426CFD320089D3E00DE032D /* LLGifView.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFD120089D3E00DE032D /* LLGifView.m */; };
 		F426CFD620089DEF00DE032D /* MGGIFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFD520089DEF00DE032D /* MGGIFViewController.m */; };
@@ -504,6 +505,8 @@
 		C0D9811D1F273BDD0070382C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C0D9812D1F273D600070382C /* MGWanWanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWanWanViewController.h; sourceTree = "<group>"; };
 		C0D9812E1F273D600070382C /* MGWanWanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWanWanViewController.m; sourceTree = "<group>"; };
+		F4078B22200C7DB50049DD5F /* MGMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGMapViewController.h; sourceTree = "<group>"; };
+		F4078B23200C7DB50049DD5F /* MGMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGMapViewController.m; sourceTree = "<group>"; };
 		F426CFCE20089D3E00DE032D /* LLGifImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLGifImageView.h; sourceTree = "<group>"; };
 		F426CFCF20089D3E00DE032D /* LLGifImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLGifImageView.m; sourceTree = "<group>"; };
 		F426CFD020089D3E00DE032D /* LLGifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLGifView.h; sourceTree = "<group>"; };
@@ -932,6 +935,8 @@
 				3A8501961D2E362500E2CE67 /* MGPolygonVC.m */,
 				3AF551D71D2FCC3800333D2E /* MGShakeVC.h */,
 				3AF551D81D2FCC3800333D2E /* MGShakeVC.m */,
+				F4078B22200C7DB50049DD5F /* MGMapViewController.h */,
+				F4078B23200C7DB50049DD5F /* MGMapViewController.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1418,6 +1423,7 @@
 				3A427A1C1D301BDF008880EE /* MGHeaderReusableView.m in Sources */,
 				3A23A3B81D2EC6F800FFFF78 /* CustomAnimateTransitionPush.m in Sources */,
 				C0B8CF7D1F46BCB600DBD937 /* UIImage+Extension.m in Sources */,
+				F4078B24200C7DB50049DD5F /* MGMapViewController.m in Sources */,
 				C0D981241F273BDD0070382C /* MASViewConstraint.m in Sources */,
 				3A29D0FE1D1A426E004F1FDD /* UIImage+MultiFormat.m in Sources */,
 				C0B8CF7B1F46BCB600DBD937 /* UIDevice+Extension.m in Sources */,

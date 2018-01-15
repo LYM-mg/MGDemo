@@ -9,6 +9,7 @@
 #import "MGPolygonVC.h"
 #import "MGPolygonView.h"
 #import "MGShakeVC.h"
+#import "MGMapViewController.h"
 
 #import <AVFoundation/AVFoundation.h>
 
@@ -28,12 +29,17 @@
     self.navigationItem.title = @"绘图";
     [self setUpShake];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"可用地图" style:UIBarButtonItemStyleDone target:self action:@selector(mapClick)];
     
     MGPolygonView *drawView = [[MGPolygonView alloc] initWithFrame:CGRectMake(10, 200, self.view.width - 20, 250)];
     [self.view addSubview:drawView];
     self.drawView = drawView;
     
     [self setCorrectBtn];
+}
+
+- (void)mapClick {
+    [self showViewController:[MGMapViewController new] sender:nil];
 }
 
 // 设置按钮    圆角

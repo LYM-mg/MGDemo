@@ -32,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"可移动的View";
+    
     [self.view setBGImage:@"lol"];
     
     [self.view addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithActionBlock:^(id gesture) {
