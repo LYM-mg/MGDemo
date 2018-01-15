@@ -101,9 +101,9 @@
                 NSNumber *number = [NSNumber numberWithBool:YES];
 //                 MKLaunchOptionsShowsTrafficKey: number
                 NSDictionary *dict = @{
-                                       MKLaunchOptionsDirectionsModeKey:  MKLaunchOptionsDirectionsModeDriving
-                                       
-                };
+                                       MKLaunchOptionsDirectionsModeKey:  MKLaunchOptionsDirectionsModeDriving,
+                                       MKLaunchOptionsShowsTrafficKey:number
+                                     };
                 [endItem openInMapsWithLaunchOptions:dict];
             }];
         }else {
@@ -112,12 +112,31 @@
             }];
             
         }
-        [alertVc addAction:a1];
+       
     }
+    [alertVc addAction:[UIAlertAction actionWithTitle:@"取消" style: UIAlertActionStyleCancel handler:nil]];
     
-    
+    NSString *str = @"10000000000";
+    MGLog(@"修改前%@", str);
+    str = [self getFormatNum:@"10000000000"];
+    MGLog(@"修改后%@", str);
    
     [self presentViewController:alertVc animated:YES completion:nil];
+}
+
+- (NSString *)getFormatNum:(NSString *)numbers {
+    
+    NSString *str = [numbers substringWithRange:NSMakeRange(numbers.length%3, numbers.length-numbers.length%3)];
+    NSString *strs = [numbers substringWithRange:NSMakeRange(0, numbers.length%3)];
+    for (int  i =0; i < str.length; i =i+3) {
+        NSString *sss = [str substringWithRange:NSMakeRange(i, 3)];
+        strs = [strs stringByAppendingString:[NSString stringWithFormat:@",%@",sss]];
+    }
+    if ([[strs substringWithRange:NSMakeRange(0, 1)] isEqualToString:@","]) {
+        strs = [strs substringWithRange:NSMakeRange(1, strs.length-1)];
+    }
+    
+    return strs;
 }
 
 @end
