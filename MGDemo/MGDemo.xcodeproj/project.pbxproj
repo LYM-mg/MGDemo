@@ -174,6 +174,7 @@
 		C0D981291F273BDD0070382C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C0D9811D1F273BDD0070382C /* README.md */; };
 		C0D9812F1F273D600070382C /* MGWanWanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D9812E1F273D600070382C /* MGWanWanViewController.m */; };
 		F4078B24200C7DB50049DD5F /* MGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4078B23200C7DB50049DD5F /* MGMapViewController.m */; };
+		F411AC59200DF29D009B73AC /* MQGradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F411AC58200DF29C009B73AC /* MQGradientProgressView.m */; };
 		F426CFD220089D3E00DE032D /* LLGifImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFCF20089D3E00DE032D /* LLGifImageView.m */; };
 		F426CFD320089D3E00DE032D /* LLGifView.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFD120089D3E00DE032D /* LLGifView.m */; };
 		F426CFD620089DEF00DE032D /* MGGIFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFD520089DEF00DE032D /* MGGIFViewController.m */; };
@@ -507,6 +508,8 @@
 		C0D9812E1F273D600070382C /* MGWanWanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWanWanViewController.m; sourceTree = "<group>"; };
 		F4078B22200C7DB50049DD5F /* MGMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGMapViewController.h; sourceTree = "<group>"; };
 		F4078B23200C7DB50049DD5F /* MGMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGMapViewController.m; sourceTree = "<group>"; };
+		F411AC57200DF29C009B73AC /* MQGradientProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQGradientProgressView.h; sourceTree = "<group>"; };
+		F411AC58200DF29C009B73AC /* MQGradientProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQGradientProgressView.m; sourceTree = "<group>"; };
 		F426CFCE20089D3E00DE032D /* LLGifImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLGifImageView.h; sourceTree = "<group>"; };
 		F426CFCF20089D3E00DE032D /* LLGifImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLGifImageView.m; sourceTree = "<group>"; };
 		F426CFD020089D3E00DE032D /* LLGifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLGifView.h; sourceTree = "<group>"; };
@@ -764,6 +767,8 @@
 		3A427A1E1D301C9D008880EE /* Extesion */ = {
 			isa = PBXGroup;
 			children = (
+				F411AC57200DF29C009B73AC /* MQGradientProgressView.h */,
+				F411AC58200DF29C009B73AC /* MQGradientProgressView.m */,
 				3A427A221D301CB4008880EE /* UIImage+Image.h */,
 				3A427A231D301CB4008880EE /* UIImage+Image.m */,
 				3A427A241D301CB4008880EE /* UIColor+HexColor.h */,
@@ -1444,6 +1449,7 @@
 				3A8501731D2E308E00E2CE67 /* MGShopModel.m in Sources */,
 				3A85016C1D2E308E00E2CE67 /* MGCollectionController.m in Sources */,
 				3A29D0E01D1A426E004F1FDD /* MJRefreshAutoFooter.m in Sources */,
+				F411AC59200DF29D009B73AC /* MQGradientProgressView.m in Sources */,
 				3A29D0D71D1A426E004F1FDD /* MJFoundation.m in Sources */,
 				3A29D0F01D1A426E004F1FDD /* UIScrollView+MJExtension.m in Sources */,
 				3A29D0F41D1A426E004F1FDD /* NSData+ImageContentType.m in Sources */,

@@ -10,6 +10,7 @@
 #import "MGPolygonView.h"
 #import "MGShakeVC.h"
 #import "MGMapViewController.h"
+#import "MQGradientProgressView.h"
 
 #import <AVFoundation/AVFoundation.h>
 
@@ -36,6 +37,13 @@
     self.drawView = drawView;
     
     [self setCorrectBtn];
+    
+    MQGradientProgressView *progressView = [[MQGradientProgressView alloc] initWithFrame:CGRectMake(0, 64, 300, 10)];
+    progressView.centerX = self.view.centerX;
+    //    progressView.colorArr = @[(id)MQRGBColor(59, 221, 255).CGColor,(id)MQRGBColor(34, 126, 239).CGColor];
+    progressView.colorArr = @[(id)[UIColor greenColor]];
+    progressView.progress = 0.75;
+    [self.view addSubview:progressView];
 }
 
 - (void)mapClick {
