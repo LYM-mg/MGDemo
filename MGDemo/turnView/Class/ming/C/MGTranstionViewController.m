@@ -36,33 +36,6 @@
     self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"动态更换图标" style: UIBarButtonItemStylePlain target:self action:@selector(changeIcon)];
 }
 
-+ (void)load {
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        Method presentM = class_getInstanceMethod(self.class, @selector(presentViewController:animated:completion:));
-//        Method presentSwizzlingM = class_getInstanceMethod(self.class, @selector(dy_presentViewController:animated:completion:));
-//        // 交换方法实现
-//        method_exchangeImplementations(presentM, presentSwizzlingM);
-//    });
-}
-
-- (void)dy_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion {
-    if ([viewControllerToPresent isKindOfClass:[UIAlertController class]]) {
-        NSLog(@"title : %@",((UIAlertController *)viewControllerToPresent).title);
-        NSLog(@"message : %@",((UIAlertController *)viewControllerToPresent).message);
-        
-        UIAlertController *alertController = (UIAlertController *)viewControllerToPresent;
-        if (alertController.title == nil && alertController.message == nil) {
-            return;
-        } else {
-            [self dy_presentViewController:viewControllerToPresent animated:flag completion:completion];
-            return;
-        }
-    }
-    
-    [self dy_presentViewController:viewControllerToPresent animated:flag completion:completion];
-}
-
 - (void)changeIcon {
     NSString *weather = self.weathers[0];
     [self setAppIconWithName:weather];
@@ -83,6 +56,34 @@
             MGLog(@"更换app图标发生错误了 ： %@",error);
         }
     }];
+}
+
+#pragma mark - 这个代码可以不弹框就实现App图标的更换。。。默认更换都会弹框
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Method presentM = class_getInstanceMethod(self.class, @selector(presentViewController:animated:completion:));
+        Method presentSwizzlingM = class_getInstanceMethod(self.class, @selector(mg_presentViewController:animated:completion:));
+        // 交换方法实现
+        method_exchangeImplementations(presentM, presentSwizzlingM);
+    });
+}
+
+- (void)mg_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion {
+    if ([viewControllerToPresent isKindOfClass:[UIAlertController class]]) {
+        NSLog(@"title : %@",((UIAlertController *)viewControllerToPresent).title);
+        NSLog(@"message : %@",((UIAlertController *)viewControllerToPresent).message);
+        
+        UIAlertController *alertController = (UIAlertController *)viewControllerToPresent;
+        if (alertController.title == nil && alertController.message == nil) {
+            return;
+        } else {
+            [self mg_presentViewController:viewControllerToPresent animated:flag completion:completion];
+            return;
+        }
+    }
+    
+    [self mg_presentViewController:viewControllerToPresent animated:flag completion:completion];
 }
 
 - (void)didReceiveMemoryWarning {
