@@ -38,12 +38,25 @@
     
     [self setCorrectBtn];
     
-    MQGradientProgressView *progressView = [[MQGradientProgressView alloc] initWithFrame:CGRectMake(0, 64, 300, 10)];
+    UISlider *slide = [[UISlider alloc] initWithFrame:CGRectMake(0, 100, 300, 10)];
+    slide.centerX = self.view.centerX;
+    slide.value = 0.75;
+    slide.continuous = YES;
+    [slide addTarget:self action:@selector(changeProgress:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:slide];
+    
+    MQGradientProgressView *progressView = [[MQGradientProgressView alloc] initWithFrame:CGRectMake(0, 70, 300, 10)];
     progressView.centerX = self.view.centerX;
     //    progressView.colorArr = @[(id)MQRGBColor(59, 221, 255).CGColor,(id)MQRGBColor(34, 126, 239).CGColor];
     progressView.colorArr = @[(id)[UIColor greenColor]];
-    progressView.progress = 0.75;
+    progressView.progress = slide.value;
+    progressView.tag = 100001;
     [self.view addSubview:progressView];
+}
+
+- (void)changeProgress:(UISlider *)slide {
+    MQGradientProgressView *progressView = [self.view viewWithTag:100001];
+    progressView.progress = slide.value;
 }
 
 - (void)mapClick {
@@ -74,6 +87,7 @@
     // 按下时
     [btn addTarget:self action:@selector(pressEvent:) forControlEvents:UIControlEventTouchDown];
 }
+
 // 监听按钮点击操作
 - (void)startDrawLine:(UIButton *)btn{
     [UIView animateWithDuration:0.5 animations:^{
@@ -147,6 +161,17 @@
         [self.player play];
         NSLog(@"摇到 xxx");
     }
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSDictionary *infoPlist = [[NSBundle mainBundle] infoDictionary];
+    NSArray *array = [infoPlist valueForKeyPath:@"CFBundleIcons.CFBundlePrimaryIcon.CFBundleIconFiles"];
+    NSString *icon = [array lastObject];
+    NSLog(@"%@", array);
+    NSLog(@"%@", icon);
+//    NSArray *arr = @[@"icon_qq"];
+//    [infoPlist setValue:arr forKeyPath:@"CFBundleIcons.CFBundlePrimaryIcon.CFBundleIconFiles"];
+    
 }
 
 @end

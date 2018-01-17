@@ -13,6 +13,7 @@
 #import "MGBodyModel.h"
 #import "MGHeaderReusableView.h"
 #import "MGHeadPushViewController.h"
+#import "MGTranstionViewController.h"
 
 
 @interface MGHeaderCollectionVC ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
@@ -126,8 +127,14 @@ static NSString * const KHeaderReusableViewIdentifier = @"KHeaderReusableViewIde
     self.navigationController.navigationBar.translucent = NO;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"翻转" style:UIBarButtonItemStylePlain target:self action:@selector(transition)];
 }
 
+- (void)transition {
+    [self showViewController:[MGTranstionViewController new] sender:nil];
+}
+    
 /* 设置collectionView */
 - (void)setUpCollectionView
 {
@@ -196,7 +203,7 @@ static NSString * const KHeaderReusableViewIdentifier = @"KHeaderReusableViewIde
 //点击collectionView的item的时候调用
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    MGLogFunc;
+//    MGLogFunc;
 }
 
 #pragma mark - 头部或者尾部视图

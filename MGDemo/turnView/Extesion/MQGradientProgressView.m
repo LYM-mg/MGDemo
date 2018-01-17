@@ -19,7 +19,6 @@
 
 #pragma mark -
 #pragma mark - GET ---> view
-
 - (CALayer *)bgLayer {
     if (!_bgLayer) {
         _bgLayer = [CALayer layer];

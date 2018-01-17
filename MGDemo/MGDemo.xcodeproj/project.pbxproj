@@ -174,7 +174,17 @@
 		C0D981291F273BDD0070382C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C0D9811D1F273BDD0070382C /* README.md */; };
 		C0D9812F1F273D600070382C /* MGWanWanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D9812E1F273D600070382C /* MGWanWanViewController.m */; };
 		F4078B24200C7DB50049DD5F /* MGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4078B23200C7DB50049DD5F /* MGMapViewController.m */; };
+		F40F0FA5200F2A9500CE1CD0 /* 晴20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F0F9D200F2A9300CE1CD0 /* 晴20x20@2x.png */; };
+		F40F0FA6200F2A9500CE1CD0 /* 晴29x29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F0F9E200F2A9300CE1CD0 /* 晴29x29@3x.png */; };
+		F40F0FA7200F2A9500CE1CD0 /* 晴60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F0F9F200F2A9300CE1CD0 /* 晴60x60@3x.png */; };
+		F40F0FA8200F2A9500CE1CD0 /* 晴20x20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F0FA0200F2A9400CE1CD0 /* 晴20x20@3x.png */; };
+		F40F0FA9200F2A9500CE1CD0 /* 晴29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F0FA1200F2A9400CE1CD0 /* 晴29x29@2x.png */; };
+		F40F0FAA200F2A9500CE1CD0 /* 晴40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F0FA2200F2A9400CE1CD0 /* 晴40x40@2x.png */; };
+		F40F0FAB200F2A9500CE1CD0 /* 晴60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F0FA3200F2A9400CE1CD0 /* 晴60x60@2x.png */; };
+		F40F0FAC200F2A9500CE1CD0 /* 晴40x40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F0FA4200F2A9500CE1CD0 /* 晴40x40@3x.png */; };
+		F40F0FAF200F32E500CE1CD0 /* MGAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40F0FAE200F32E500CE1CD0 /* MGAlertController.m */; };
 		F411AC59200DF29D009B73AC /* MQGradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F411AC58200DF29C009B73AC /* MQGradientProgressView.m */; };
+		F411AC5C200DFA57009B73AC /* MGTranstionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F411AC5B200DFA57009B73AC /* MGTranstionViewController.m */; };
 		F426CFD220089D3E00DE032D /* LLGifImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFCF20089D3E00DE032D /* LLGifImageView.m */; };
 		F426CFD320089D3E00DE032D /* LLGifView.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFD120089D3E00DE032D /* LLGifView.m */; };
 		F426CFD620089DEF00DE032D /* MGGIFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFD520089DEF00DE032D /* MGGIFViewController.m */; };
@@ -185,6 +195,10 @@
 		F426CFE62008B11C00DE032D /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFE52008B11C00DE032D /* UIViewController+Utils.m */; };
 		F426CFE92008B14E00DE032D /* UINavigationBar+ChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFE72008B14D00DE032D /* UINavigationBar+ChangeColor.m */; };
 		F426CFEB2008B56A00DE032D /* example.gif in Resources */ = {isa = PBXBuildFile; fileRef = F426CFEA2008B56A00DE032D /* example.gif */; };
+		F44D0B67200F200100AB7C63 /* debugRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B63200F200000AB7C63 /* debugRibbon.png */; };
+		F44D0B68200F200100AB7C63 /* betaRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B64200F200000AB7C63 /* betaRibbon.png */; };
+		F44D0B69200F200100AB7C63 /* resizedBetaRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B65200F200000AB7C63 /* resizedBetaRibbon.png */; };
+		F44D0B6A200F200100AB7C63 /* resizedRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B66200F200000AB7C63 /* resizedRibbon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -508,8 +522,20 @@
 		C0D9812E1F273D600070382C /* MGWanWanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWanWanViewController.m; sourceTree = "<group>"; };
 		F4078B22200C7DB50049DD5F /* MGMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGMapViewController.h; sourceTree = "<group>"; };
 		F4078B23200C7DB50049DD5F /* MGMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGMapViewController.m; sourceTree = "<group>"; };
+		F40F0F9D200F2A9300CE1CD0 /* 晴20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "晴20x20@2x.png"; sourceTree = "<group>"; };
+		F40F0F9E200F2A9300CE1CD0 /* 晴29x29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "晴29x29@3x.png"; sourceTree = "<group>"; };
+		F40F0F9F200F2A9300CE1CD0 /* 晴60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "晴60x60@3x.png"; sourceTree = "<group>"; };
+		F40F0FA0200F2A9400CE1CD0 /* 晴20x20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "晴20x20@3x.png"; sourceTree = "<group>"; };
+		F40F0FA1200F2A9400CE1CD0 /* 晴29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "晴29x29@2x.png"; sourceTree = "<group>"; };
+		F40F0FA2200F2A9400CE1CD0 /* 晴40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "晴40x40@2x.png"; sourceTree = "<group>"; };
+		F40F0FA3200F2A9400CE1CD0 /* 晴60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "晴60x60@2x.png"; sourceTree = "<group>"; };
+		F40F0FA4200F2A9500CE1CD0 /* 晴40x40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "晴40x40@3x.png"; sourceTree = "<group>"; };
+		F40F0FAD200F32E500CE1CD0 /* MGAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGAlertController.h; sourceTree = "<group>"; };
+		F40F0FAE200F32E500CE1CD0 /* MGAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGAlertController.m; sourceTree = "<group>"; };
 		F411AC57200DF29C009B73AC /* MQGradientProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQGradientProgressView.h; sourceTree = "<group>"; };
 		F411AC58200DF29C009B73AC /* MQGradientProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQGradientProgressView.m; sourceTree = "<group>"; };
+		F411AC5A200DFA57009B73AC /* MGTranstionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGTranstionViewController.h; sourceTree = "<group>"; };
+		F411AC5B200DFA57009B73AC /* MGTranstionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGTranstionViewController.m; sourceTree = "<group>"; };
 		F426CFCE20089D3E00DE032D /* LLGifImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLGifImageView.h; sourceTree = "<group>"; };
 		F426CFCF20089D3E00DE032D /* LLGifImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLGifImageView.m; sourceTree = "<group>"; };
 		F426CFD020089D3E00DE032D /* LLGifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLGifView.h; sourceTree = "<group>"; };
@@ -528,6 +554,10 @@
 		F426CFE72008B14D00DE032D /* UINavigationBar+ChangeColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+ChangeColor.m"; sourceTree = "<group>"; };
 		F426CFE82008B14E00DE032D /* UINavigationBar+ChangeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+ChangeColor.h"; sourceTree = "<group>"; };
 		F426CFEA2008B56A00DE032D /* example.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = example.gif; sourceTree = "<group>"; };
+		F44D0B63200F200000AB7C63 /* debugRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debugRibbon.png; sourceTree = "<group>"; };
+		F44D0B64200F200000AB7C63 /* betaRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = betaRibbon.png; sourceTree = "<group>"; };
+		F44D0B65200F200000AB7C63 /* resizedBetaRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resizedBetaRibbon.png; sourceTree = "<group>"; };
+		F44D0B66200F200000AB7C63 /* resizedRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resizedRibbon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -852,6 +882,10 @@
 				3A427A061D300EB0008880EE /* MGHeaderCollectionVC.m */,
 				3A427A2A1D30250E008880EE /* MGHeadPushViewController.h */,
 				3A427A2B1D30250E008880EE /* MGHeadPushViewController.m */,
+				F411AC5A200DFA57009B73AC /* MGTranstionViewController.h */,
+				F411AC5B200DFA57009B73AC /* MGTranstionViewController.m */,
+				F40F0FAD200F32E500CE1CD0 /* MGAlertController.h */,
+				F40F0FAE200F32E500CE1CD0 /* MGAlertController.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1109,6 +1143,10 @@
 				3AE9E45C1CF92D03000DCB72 /* MGDemo.xcdatamodeld */,
 				F426CFD92008A53D00DE032D /* plane.gif */,
 				F426CFEA2008B56A00DE032D /* example.gif */,
+				F44D0B64200F200000AB7C63 /* betaRibbon.png */,
+				F44D0B63200F200000AB7C63 /* debugRibbon.png */,
+				F44D0B65200F200000AB7C63 /* resizedBetaRibbon.png */,
+				F44D0B66200F200000AB7C63 /* resizedRibbon.png */,
 				3AE9E4501CF92D03000DCB72 /* Supporting Files */,
 			);
 			name = MGDemo;
@@ -1118,6 +1156,14 @@
 		3AE9E4501CF92D03000DCB72 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F40F0F9D200F2A9300CE1CD0 /* 晴20x20@2x.png */,
+				F40F0FA0200F2A9400CE1CD0 /* 晴20x20@3x.png */,
+				F40F0FA1200F2A9400CE1CD0 /* 晴29x29@2x.png */,
+				F40F0F9E200F2A9300CE1CD0 /* 晴29x29@3x.png */,
+				F40F0FA2200F2A9400CE1CD0 /* 晴40x40@2x.png */,
+				F40F0FA4200F2A9500CE1CD0 /* 晴40x40@3x.png */,
+				F40F0FA3200F2A9400CE1CD0 /* 晴60x60@2x.png */,
+				F40F0F9F200F2A9300CE1CD0 /* 晴60x60@3x.png */,
 				3A8595A31D30F8F300D7720C /* data */,
 				3A427A341D30350E008880EE /* food.imageset */,
 				3AA3371C1D199C0600DAAF32 /* MGDemo.pch */,
@@ -1322,6 +1368,7 @@
 				3AE9E4491CF92D03000DCB72 /* Sources */,
 				3AE9E44A1CF92D03000DCB72 /* Frameworks */,
 				3AE9E44B1CF92D03000DCB72 /* Resources */,
+				F44D0B62200F013D00AB7C63 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1381,28 +1428,56 @@
 				3A427A0F1D3015C5008880EE /* MGBodyCell.xib in Resources */,
 				3A427A1D1D301BDF008880EE /* MGHeaderReusableView.xib in Resources */,
 				3AA3DA9C1D0FDB18008B96E2 /* SVProgressHUD.bundle in Resources */,
+				F40F0FAC200F2A9500CE1CD0 /* 晴40x40@3x.png in Resources */,
 				C0D9811E1F273BDD0070382C /* LICENSE in Resources */,
+				F40F0FAB200F2A9500CE1CD0 /* 晴60x60@2x.png in Resources */,
 				3A427A381D30350E008880EE /* food.png in Resources */,
 				3A8501941D2E31A600E2CE67 /* TableViewHead.xib in Resources */,
 				3AE9E4601CF92D03000DCB72 /* Assets.xcassets in Resources */,
+				F44D0B67200F200100AB7C63 /* debugRibbon.png in Resources */,
 				3A5096161D2F6E7500580D2B /* CustomTransitionViewController.xib in Resources */,
 				3A8595B41D30F8F300D7720C /* cars_total.plist in Resources */,
+				F40F0FA9200F2A9500CE1CD0 /* 晴29x29@2x.png in Resources */,
 				3A8595B71D30F8F300D7720C /* gril@2x.png in Resources */,
 				3A8595BB1D30F8F300D7720C /* up1.png in Resources */,
 				3A8595B91D30F8F300D7720C /* lose.aac in Resources */,
 				3A8595BA1D30F8F300D7720C /* normal.aac in Resources */,
+				F44D0B69200F200100AB7C63 /* resizedBetaRibbon.png in Resources */,
 				3A427A371D30350E008880EE /* Contents.json in Resources */,
+				F44D0B68200F200100AB7C63 /* betaRibbon.png in Resources */,
 				3A8595B61D30F8F300D7720C /* expend.png in Resources */,
+				F40F0FA8200F2A9500CE1CD0 /* 晴20x20@3x.png in Resources */,
 				3A29D0EE1D1A426E004F1FDD /* MJRefresh.bundle in Resources */,
+				F40F0FA6200F2A9500CE1CD0 /* 晴29x29@3x.png in Resources */,
 				F426CFDA2008A53D00DE032D /* plane.gif in Resources */,
+				F40F0FA7200F2A9500CE1CD0 /* 晴60x60@3x.png in Resources */,
+				F40F0FA5200F2A9500CE1CD0 /* 晴20x20@2x.png in Resources */,
 				3A8595B21D30F8F300D7720C /* butterfly@2x.png in Resources */,
 				F426CFEB2008B56A00DE032D /* example.gif in Resources */,
+				F40F0FAA200F2A9500CE1CD0 /* 晴40x40@2x.png in Resources */,
 				3AE9E45B1CF92D03000DCB72 /* Main.storyboard in Resources */,
 				3A8501711D2E308E00E2CE67 /* MGShopCell.xib in Resources */,
+				F44D0B6A200F200100AB7C63 /* resizedRibbon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F44D0B62200F013D00AB7C63 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "IFS=$'\\n'\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nPATH=${PATH}:/usr/local/bin\n\nfunction generateIcon () {\n    BASE_IMAGE_NAME=$1\n    \n    TARGET_PATH=\"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/${BASE_IMAGE_NAME}\"\n    echo $TARGET_PATH\n    echo $SRCROOT\n    echo $(find ${SRCROOT} -name \"AppIcon60x60.png\")\n    BASE_IMAGE_PATH=$(find ${SRCROOT} -name ${BASE_IMAGE_NAME})\n    WIDTH=$(identify -format %w ${BASE_IMAGE_PATH})\n    FONT_SIZE=$(echo \"$WIDTH * .15\" | bc -l)\n    echo \"font size $FONT_SIZE\"\n    \n    if [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n    convert debugRibbon.png -resize ${WIDTH}x${WIDTH} resizedRibbon.png\n    convert ${BASE_IMAGE_PATH} -fill white -font Times-Bold -pointsize ${FONT_SIZE} -gravity south -annotate 0 \"$buildNumber\" - | composite resizedRibbon.png - ${TARGET_PATH}\n    fi\n    \n    if [ \"${CONFIGURATION}\" == \"Beta\" ]; then\n    convert betaRibbon.png -resize ${WIDTH}x${WIDTH} resizedRibbon.png\n    convert ${BASE_IMAGE_PATH} -fill white -font Times-Boldr -pointsize ${FONT_SIZE} -gravity south -annotate 0 \"$buildNumber\" - | composite resizedRibbon.png - ${TARGET_PATH}\n    fi\n}\n\ngenerateIcon \"AppIcon60x60.png\"\n#generateIcon \"AppIcon60x60.png\"\n#generateIcon \"AppIcon76x76~ipad.png\"\n#generateIcon \"AppIcon76x76@2x~ipad.png\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3AE9E4491CF92D03000DCB72 /* Sources */ = {
@@ -1420,6 +1495,7 @@
 				C0B8CF831F46BCB600DBD937 /* UIViewController+HUD.m in Sources */,
 				3A29D0E51D1A426E004F1FDD /* MJRefreshAutoGifFooter.m in Sources */,
 				3A29D0EA1D1A426E004F1FDD /* MJRefreshBackStateFooter.m in Sources */,
+				F411AC5C200DFA57009B73AC /* MGTranstionViewController.m in Sources */,
 				3A4279FD1D2FF709008880EE /* PMBallLayer.m in Sources */,
 				3A8501971D2E362500E2CE67 /* MGPolygonVC.m in Sources */,
 				3A29D0F21D1A426E004F1FDD /* UIView+MJExtension.m in Sources */,
@@ -1555,6 +1631,7 @@
 				C036A3041F2C605000EE45DE /* MGRunTimeVC.m in Sources */,
 				F426CFD620089DEF00DE032D /* MGGIFViewController.m in Sources */,
 				3A29D0FD1D1A426E004F1FDD /* UIImage+GIF.m in Sources */,
+				F40F0FAF200F32E500CE1CD0 /* MGAlertController.m in Sources */,
 				3A85018F1D2E31A600E2CE67 /* MGCellModel.m in Sources */,
 				3A5096291D2F703A00580D2B /* UIViewController+Animator.m in Sources */,
 				3A29D0EC1D1A426E004F1FDD /* MJRefreshNormalHeader.m in Sources */,
@@ -1613,7 +1690,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1650,7 +1727,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1691,6 +1768,60 @@
 			};
 			name = Release;
 		};
+		F44D0B60200EF93700AB7C63 /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Beta;
+		};
+		F44D0B61200EF93700AB7C63 /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = H54L47S422;
+				GCC_PREFIX_HEADER = turnView/MGDemo.pch;
+				INFOPLIST_FILE = turnView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView1;
+				PRODUCT_NAME = MGDemo;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Beta;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1699,6 +1830,7 @@
 			buildConfigurations = (
 				3AE9E4651CF92D03000DCB72 /* Debug */,
 				3AE9E4661CF92D03000DCB72 /* Release */,
+				F44D0B60200EF93700AB7C63 /* Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1708,6 +1840,7 @@
 			buildConfigurations = (
 				3AE9E4681CF92D03000DCB72 /* Debug */,
 				3AE9E4691CF92D03000DCB72 /* Release */,
+				F44D0B61200EF93700AB7C63 /* Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

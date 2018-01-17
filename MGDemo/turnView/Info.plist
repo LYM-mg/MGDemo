@@ -70,5 +70,34 @@
 		<string>iosamap</string>
 		<string>baidumap</string>
 	</array>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>晴</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>晴20x20</string>
+					<string>晴29x29</string>
+					<string>晴40x40</string>
+					<string>晴60x60</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+		</dict>
+		<key>UINewsstandIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string></string>
+			</array>
+			<key>UINewsstandBindingEdge</key>
+			<string>UINewsstandBindingEdgeLeft</string>
+			<key>UINewsstandBindingType</key>
+			<string>UINewsstandBindingTypeMagazine</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

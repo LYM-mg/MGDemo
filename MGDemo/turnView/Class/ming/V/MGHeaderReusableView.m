@@ -28,7 +28,6 @@
 
 - (void)awakeFromNib {
 
-
 }
 
 /** 赋值 */
@@ -46,7 +45,7 @@
 /** 点击头部视图的跳转 */
 - (IBAction)clickHeader:(UIButton *)sender {
     
-    MGLogFunc;
+//    MGLogFunc;
 }
 
 @end
