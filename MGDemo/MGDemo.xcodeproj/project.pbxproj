@@ -174,6 +174,7 @@
 		C0D981291F273BDD0070382C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C0D9811D1F273BDD0070382C /* README.md */; };
 		C0D9812F1F273D600070382C /* MGWanWanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D9812E1F273D600070382C /* MGWanWanViewController.m */; };
 		F4078B24200C7DB50049DD5F /* MGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4078B23200C7DB50049DD5F /* MGMapViewController.m */; };
+		F40939AE201592EC00107E85 /* MGButton+Delay.m in Sources */ = {isa = PBXBuildFile; fileRef = F40939AD201592EC00107E85 /* MGButton+Delay.m */; };
 		F40F0FA5200F2A9500CE1CD0 /* 晴20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F0F9D200F2A9300CE1CD0 /* 晴20x20@2x.png */; };
 		F40F0FA6200F2A9500CE1CD0 /* 晴29x29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F0F9E200F2A9300CE1CD0 /* 晴29x29@3x.png */; };
 		F40F0FA7200F2A9500CE1CD0 /* 晴60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F0F9F200F2A9300CE1CD0 /* 晴60x60@3x.png */; };
@@ -522,6 +523,8 @@
 		C0D9812E1F273D600070382C /* MGWanWanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWanWanViewController.m; sourceTree = "<group>"; };
 		F4078B22200C7DB50049DD5F /* MGMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGMapViewController.h; sourceTree = "<group>"; };
 		F4078B23200C7DB50049DD5F /* MGMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGMapViewController.m; sourceTree = "<group>"; };
+		F40939AC201592EC00107E85 /* MGButton+Delay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MGButton+Delay.h"; sourceTree = "<group>"; };
+		F40939AD201592EC00107E85 /* MGButton+Delay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MGButton+Delay.m"; sourceTree = "<group>"; };
 		F40F0F9D200F2A9300CE1CD0 /* 晴20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "晴20x20@2x.png"; sourceTree = "<group>"; };
 		F40F0F9E200F2A9300CE1CD0 /* 晴29x29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "晴29x29@3x.png"; sourceTree = "<group>"; };
 		F40F0F9F200F2A9300CE1CD0 /* 晴60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "晴60x60@3x.png"; sourceTree = "<group>"; };
@@ -1204,6 +1207,8 @@
 				C0B8CF581F46BCB600DBD937 /* UIBarButtonItem+Extension.m */,
 				C0B8CF591F46BCB600DBD937 /* UIButton+Extension.h */,
 				C0B8CF5A1F46BCB600DBD937 /* UIButton+Extension.m */,
+				F40939AC201592EC00107E85 /* MGButton+Delay.h */,
+				F40939AD201592EC00107E85 /* MGButton+Delay.m */,
 				C0B8CF5B1F46BCB600DBD937 /* UIColor+Extension.h */,
 				C0B8CF5C1F46BCB600DBD937 /* UIColor+Extension.m */,
 				C0B8CF5D1F46BCB600DBD937 /* UIDevice+Extension.h */,
@@ -1569,6 +1574,7 @@
 				3A29D0F91D1A426E004F1FDD /* SDWebImageDownloaderOperation.m in Sources */,
 				C05B45CB1F79E856003B77D3 /* MGHViewController.m in Sources */,
 				3A29D0E91D1A426E004F1FDD /* MJRefreshBackNormalFooter.m in Sources */,
+				F40939AE201592EC00107E85 /* MGButton+Delay.m in Sources */,
 				3A29D0E11D1A426E004F1FDD /* MJRefreshBackFooter.m in Sources */,
 				3A427A0D1D301567008880EE /* MGHeaderFlowLayout.m in Sources */,
 				3AE9E45E1CF92D03000DCB72 /* MGDemo.xcdatamodeld in Sources */,

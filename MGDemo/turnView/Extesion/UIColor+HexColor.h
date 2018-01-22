@@ -10,9 +10,6 @@
 
 @interface UIColor (HexColor)
 
-//随机颜色
-+ (UIColor *)randomColor;
-
 //16进制自动转换RGB颜色
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert;
 

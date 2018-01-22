@@ -63,7 +63,7 @@ void enumerateFonts() {
     Method swizzledMethod = class_getInstanceMethod(cls, swizzledSel);
     
     // 首先动态添加方法。如果类中不存在这个方法的实现，添加成功
-    BOOL isAdded = class_addMethod(cls, originalSel, method_getImplementation(originalMethod), method_getTypeEncoding(swizzledMethod));
+    BOOL isAdded = class_addMethod(cls, originalSel, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
     // 因为控制器已经包含了originalSel的实现，所以不会被添加成功
     if (isAdded) {
         //如果类没有originalSel这个方法的实现，那么添加成功，将被交换方法的实现替换到这个并不存在的实现

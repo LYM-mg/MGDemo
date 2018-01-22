@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (Extension)
+//随机颜色
++ (UIColor *)randomColor;
+
 /** 16禁止转RGB */
 + (UIColor *)colorWithHexString:(NSString *)colorStr;
 @end

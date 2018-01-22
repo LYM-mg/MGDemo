@@ -49,4 +49,27 @@
 #define MGLogLog(...)
 #endif
 
+/** 减少一下图片的缓存  */
+#pragma mark - UIImage
+CG_INLINE UIImage* UIImageContentsOfFileMake(NSString *name,NSBundle *bundle) {
+    CGFloat ScreenScale = [UIScreen mainScreen].scale;
+    NSString *imageName;
+    int scale = (int)ScreenScale;
+    if (scale == 2)  {
+        imageName = [NSString stringWithFormat:@"%@@1x",name];
+    }else if (scale == 2) {
+        imageName = [NSString stringWithFormat:@"%@@2x",name];
+    }else{
+        imageName = [NSString stringWithFormat:@"%@@3x",name];
+    }
+    NSString *path = [bundle pathForResource:imageName ofType:@"png"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    UIImage *image = [UIImage imageWithData:data scale:ScreenScale];
+    return image;
+}
+
+CG_INLINE UIImage* UIImageMainbundleMake(NSString *name) {
+    return UIImageContentsOfFileMake(name, [NSBundle mainBundle]);
+}
+
 #endif /* MGDemo_pch */

@@ -108,7 +108,7 @@
     
     MGAlertController *alertVc = [MGAlertController new];
     [alertVc setValue: @(UIAlertControllerStyleActionSheet) forKeyPath:@"preferredStyle"];
-    alertVc.title = @"dsa";
+    alertVc.title = @"";
     [self presentViewController:alertVc animated:true completion:nil];
 }
 

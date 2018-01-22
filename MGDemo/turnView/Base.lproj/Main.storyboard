@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xbw-Cg-ynU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xbw-Cg-ynU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,7 +64,7 @@
                 <navigationController id="PMx-0B-Sdg" customClass="MGNavVC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="search" image="gril.png" id="Mr1-pC-CA0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iGm-Kv-dLI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -81,7 +81,7 @@
                 <navigationController id="XnE-KH-EnX" userLabel="折线图Navigation" customClass="MGNavVC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" selectedImage="info.png" systemItem="featured" id="DKe-pK-en5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eLe-rP-5GG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -138,7 +138,7 @@
                 <navigationController id="guD-Mp-7hr" customClass="MGNavVC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="明哥" image="butterfly.png" id="u9w-AL-Siq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sES-BW-vPT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -255,7 +255,7 @@
                 <navigationController id="69Y-8l-nlu" userLabel="转场动画Navigation" customClass="MGNavVC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" selectedImage="info.png" systemItem="mostViewed" id="RAX-1a-mLg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7oI-RL-0LK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -291,7 +291,7 @@
                 <navigationController id="dIl-Lq-2WX" userLabel="转场动画Navigation" customClass="MGNavVC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="mostRecent" id="QWp-t3-Noh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pzc-x6-ENL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -348,6 +348,19 @@
                                     <action selector="change:" destination="4ud-8K-Nqg" eventType="editingChanged" id="ZDI-CV-y8k"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GO1-hH-ymD" customClass="MGButton_Delay">
+                                <rect key="frame" x="134" y="378" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="测试延迟点击"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="timeInterval">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ceshiDelay:" destination="4ud-8K-Nqg" eventType="touchUpInside" id="sN1-Tk-Hi8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

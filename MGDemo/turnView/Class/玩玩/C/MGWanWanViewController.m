@@ -11,6 +11,7 @@
 #import "MGRunTimeVC.h"
 #import "AppDelegate.h"
 #import "MGScrollViewLabel.h"
+#import "MGButton+Delay.h"
 
 @interface MGWanWanViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *shakeBtn;
@@ -71,6 +72,9 @@
 //    UIView *captureView = [_shakeBtn snapshotViewAfterScreenUpdates:false];
 //    [self.view addSubview:captureView];
 //    captureView.frame = CGRectMake(120,150,200,200);
+}
+- (IBAction)ceshiDelay:(MGButton_Delay *)sender {
+    NSLog(@"我很快就去点击了，看我响应了几次");
 }
 - (IBAction)start:(id)sender {
     [UIDevice setOrientationLandscapeRight];

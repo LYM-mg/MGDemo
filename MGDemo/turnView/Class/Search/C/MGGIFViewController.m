@@ -25,6 +25,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self setUpSubView];
+    [self navgation];
 }
 
 - (void)setUpSubView {
@@ -137,5 +138,48 @@
     }
 }
 
+- (void)navgation {
+    [UIImage imageWithContentsOfFile:@"lol"];
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"减小内存" style:UIBarButtonItemStylePlain target:self action:@selector(lessClick)];
+    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"系统加载1" style:UIBarButtonItemStylePlain target:self action:@selector(system1Click)];
+    UIBarButtonItem *item3 = [[UIBarButtonItem alloc] initWithTitle:@"系统加载2" style:UIBarButtonItemStylePlain target:self action:@selector(system2Click)];
+    self.navigationItem.rightBarButtonItems = @[item1,item2,item3];
+}
+
+// 导航栏右边1的点击
+- (void)lessClick{
+    for (int i = 0; i< 100; i++) {
+        UIImage *image = UIImageMainbundleMake(@"晴60x60");
+        UIImageView *imageV = [[UIImageView alloc] initWithImage: image];
+        imageV.center = self.view.center;
+        [self.view addSubview:imageV];
+    }
+}
+
+// 导航栏右边2的点击
+- (void)system1Click{
+    for (int i = 0; i< 100; i++) {
+        UIImage *image = [UIImage imageNamed:@"lol"];
+       
+        UIImageView *imageV = [[UIImageView alloc] initWithImage: image];
+        imageV.center = self.view.center;
+
+        [self.view addSubview:imageV];
+    }
+}
+
+// 导航栏右边3的点击
+- (void)system2Click{
+    for (int i = 0; i< 100; i++) {
+        
+        UIImage *image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"晴60x60" ofType:@"png"]];
+        UIImageView *imageV = [[UIImageView alloc] initWithImage: image];
+        imageV.center = self.view.center;
+        [self.view addSubview:imageV];
+    }
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+   
+}
 
 @end
