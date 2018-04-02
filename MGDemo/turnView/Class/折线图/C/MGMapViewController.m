@@ -8,6 +8,7 @@
 
 #import "MGMapViewController.h"
 #import <MapKit/MapKit.h>
+#import "XJLTaskViewController.h"
 
 @interface MGMapViewController ()
 @property (strong,nonatomic) NSMutableArray *mapArr;
@@ -27,8 +28,16 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"笨蛋写的代码" style:UIBarButtonItemStylePlain target:self action:@selector(rightClick)];
+    
     CLLocationCoordinate2D coordination = CLLocationCoordinate2DMake(31, 122);
     self.mapArr = [self getInstalledMapAppWithEndLocation:coordination];
+}
+
+- (void)rightClick {
+    XJLTaskViewController *vc = [[XJLTaskViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    vc.isLiveTask = YES;
+    [self showViewController:vc  sender:nil];
 }
 
 - (void)didReceiveMemoryWarning {

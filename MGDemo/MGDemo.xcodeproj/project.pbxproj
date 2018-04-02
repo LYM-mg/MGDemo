@@ -196,6 +196,13 @@
 		F426CFE62008B11C00DE032D /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFE52008B11C00DE032D /* UIViewController+Utils.m */; };
 		F426CFE92008B14E00DE032D /* UINavigationBar+ChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFE72008B14D00DE032D /* UINavigationBar+ChangeColor.m */; };
 		F426CFEB2008B56A00DE032D /* example.gif in Resources */ = {isa = PBXBuildFile; fileRef = F426CFEA2008B56A00DE032D /* example.gif */; };
+		F43F1A242016E26200A4B17E /* XJLLiveTaskHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A172016E26200A4B17E /* XJLLiveTaskHeaderView.m */; };
+		F43F1A252016E26200A4B17E /* XJLTaskButten.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A192016E26200A4B17E /* XJLTaskButten.m */; };
+		F43F1A262016E26200A4B17E /* XJLTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A1B2016E26200A4B17E /* XJLTaskCell.m */; };
+		F43F1A272016E26200A4B17E /* XJLTaskHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A1D2016E26200A4B17E /* XJLTaskHeaderView.m */; };
+		F43F1A282016E26200A4B17E /* XJLTaskLittleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A1F2016E26200A4B17E /* XJLTaskLittleView.m */; };
+		F43F1A292016E26200A4B17E /* XJLTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A212016E26200A4B17E /* XJLTaskViewController.m */; };
+		F43F1A2A2016E26200A4B17E /* XJLWatchLiveTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A232016E26200A4B17E /* XJLWatchLiveTaskCell.m */; };
 		F44D0B67200F200100AB7C63 /* debugRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B63200F200000AB7C63 /* debugRibbon.png */; };
 		F44D0B68200F200100AB7C63 /* betaRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B64200F200000AB7C63 /* betaRibbon.png */; };
 		F44D0B69200F200100AB7C63 /* resizedBetaRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B65200F200000AB7C63 /* resizedBetaRibbon.png */; };
@@ -557,6 +564,20 @@
 		F426CFE72008B14D00DE032D /* UINavigationBar+ChangeColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+ChangeColor.m"; sourceTree = "<group>"; };
 		F426CFE82008B14E00DE032D /* UINavigationBar+ChangeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+ChangeColor.h"; sourceTree = "<group>"; };
 		F426CFEA2008B56A00DE032D /* example.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = example.gif; sourceTree = "<group>"; };
+		F43F1A162016E26200A4B17E /* XJLLiveTaskHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJLLiveTaskHeaderView.h; sourceTree = "<group>"; };
+		F43F1A172016E26200A4B17E /* XJLLiveTaskHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJLLiveTaskHeaderView.m; sourceTree = "<group>"; };
+		F43F1A182016E26200A4B17E /* XJLTaskButten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJLTaskButten.h; sourceTree = "<group>"; };
+		F43F1A192016E26200A4B17E /* XJLTaskButten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJLTaskButten.m; sourceTree = "<group>"; };
+		F43F1A1A2016E26200A4B17E /* XJLTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJLTaskCell.h; sourceTree = "<group>"; };
+		F43F1A1B2016E26200A4B17E /* XJLTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJLTaskCell.m; sourceTree = "<group>"; };
+		F43F1A1C2016E26200A4B17E /* XJLTaskHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJLTaskHeaderView.h; sourceTree = "<group>"; };
+		F43F1A1D2016E26200A4B17E /* XJLTaskHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJLTaskHeaderView.m; sourceTree = "<group>"; };
+		F43F1A1E2016E26200A4B17E /* XJLTaskLittleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJLTaskLittleView.h; sourceTree = "<group>"; };
+		F43F1A1F2016E26200A4B17E /* XJLTaskLittleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJLTaskLittleView.m; sourceTree = "<group>"; };
+		F43F1A202016E26200A4B17E /* XJLTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJLTaskViewController.h; sourceTree = "<group>"; };
+		F43F1A212016E26200A4B17E /* XJLTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJLTaskViewController.m; sourceTree = "<group>"; };
+		F43F1A222016E26200A4B17E /* XJLWatchLiveTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJLWatchLiveTaskCell.h; sourceTree = "<group>"; };
+		F43F1A232016E26200A4B17E /* XJLWatchLiveTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJLWatchLiveTaskCell.m; sourceTree = "<group>"; };
 		F44D0B63200F200000AB7C63 /* debugRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debugRibbon.png; sourceTree = "<group>"; };
 		F44D0B64200F200000AB7C63 /* betaRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = betaRibbon.png; sourceTree = "<group>"; };
 		F44D0B65200F200000AB7C63 /* resizedBetaRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resizedBetaRibbon.png; sourceTree = "<group>"; };
@@ -979,6 +1000,7 @@
 				3AF551D81D2FCC3800333D2E /* MGShakeVC.m */,
 				F4078B22200C7DB50049DD5F /* MGMapViewController.h */,
 				F4078B23200C7DB50049DD5F /* MGMapViewController.m */,
+				F43F1A152016E26200A4B17E /* TaskView */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1363,6 +1385,27 @@
 			path = LLGifView;
 			sourceTree = "<group>";
 		};
+		F43F1A152016E26200A4B17E /* TaskView */ = {
+			isa = PBXGroup;
+			children = (
+				F43F1A162016E26200A4B17E /* XJLLiveTaskHeaderView.h */,
+				F43F1A172016E26200A4B17E /* XJLLiveTaskHeaderView.m */,
+				F43F1A182016E26200A4B17E /* XJLTaskButten.h */,
+				F43F1A192016E26200A4B17E /* XJLTaskButten.m */,
+				F43F1A1A2016E26200A4B17E /* XJLTaskCell.h */,
+				F43F1A1B2016E26200A4B17E /* XJLTaskCell.m */,
+				F43F1A1C2016E26200A4B17E /* XJLTaskHeaderView.h */,
+				F43F1A1D2016E26200A4B17E /* XJLTaskHeaderView.m */,
+				F43F1A1E2016E26200A4B17E /* XJLTaskLittleView.h */,
+				F43F1A1F2016E26200A4B17E /* XJLTaskLittleView.m */,
+				F43F1A202016E26200A4B17E /* XJLTaskViewController.h */,
+				F43F1A212016E26200A4B17E /* XJLTaskViewController.m */,
+				F43F1A222016E26200A4B17E /* XJLWatchLiveTaskCell.h */,
+				F43F1A232016E26200A4B17E /* XJLWatchLiveTaskCell.m */,
+			);
+			path = TaskView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1520,9 +1563,11 @@
 				3A427A001D2FF709008880EE /* UIScrollView+ElasticRefresh.m in Sources */,
 				3A8501911D2E31A600E2CE67 /* MGHeadView.m in Sources */,
 				3A29D0F71D1A426E004F1FDD /* SDWebImageDecoder.m in Sources */,
+				F43F1A272016E26200A4B17E /* XJLTaskHeaderView.m in Sources */,
 				C0D981221F273BDD0070382C /* MASLayoutConstraint.m in Sources */,
 				3A427A181D30178F008880EE /* MGBodyModel.m in Sources */,
 				3A29D0F61D1A426E004F1FDD /* SDWebImageCompat.m in Sources */,
+				F43F1A2A2016E26200A4B17E /* XJLWatchLiveTaskCell.m in Sources */,
 				C0665D411F5546E600429A61 /* OSSImage.m in Sources */,
 				C0D9811F1F273BDD0070382C /* MASCompositeConstraint.m in Sources */,
 				3A427A121D301648008880EE /* MGBodyCell.m in Sources */,
@@ -1560,6 +1605,7 @@
 				C0B8CF441F44258100DBD937 /* MGHeTableViewController.m in Sources */,
 				3AFE8BA81D2E622C00512C3A /* MGCarGroup.m in Sources */,
 				3A29D0F81D1A426E004F1FDD /* SDWebImageDownloader.m in Sources */,
+				F43F1A262016E26200A4B17E /* XJLTaskCell.m in Sources */,
 				3A29D0FC1D1A426E004F1FDD /* UIButton+WebCache.m in Sources */,
 				C0B8CF771F46BCB600DBD937 /* NSString+Extension.m in Sources */,
 				C0B8CF731F46BCB600DBD937 /* MGRefreshGifHeader.m in Sources */,
@@ -1569,6 +1615,7 @@
 				C036A3101F2C8C3700EE45DE /* MGPhotoCollectionViewController.m in Sources */,
 				3A29D0DE1D1A426E004F1FDD /* NSObject+MJKeyValue.m in Sources */,
 				3A8501931D2E31A600E2CE67 /* TableViewHead.m in Sources */,
+				F43F1A292016E26200A4B17E /* XJLTaskViewController.m in Sources */,
 				3A29D0D61D1A426E004F1FDD /* MJConst.m in Sources */,
 				3A29D0F11D1A426E004F1FDD /* UIScrollView+MJRefresh.m in Sources */,
 				3A29D0F91D1A426E004F1FDD /* SDWebImageDownloaderOperation.m in Sources */,
@@ -1578,8 +1625,10 @@
 				3A29D0E11D1A426E004F1FDD /* MJRefreshBackFooter.m in Sources */,
 				3A427A0D1D301567008880EE /* MGHeaderFlowLayout.m in Sources */,
 				3AE9E45E1CF92D03000DCB72 /* MGDemo.xcdatamodeld in Sources */,
+				F43F1A252016E26200A4B17E /* XJLTaskButten.m in Sources */,
 				3AA3DA9E1D0FDB18008B96E2 /* SVRadialGradientLayer.m in Sources */,
 				3A29D0EB1D1A426E004F1FDD /* MJRefreshGifHeader.m in Sources */,
+				F43F1A242016E26200A4B17E /* XJLLiveTaskHeaderView.m in Sources */,
 				3A85016D1D2E308E00E2CE67 /* MGSelectViewController.m in Sources */,
 				3AFE8BA51D2E620F00512C3A /* MGCar.m in Sources */,
 				C0B8CF821F46BCB600DBD937 /* UIView+LYMExtension.m in Sources */,
@@ -1643,6 +1692,7 @@
 				3A29D0EC1D1A426E004F1FDD /* MJRefreshNormalHeader.m in Sources */,
 				C05B45D51F7A332A003B77D3 /* MGApplication.m in Sources */,
 				3A29D0E21D1A426E004F1FDD /* MJRefreshComponent.m in Sources */,
+				F43F1A282016E26200A4B17E /* XJLTaskLittleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1751,7 +1801,7 @@
 				INFOPLIST_FILE = turnView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView2;
 				PRODUCT_NAME = MGDemo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1768,7 +1818,7 @@
 				INFOPLIST_FILE = turnView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView2;
 				PRODUCT_NAME = MGDemo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1822,7 +1872,7 @@
 				INFOPLIST_FILE = turnView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView2;
 				PRODUCT_NAME = MGDemo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};

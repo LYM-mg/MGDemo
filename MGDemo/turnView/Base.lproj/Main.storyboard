@@ -348,30 +348,49 @@
                                     <action selector="change:" destination="4ud-8K-Nqg" eventType="editingChanged" id="ZDI-CV-y8k"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GO1-hH-ymD" customClass="MGButton_Delay">
-                                <rect key="frame" x="134" y="378" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GO1-hH-ymD" customClass="MGButton_Delay">
+                                <rect key="frame" x="141.5" y="354" width="92" height="30"/>
                                 <state key="normal" title="测试延迟点击"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="timeInterval">
-                                        <real key="value" value="0.29999999999999999"/>
+                                        <real key="value" value="1.3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="ceshiDelay:" destination="4ud-8K-Nqg" eventType="touchUpInside" id="sN1-Tk-Hi8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJS-GM-oul" customClass="MGButton_Delay">
+                                <rect key="frame" x="137" y="392" width="101" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="Egg-NA-rJh"/>
+                                    <constraint firstAttribute="height" constant="30" id="bmU-FN-QcF"/>
+                                </constraints>
+                                <state key="normal" title="测试演示点击2"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="timeInterval">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ceshiDelay:" destination="4ud-8K-Nqg" eventType="touchUpInside" id="S5e-hV-CLq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="GO1-hH-ymD" firstAttribute="top" secondItem="YQM-4L-3w8" secondAttribute="bottom" constant="30" id="0bu-T3-rBv"/>
                             <constraint firstItem="YBH-oh-zNd" firstAttribute="centerY" secondItem="t1R-S0-a95" secondAttribute="centerY" id="0y6-N7-bd1"/>
                             <constraint firstAttribute="trailing" secondItem="YQM-4L-3w8" secondAttribute="trailing" constant="30" id="IcB-Xx-neH"/>
                             <constraint firstItem="YQM-4L-3w8" firstAttribute="top" secondItem="t1R-S0-a95" secondAttribute="bottom" constant="150" id="LqN-gA-D2f"/>
+                            <constraint firstItem="mJS-GM-oul" firstAttribute="centerX" secondItem="xHE-fs-XfA" secondAttribute="centerX" id="Q1r-Js-QrN"/>
+                            <constraint firstItem="GO1-hH-ymD" firstAttribute="centerX" secondItem="xHE-fs-XfA" secondAttribute="centerX" id="UjU-fR-zxI"/>
                             <constraint firstItem="YQM-4L-3w8" firstAttribute="leading" secondItem="xHE-fs-XfA" secondAttribute="leading" constant="30" id="bfT-om-yFD"/>
                             <constraint firstItem="t1R-S0-a95" firstAttribute="centerX" secondItem="xHE-fs-XfA" secondAttribute="centerX" id="k5G-Dp-hiO"/>
                             <constraint firstItem="d0r-iQ-WbV" firstAttribute="centerY" secondItem="t1R-S0-a95" secondAttribute="centerY" id="laI-Wv-bi8"/>
                             <constraint firstItem="d0r-iQ-WbV" firstAttribute="leading" secondItem="xHE-fs-XfA" secondAttribute="leading" constant="15" id="nXe-mQ-b6S"/>
                             <constraint firstItem="t1R-S0-a95" firstAttribute="top" secondItem="4xG-ah-Q5A" secondAttribute="bottom" constant="20" id="qDF-ZZ-YVr"/>
+                            <constraint firstItem="mJS-GM-oul" firstAttribute="top" secondItem="GO1-hH-ymD" secondAttribute="bottom" constant="8" id="uJ2-fs-Rxs"/>
                             <constraint firstAttribute="trailing" secondItem="YBH-oh-zNd" secondAttribute="trailing" constant="15" id="zhb-pM-vcn"/>
                         </constraints>
                     </view>

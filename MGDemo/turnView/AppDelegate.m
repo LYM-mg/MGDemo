@@ -30,7 +30,6 @@
         [application registerUserNotificationSettings:settings];
     }
     [self sendLocalNotification];
-    
     return YES;
 }
 
@@ -240,6 +239,13 @@
             abort();
         }
     }
+}
+
+- (void)test {
+    NSMutableAttributedString *content = [[NSMutableAttributedString alloc] initWithString:@"das"];
+    CGFloat contentHeight = [content boundingRectWithSize:CGSizeMake(320, CGFLOAT_MAX)
+                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                          context:nil].size.height;
 }
 
 @end

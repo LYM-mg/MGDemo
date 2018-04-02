@@ -62,10 +62,11 @@
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        Method presentM = class_getInstanceMethod(self.class, @selector(presentViewController:animated:completion:));
-        Method presentSwizzlingM = class_getInstanceMethod(self.class, @selector(mg_presentViewController:animated:completion:));
-        // 交换方法实现
-        method_exchangeImplementations(presentM, presentSwizzlingM);
+//        Method presentM = class_getInstanceMethod(MGTranstionViewController.class, @selector(presentViewController:animated:completion:));
+//        Method presentSwizzlingM = class_getInstanceMethod(MGTranstionViewController.class, @selector(mg_presentViewController:animated:completion:));
+//        // 交换方法实现
+//        method_exchangeImplementations(presentM, presentSwizzlingM);
+        [self mg_SwitchMethod:self originalSelector:@selector(presentViewController:animated:completion:) swizzledSelector:@selector(mg_presentViewController:animated:completion:)];
     });
 }
 

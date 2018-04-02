@@ -30,21 +30,21 @@
 + (void)load{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [self mg_SwitchMethod:self originalSelector:@selector(sendAction:to:forEvent:) swizzledSelector:@selector(mySendAction:to:forEvent:)];
+//        [self mg_SwitchMethod:self originalSelector:@selector(sendAction:to:forEvent:) swizzledSelector:@selector(mySendAction:to:forEvent:)];
         
-//        SEL selA = @selector(sendAction:to:forEvent:);
-//        SEL selB = @selector(mySendAction:to:forEvent:);
-//        Method methodA = class_getInstanceMethod(self, selA);
-//        Method methodB = class_getInstanceMethod(self, selB);
-//        //将methodB的实现添加到系统方法中也就是说将methodA方法指针添加成方法methodB的返回值表示是否添加成功
-//        BOOL isAdd = class_addMethod(self, selA,method_getImplementation(methodB),method_getTypeEncoding(methodB));
-//        //添加成功了说明本类中不存在methodB所以此时必须将方法b的实现指针换成方法A的，否则b方法将没有实现。
-//        if(isAdd) {
-//            class_replaceMethod(self, selB,method_getImplementation(methodA),method_getTypeEncoding(methodA));
-//        }else{
-//            //添加失败了说明本类中有methodB的实现，此时只需要将methodA和methodB的IMP互换一下即可。
-//            method_exchangeImplementations(methodA, methodB);
-//        }
+        SEL selA = @selector(sendAction:to:forEvent:);
+        SEL selB = @selector(mySendAction:to:forEvent:);
+        Method methodA = class_getInstanceMethod(self, selA);
+        Method methodB = class_getInstanceMethod(self, selB);
+        //将methodB的实现添加到系统方法中也就是说将methodA方法指针添加成方法methodB的返回值表示是否添加成功
+        BOOL isAdd = class_addMethod(self, selA,method_getImplementation(methodB),method_getTypeEncoding(methodB));
+        //添加成功了说明本类中不存在methodB所以此时必须将方法b的实现指针换成方法A的，否则b方法将没有实现。
+        if(isAdd) {
+            class_replaceMethod(self, selB,method_getImplementation(methodA),method_getTypeEncoding(methodA));
+        }else{
+            //添加失败了说明本类中有methodB的实现，此时只需要将methodA和methodB的IMP互换一下即可。
+            method_exchangeImplementations(methodA, methodB);
+        }
     });
 }
 - (void)mySendAction:(SEL)action to:(id)target forEvent:(UIEvent*)event{

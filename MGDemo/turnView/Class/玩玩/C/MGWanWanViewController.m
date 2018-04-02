@@ -53,6 +53,17 @@
     
 //    self.navigationController.toolbarHidden = NO;
     [self addScrollViewLabel];
+    
+    MGButton_Delay *scrollSwitchBtn=[MGButton_Delay buttonWithType:UIButtonTypeCustom];
+    [scrollSwitchBtn addTarget:self action:@selector(ss:) forControlEvents:UIControlEventTouchUpInside];
+    scrollSwitchBtn.selected = NO;
+    [scrollSwitchBtn setTitle:@"你咩，代码咋就不行" forState:UIControlStateNormal];
+     [scrollSwitchBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [scrollSwitchBtn sizeToFit];
+    scrollSwitchBtn.y = 450;
+    scrollSwitchBtn.centerX = self.view.centerX;
+    scrollSwitchBtn.timeInterval = 5;
+    [self.view addSubview:scrollSwitchBtn];
 }
 
 - (void)runtimeClick {
@@ -68,14 +79,27 @@
     [super touchesBegan:touches withEvent:event];
     NSLog(@"%@", self.toolbarItems);
     
+    [self ss:nil];
+    
     // 截屏功能 iOS7 [_shakeBtn snapView];
 //    UIView *captureView = [_shakeBtn snapshotViewAfterScreenUpdates:false];
 //    [self.view addSubview:captureView];
 //    captureView.frame = CGRectMake(120,150,200,200);
 }
 - (IBAction)ceshiDelay:(MGButton_Delay *)sender {
-    NSLog(@"我很快就去点击了，看我响应了几次");
+    sender.selected = !sender.selected;
+    if ([sender.titleLabel.text isEqualToString:@"测试延迟点击"]) {
+        NSLog(@"我很快就去点击了，看我响应了几次");
+    }else if([sender.titleLabel.text isEqualToString:@"测试延迟点击1"]) {
+        NSLog(@"靠  不响应");
+    }else {
+         NSLog(@"靠  代码不响应");
+    }
 }
+- (void)ss:(UIButton *)sender {
+     NSLog(@"靠  代码不响应");
+}
+
 - (IBAction)start:(id)sender {
     [UIDevice setOrientationLandscapeRight];
     [_shakeBtn beginWobble:0.1];
