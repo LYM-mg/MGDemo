@@ -173,6 +173,15 @@
 		C0D981281F273BDD0070382C /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D9811C1F273BDD0070382C /* ViewController+MASAdditions.m */; };
 		C0D981291F273BDD0070382C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C0D9811D1F273BDD0070382C /* README.md */; };
 		C0D9812F1F273D600070382C /* MGWanWanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D9812E1F273D600070382C /* MGWanWanViewController.m */; };
+		F402467A207F057400A04718 /* MGMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F402466D207F057400A04718 /* MGMarqueeView.m */; };
+		F402467B207F057400A04718 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = F402466F207F057400A04718 /* Contents.json */; };
+		F402467C207F057400A04718 /* new_home_notice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4024670207F057400A04718 /* new_home_notice@2x.png */; };
+		F402467D207F057400A04718 /* new_home_notice@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4024671207F057400A04718 /* new_home_notice@3x.png */; };
+		F402467E207F057400A04718 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = F4024673207F057400A04718 /* Contents.json */; };
+		F402467F207F057400A04718 /* new_notice_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4024674207F057400A04718 /* new_notice_close@2x.png */; };
+		F4024680207F057400A04718 /* new_notice_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4024675207F057400A04718 /* new_notice_close@3x.png */; };
+		F4024681207F057400A04718 /* UIColor+LYMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4024677207F057400A04718 /* UIColor+LYMExtension.m */; };
+		F4024682207F057400A04718 /* UIView+LYMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4024679207F057400A04718 /* UIView+LYMExtension.m */; };
 		F4078B24200C7DB50049DD5F /* MGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4078B23200C7DB50049DD5F /* MGMapViewController.m */; };
 		F40939AE201592EC00107E85 /* MGButton+Delay.m in Sources */ = {isa = PBXBuildFile; fileRef = F40939AD201592EC00107E85 /* MGButton+Delay.m */; };
 		F40F0FA5200F2A9500CE1CD0 /* 晴20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F0F9D200F2A9300CE1CD0 /* 晴20x20@2x.png */; };
@@ -528,6 +537,18 @@
 		C0D9811D1F273BDD0070382C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C0D9812D1F273D600070382C /* MGWanWanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWanWanViewController.h; sourceTree = "<group>"; };
 		C0D9812E1F273D600070382C /* MGWanWanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWanWanViewController.m; sourceTree = "<group>"; };
+		F402466C207F057400A04718 /* MGMarqueeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGMarqueeView.h; sourceTree = "<group>"; };
+		F402466D207F057400A04718 /* MGMarqueeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGMarqueeView.m; sourceTree = "<group>"; };
+		F402466F207F057400A04718 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		F4024670207F057400A04718 /* new_home_notice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_home_notice@2x.png"; sourceTree = "<group>"; };
+		F4024671207F057400A04718 /* new_home_notice@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_home_notice@3x.png"; sourceTree = "<group>"; };
+		F4024673207F057400A04718 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		F4024674207F057400A04718 /* new_notice_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_notice_close@2x.png"; sourceTree = "<group>"; };
+		F4024675207F057400A04718 /* new_notice_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_notice_close@3x.png"; sourceTree = "<group>"; };
+		F4024676207F057400A04718 /* UIColor+LYMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LYMExtension.h"; sourceTree = "<group>"; };
+		F4024677207F057400A04718 /* UIColor+LYMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LYMExtension.m"; sourceTree = "<group>"; };
+		F4024678207F057400A04718 /* UIView+LYMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LYMExtension.h"; sourceTree = "<group>"; };
+		F4024679207F057400A04718 /* UIView+LYMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LYMExtension.m"; sourceTree = "<group>"; };
 		F4078B22200C7DB50049DD5F /* MGMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGMapViewController.h; sourceTree = "<group>"; };
 		F4078B23200C7DB50049DD5F /* MGMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGMapViewController.m; sourceTree = "<group>"; };
 		F40939AC201592EC00107E85 /* MGButton+Delay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MGButton+Delay.h"; sourceTree = "<group>"; };
@@ -1333,6 +1354,7 @@
 		C0D9812A1F273D430070382C /* 玩玩 */ = {
 			isa = PBXGroup;
 			children = (
+				F402466B207F057400A04718 /* 跑马灯 */,
 				C05B45D21F7A3316003B77D3 /* M */,
 				C0D9812B1F273D430070382C /* C */,
 				C0D9812C1F273D430070382C /* V */,
@@ -1372,6 +1394,41 @@
 				C05B45CD1F79E91F003B77D3 /* MGHFlowLayout.m */,
 			);
 			path = V;
+			sourceTree = "<group>";
+		};
+		F402466B207F057400A04718 /* 跑马灯 */ = {
+			isa = PBXGroup;
+			children = (
+				F402466C207F057400A04718 /* MGMarqueeView.h */,
+				F402466D207F057400A04718 /* MGMarqueeView.m */,
+				F402466E207F057400A04718 /* new_home_notice.imageset */,
+				F4024672207F057400A04718 /* new_notice_close.imageset */,
+				F4024676207F057400A04718 /* UIColor+LYMExtension.h */,
+				F4024677207F057400A04718 /* UIColor+LYMExtension.m */,
+				F4024678207F057400A04718 /* UIView+LYMExtension.h */,
+				F4024679207F057400A04718 /* UIView+LYMExtension.m */,
+			);
+			path = "跑马灯";
+			sourceTree = "<group>";
+		};
+		F402466E207F057400A04718 /* new_home_notice.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				F402466F207F057400A04718 /* Contents.json */,
+				F4024670207F057400A04718 /* new_home_notice@2x.png */,
+				F4024671207F057400A04718 /* new_home_notice@3x.png */,
+			);
+			path = new_home_notice.imageset;
+			sourceTree = "<group>";
+		};
+		F4024672207F057400A04718 /* new_notice_close.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				F4024673207F057400A04718 /* Contents.json */,
+				F4024674207F057400A04718 /* new_notice_close@2x.png */,
+				F4024675207F057400A04718 /* new_notice_close@3x.png */,
+			);
+			path = new_notice_close.imageset;
 			sourceTree = "<group>";
 		};
 		F426CFCD20089D3E00DE032D /* LLGifView */ = {
@@ -1467,13 +1524,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F402467F207F057400A04718 /* new_notice_close@2x.png in Resources */,
 				3A8595B11D30F8F300D7720C /* 12.png in Resources */,
+				F402467D207F057400A04718 /* new_home_notice@3x.png in Resources */,
 				3A8595B31D30F8F300D7720C /* buyao.wav in Resources */,
 				3A8595B51D30F8F300D7720C /* cellDatas.plist in Resources */,
 				3A8595B01D30F8F300D7720C /* 1.plist in Resources */,
 				3A8595B81D30F8F300D7720C /* homeDatas.plist in Resources */,
+				F402467E207F057400A04718 /* Contents.json in Resources */,
 				3A427A311D3028B9008880EE /* MGRmndCell.xib in Resources */,
 				3A427A0F1D3015C5008880EE /* MGBodyCell.xib in Resources */,
+				F4024680207F057400A04718 /* new_notice_close@3x.png in Resources */,
 				3A427A1D1D301BDF008880EE /* MGHeaderReusableView.xib in Resources */,
 				3AA3DA9C1D0FDB18008B96E2 /* SVProgressHUD.bundle in Resources */,
 				F40F0FAC200F2A9500CE1CD0 /* 晴40x40@3x.png in Resources */,
@@ -1498,10 +1559,12 @@
 				3A29D0EE1D1A426E004F1FDD /* MJRefresh.bundle in Resources */,
 				F40F0FA6200F2A9500CE1CD0 /* 晴29x29@3x.png in Resources */,
 				F426CFDA2008A53D00DE032D /* plane.gif in Resources */,
+				F402467C207F057400A04718 /* new_home_notice@2x.png in Resources */,
 				F40F0FA7200F2A9500CE1CD0 /* 晴60x60@3x.png in Resources */,
 				F40F0FA5200F2A9500CE1CD0 /* 晴20x20@2x.png in Resources */,
 				3A8595B21D30F8F300D7720C /* butterfly@2x.png in Resources */,
 				F426CFEB2008B56A00DE032D /* example.gif in Resources */,
+				F402467B207F057400A04718 /* Contents.json in Resources */,
 				F40F0FAA200F2A9500CE1CD0 /* 晴40x40@2x.png in Resources */,
 				3AE9E45B1CF92D03000DCB72 /* Main.storyboard in Resources */,
 				3A8501711D2E308E00E2CE67 /* MGShopCell.xib in Resources */,
@@ -1567,6 +1630,7 @@
 				C0D981221F273BDD0070382C /* MASLayoutConstraint.m in Sources */,
 				3A427A181D30178F008880EE /* MGBodyModel.m in Sources */,
 				3A29D0F61D1A426E004F1FDD /* SDWebImageCompat.m in Sources */,
+				F4024682207F057400A04718 /* UIView+LYMExtension.m in Sources */,
 				F43F1A2A2016E26200A4B17E /* XJLWatchLiveTaskCell.m in Sources */,
 				C0665D411F5546E600429A61 /* OSSImage.m in Sources */,
 				C0D9811F1F273BDD0070382C /* MASCompositeConstraint.m in Sources */,
@@ -1577,6 +1641,7 @@
 				3A29D0E01D1A426E004F1FDD /* MJRefreshAutoFooter.m in Sources */,
 				F411AC59200DF29D009B73AC /* MQGradientProgressView.m in Sources */,
 				3A29D0D71D1A426E004F1FDD /* MJFoundation.m in Sources */,
+				F402467A207F057400A04718 /* MGMarqueeView.m in Sources */,
 				3A29D0F01D1A426E004F1FDD /* UIScrollView+MJExtension.m in Sources */,
 				3A29D0F41D1A426E004F1FDD /* NSData+ImageContentType.m in Sources */,
 				3A5096231D2F6EA100580D2B /* HUTransitionVerticalLinesAnimator.m in Sources */,
@@ -1642,6 +1707,7 @@
 				3A5096151D2F6E7500580D2B /* CustomTransitionViewController.m in Sources */,
 				C0D981281F273BDD0070382C /* ViewController+MASAdditions.m in Sources */,
 				C05B45D11F7A327D003B77D3 /* MGListViewController.m in Sources */,
+				F4024681207F057400A04718 /* UIColor+LYMExtension.m in Sources */,
 				3A29D0FA1D1A426E004F1FDD /* SDWebImageManager.m in Sources */,
 				C0D981201F273BDD0070382C /* MASConstraint.m in Sources */,
 				3A427A2C1D30250E008880EE /* MGHeadPushViewController.m in Sources */,

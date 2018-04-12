@@ -35,6 +35,8 @@
     // 设置button
     [self setUpButton];
     
+    [self testLable];
+    
 }
 
 - (void)customAnimation{
@@ -244,6 +246,43 @@
         
     }
     
+}
+
+- (void)testLable {
+    UILabel *label1 = [UILabel new];
+//    [label1 setContentHuggingPriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
+    label1.backgroundColor = [UIColor grayColor];
+    label1.tag = 100;
+    
+    UILabel *label2 = [UILabel new];
+    label2.numberOfLines = 0;
+    label2.backgroundColor = [UIColor redColor];
+    label2.tag = 200;
+    [self.view addSubview:label1];
+    [self.view addSubview:label2];
+    
+    [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(490);
+        make.height.mas_equalTo(18);
+    }];
+    
+    [label2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(label1.mas_right);
+        make.top.mas_equalTo(label1);
+        make.right.mas_offset(0);
+    }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UILabel *label1 = [self.view viewWithTag:100];
+    UILabel *label2 = [self.view viewWithTag:200];
+    
+    NSString *randomSTr = @"你是一个大笨蛋，我说的没错吧";
+    NSUInteger randomNum = arc4random_uniform((UInt32)randomSTr.length);
+    NSString *newStr = [randomSTr substringFromIndex:randomNum];
+    label1.text = [NSString stringWithFormat:@"%@",newStr];
+    label2.text = @"你是一个大笨蛋，我说的没错吧，你就是一个呆头呆脑的傻瓜";
 }
 
 

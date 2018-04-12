@@ -13,19 +13,22 @@
 #import "MGScrollViewLabel.h"
 #import "MGScrollLabelView.h"
 #import "MGHViewController.h"
+#import "MGMarqueeView.h"
 
-@interface MGRunTimeVC ()<MGScrollLabelViewDelegate>
+@interface MGRunTimeVC ()<MGScrollLabelViewDelegate,MGMarqueeViewDelegate>
 {
     MGScrollLabelView *scrollLabelView;
     MGScrollViewLabel *sl;
 }
 
 @property (nonatomic,weak)UIView *firstView;
+@property (weak,nonatomic) MGMarqueeView *marqueeView;
 @end
 
 @implementation MGRunTimeVC
 
 - (void)dealloc {
+    [_marqueeView invalidateTimer];
     NSLog(@"%s",__func__);
 }
 
@@ -52,7 +55,7 @@
 //        [weakSelf showDetailViewController:[MGHeTableViewController new] sender:nil];
     }]];
     [self.view addSubview:tapLabel];
-    
+
     // 按钮测试
     UIButton *btn = [UIButton ButtonWithTitle:@"嘿嘿" actionBlock:^(id btn) {
         [weakSelf showHint:@"响应按钮事件的点击"];
@@ -64,6 +67,13 @@
     
     [self DragView];
     [self set];
+    
+    MGMarqueeView *marqueeView = [[MGMarqueeView alloc] initWithFrame:CGRectMake(0, 70, self.view.frame.size.width, 35)];
+    //    marqueeView.backgroundColor = [UIColor orangeColor];
+    marqueeView.marqueeTextArray = @[@"许笨蛋大傻瓜不理我",@"昨晚吃了两个馒头还花了我2块钱,今天两块都省了",@"进口量的时间里打卡机了快递费发斯蒂芬斯蒂芬我",@"哎呦喂😀"];
+    [self.view addSubview:marqueeView];
+    _marqueeView = marqueeView;
+    _marqueeView.delegate = self;
 }
 
 - (void)DragView {
@@ -190,5 +200,9 @@
     NSLog(@"点击%zd",index);
 }
 
+#pragma mark - MGMarqueeViewDelegate
+- (void)marqueeView:(MGMarqueeView *)marqueeView marqueeLabelDidClick:(UILabel *)sender isMarqueeArray:(BOOL)isMarqueeArray {
+     NSLog(@"点击%zd",sender.text);
+}
 
 @end
