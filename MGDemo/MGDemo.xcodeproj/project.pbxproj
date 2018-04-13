@@ -212,6 +212,7 @@
 		F43F1A282016E26200A4B17E /* XJLTaskLittleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A1F2016E26200A4B17E /* XJLTaskLittleView.m */; };
 		F43F1A292016E26200A4B17E /* XJLTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A212016E26200A4B17E /* XJLTaskViewController.m */; };
 		F43F1A2A2016E26200A4B17E /* XJLWatchLiveTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A232016E26200A4B17E /* XJLWatchLiveTaskCell.m */; };
+		F4436E2C2080585C00EFD7A7 /* MGSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4436E2B2080585C00EFD7A7 /* MGSortViewController.m */; };
 		F44D0B67200F200100AB7C63 /* debugRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B63200F200000AB7C63 /* debugRibbon.png */; };
 		F44D0B68200F200100AB7C63 /* betaRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B64200F200000AB7C63 /* betaRibbon.png */; };
 		F44D0B69200F200100AB7C63 /* resizedBetaRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B65200F200000AB7C63 /* resizedBetaRibbon.png */; };
@@ -599,6 +600,8 @@
 		F43F1A212016E26200A4B17E /* XJLTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJLTaskViewController.m; sourceTree = "<group>"; };
 		F43F1A222016E26200A4B17E /* XJLWatchLiveTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJLWatchLiveTaskCell.h; sourceTree = "<group>"; };
 		F43F1A232016E26200A4B17E /* XJLWatchLiveTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJLWatchLiveTaskCell.m; sourceTree = "<group>"; };
+		F4436E2A2080585C00EFD7A7 /* MGSortViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGSortViewController.h; sourceTree = "<group>"; };
+		F4436E2B2080585C00EFD7A7 /* MGSortViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGSortViewController.m; sourceTree = "<group>"; };
 		F44D0B63200F200000AB7C63 /* debugRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debugRibbon.png; sourceTree = "<group>"; };
 		F44D0B64200F200000AB7C63 /* betaRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = betaRibbon.png; sourceTree = "<group>"; };
 		F44D0B65200F200000AB7C63 /* resizedBetaRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resizedBetaRibbon.png; sourceTree = "<group>"; };
@@ -1021,6 +1024,8 @@
 				3AF551D81D2FCC3800333D2E /* MGShakeVC.m */,
 				F4078B22200C7DB50049DD5F /* MGMapViewController.h */,
 				F4078B23200C7DB50049DD5F /* MGMapViewController.m */,
+				F4436E2A2080585C00EFD7A7 /* MGSortViewController.h */,
+				F4436E2B2080585C00EFD7A7 /* MGSortViewController.m */,
 				F43F1A152016E26200A4B17E /* TaskView */,
 			);
 			path = C;
@@ -1626,6 +1631,7 @@
 				3A427A001D2FF709008880EE /* UIScrollView+ElasticRefresh.m in Sources */,
 				3A8501911D2E31A600E2CE67 /* MGHeadView.m in Sources */,
 				3A29D0F71D1A426E004F1FDD /* SDWebImageDecoder.m in Sources */,
+				F4436E2C2080585C00EFD7A7 /* MGSortViewController.m in Sources */,
 				F43F1A272016E26200A4B17E /* XJLTaskHeaderView.m in Sources */,
 				C0D981221F273BDD0070382C /* MASLayoutConstraint.m in Sources */,
 				3A427A181D30178F008880EE /* MGBodyModel.m in Sources */,

@@ -42,15 +42,18 @@
     }
     return self;
 }
-- (void)setSubviews
-{
+- (void)setSubviews{
     _currentLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))];
     _willShowLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.frame), CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))];
     [self addSubview:_currentLabel];
     [self addSubview:_willShowLabel];
 }
-- (void)setTitleArray:(NSArray *)titleArray
-{
+
+- (void)setAnimationDuration:(NSTimeInterval)animationDuration {
+    _animationDuration = animationDuration;
+}
+
+- (void)setTitleArray:(NSArray *)titleArray{
     _titleArray = titleArray;
     if (titleArray&&titleArray.count) {
         _currentLabel.text = [titleArray firstObject];
@@ -59,14 +62,14 @@
         }
     }
 }
-- (void)setTitleFont:(UIFont *)titleFont
-{
+
+- (void)setTitleFont:(UIFont *)titleFont{
     _titleFont = titleFont;
     self.currentLabel.font = titleFont;
     self.willShowLabel.font = titleFont;
 }
-- (void)setTitleColor:(UIColor *)titleColor
-{
+
+- (void)setTitleColor:(UIColor *)titleColor{
     _titleColor = titleColor;
     self.currentLabel.textColor = titleColor;
     self.willShowLabel.textColor = titleColor;
@@ -81,7 +84,7 @@
     _timer = [NSTimer scheduledTimerWithTimeInterval:self.stayInterval target:self selector:@selector(startTimer) userInfo:nil repeats:YES];
 }
 - (void)startTimer {
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:_animationDuration animations:^{
         _currentLabel.frame = CGRectMake(0, -self.frame.size.height, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
         _willShowLabel.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
     } completion:^(BOOL finished) {

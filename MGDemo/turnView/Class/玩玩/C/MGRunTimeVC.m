@@ -202,7 +202,7 @@
 
 #pragma mark - MGMarqueeViewDelegate
 - (void)marqueeView:(MGMarqueeView *)marqueeView marqueeLabelDidClick:(UILabel *)sender isMarqueeArray:(BOOL)isMarqueeArray {
-     NSLog(@"点击%zd",sender.text);
+    NSLog(@"点击%@",sender.text);
 }
 
 @end

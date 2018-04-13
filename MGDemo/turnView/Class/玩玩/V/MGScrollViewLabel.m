@@ -106,13 +106,17 @@
 }
 
 - (void)stopAni:(NSString *)aniID{
-    [UIView animateWithDuration:0.1 animations:^{
+    [UIView animateWithDuration:0.5 animations:^{
         if (self.direction == Horizontal)  {
-            self.showView.contentOffset = CGPointMake(-self.showView.frame.size.width/2, 0);
+            self.showView.contentOffset = CGPointMake(-self.showView.frame.size.width, 0);
         }else {
-            self.showView.contentOffset = CGPointMake(0, -self.showView.frame.size.height/2);
+            self.showView.contentOffset = CGPointMake(0, -self.showView.frame.size.height);
         }
     }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self beginScolling];
+    });
 }
 
 - (void)stopScolling {
@@ -121,8 +125,8 @@
 }
 
 - (void)pauseScolling {
-    [self.showView.layer pauseAnimate];
-    [self.layer pauseAnimate];
+//    [self.showView.layer pauseAnimate];
+//    [self.layer pauseAnimate];
 }
 
 - (void)resumeScolling {

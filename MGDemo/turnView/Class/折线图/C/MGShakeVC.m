@@ -8,6 +8,8 @@
 
 #import "MGShakeVC.h"
 #import <AVFoundation/AVFoundation.h>
+#import "MGShakeVC.h"
+#import "MGSortViewController.h"
 
 @interface MGShakeVC ()
 /** imgUp */
@@ -62,6 +64,12 @@
     // 摇一摇
     [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
     [self becomeFirstResponder];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"排序" style:UIBarButtonItemStylePlain target:self action:@selector(sortClick)];
+}
+
+- (void)sortClick {
+    [self.navigationController pushViewController:[MGSortViewController new] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

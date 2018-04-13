@@ -66,6 +66,7 @@
     // marquee label
     _marqueeLabel = [[UILabel alloc] initWithFrame:marqueeBgView.bounds];
     [marqueeBgView addSubview:_marqueeLabel];
+    _marqueeLabel.userInteractionEnabled = YES;
     _marqueeLabel.textColor = [UIColor colorWithHexString:@"ff6666"];
     _marqueeLabel.font = [UIFont systemFontOfSize:13];
     
