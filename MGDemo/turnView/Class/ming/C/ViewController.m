@@ -18,13 +18,33 @@
     UITableView *_rightnView;
     UIView *_topBgView;
     BOOL isFirst;
+    
+    BOOL isPush; // 是否是push过去的 （默认false）
 }
 @end
 
 @implementation ViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+    if (isPush) {
+        [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionOverrideInheritedCurve animations:^{
+            self.tabBarController.tabBar.transform = CGAffineTransformIdentity;
+        } completion:nil];
+    }
+    self->isPush = NO;
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    self.tabBarController.tabBar.hidden = YES;
+    if (isPush) {
+        [UIView animateWithDuration:0 animations:^{
+            self.tabBarController.tabBar.transform = CGAffineTransformMakeTranslation(0, 49);
+        }];
+    }
+    
     self.navigationController.navigationBar.hidden = YES;
     
     if (isFirst == NO) {
@@ -80,6 +100,7 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     self.navigationController.navigationBar.hidden = NO;
+//    self.tabBarController.tabBar.transform = CGAffineTransformMakeTranslation(0, 49);
 }
 
 - (void)setMainView{
@@ -131,13 +152,15 @@
 }
 
 - (void)selectClick{
+    self->isPush = YES;
     MGSelectViewController *selectVc = [[MGSelectViewController alloc] init];
     selectVc.hidesBottomBarWhenPushed = YES;
     selectVc.view.backgroundColor = [UIColor whiteColor];
-    [self.navigationController pushViewController:selectVc animated:YES];
+    [self.navigationController pushViewController:selectVc animated:NO];
 }
 
 - (void)videoClick{
+    self->isPush = YES;
     MGVideoViewController *videoVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MGVideoViewController"];
     videoVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:videoVC animated:NO];

@@ -36,6 +36,14 @@ static NSString *watchLivetaskCellIdentifier = @"watchLivetaskCellIdentifier";
     
 }
 
+- (instancetype)initWithStyle:(UITableViewStyle)style {
+    if (self == [super initWithStyle:style]) {
+        
+    }
+    return self;
+}
+
+
 
 - (void)setUpUI{
     

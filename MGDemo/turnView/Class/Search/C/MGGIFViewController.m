@@ -69,14 +69,15 @@
     [self removeGif];
     
     //方法1:适用于帧数少的gif动画
-        NSData *localData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"example" ofType:@"gif"]];
-        _gifView = [[LLGifView alloc] initWithFrame:CGRectMake(10, 80, MGSCREEN_WIDTH, 400) data:localData];
-        [self.view addSubview:_gifView];
-        [_gifView startGif];
+//    NSData *localData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"example" ofType:@"gif"]];
+//    _gifView = [[LLGifView alloc] initWithFrame:CGRectMake(10, 80, MGSCREEN_WIDTH, 400) data:localData];
+//    [self.view addSubview:_gifView];
+//    [_gifView startGif];
     
     //方法2:适用于帧数多的gif动画
     NSData *localData1 = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"plane" ofType:@"gif"]];
-    _gifImageView = [[LLGifImageView alloc] initWithFrame:CGRectMake(100, 400, 100, 200) data:localData1];
+    // CGRectMake(100, 400, 100, 200)
+    _gifImageView = [[LLGifImageView alloc] initWithFrame:CGRectMake(0, 200, MGSCREEN_WIDTH, 400) data:localData1];
     [self.view addSubview:_gifImageView];
     [_gifImageView startGifLoopCount:3];
     __weak typeof(self) weakSelf = self;

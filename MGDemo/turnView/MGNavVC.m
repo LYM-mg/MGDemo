@@ -66,6 +66,7 @@
         
         // 隐藏下面的TabBar
         viewController.hidesBottomBarWhenPushed = YES;
+        
     }
 //    else{
 //        viewController.hidesBottomBarWhenPushed = NO;
@@ -75,6 +76,7 @@
     [super pushViewController:viewController animated:animated];
     
 }
+
 
 // 监听按钮的点击
 - (void)leftBtnClick{

@@ -78,6 +78,10 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     NSLog(@"%@", self.toolbarItems);
+//    NSMutableDictionary *dict = [NSMutableDictionary dictionary]
+//    dict[@"3333"]
+//    int o = (int)self.nameDic[@"3333"];
+//    NSLog(@"%d", o);
     
     [self ss:nil];
     
