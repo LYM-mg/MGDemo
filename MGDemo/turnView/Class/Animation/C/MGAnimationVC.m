@@ -12,6 +12,7 @@
 
 #import "CustomTransitionViewController.h"
 #import "MGShakeVC.h"
+#import "TimerViewController.h"
 
 @interface MGAnimationVC ()<UINavigationControllerDelegate>
 
@@ -29,6 +30,7 @@
     [super viewDidLoad];
     // 设置导航栏右边按钮
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Custom" style:UIBarButtonItemStyleDone target:self action:@selector(customAnimation)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"GCD定时器" style:UIBarButtonItemStyleDone target:self action:@selector(GCDTimer)];
     
     self.view.backgroundColor=[UIColor colorWithRed:0.98f green:0.97f blue:0.90f alpha:1.00f];
     
@@ -41,6 +43,10 @@
 
 - (void)customAnimation{
     CustomTransitionViewController *vc = [[CustomTransitionViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)GCDTimer {
+    TimerViewController *vc = [[TimerViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

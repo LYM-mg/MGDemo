@@ -86,6 +86,11 @@ static NSString *const CellIdentfier = @"CellIdentfier";
            forCellReuseIdentifier:CellIdentfier];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"ssssss");
+}
+
 #pragma mark- -setUpTableViewHead
 - (void)setUpTableViewHead{
     TableViewHead *head = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([TableViewHead class]) owner:nil options:nil].lastObject;
@@ -108,7 +113,7 @@ static NSString *const CellIdentfier = @"CellIdentfier";
     _topImageView.layer.anchorPoint = CGPointMake(0.5, 0);
     _topImageView.backgroundColor = [UIColor whiteColor];
     _topImageView.layer.cornerRadius = _topImageView.bounds.size.width/2;
-    _topImageView.layer.masksToBounds = YES;
+//    _topImageView.layer.masksToBounds = YES;
     _topImageView.image = [UIImage imageNamed:@"12"];
     [topView addSubview:_topImageView];
     self.navigationItem.titleView = topView;

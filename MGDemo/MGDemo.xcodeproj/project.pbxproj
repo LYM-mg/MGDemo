@@ -205,6 +205,7 @@
 		F426CFE62008B11C00DE032D /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFE52008B11C00DE032D /* UIViewController+Utils.m */; };
 		F426CFE92008B14E00DE032D /* UINavigationBar+ChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFE72008B14D00DE032D /* UINavigationBar+ChangeColor.m */; };
 		F426CFEB2008B56A00DE032D /* example.gif in Resources */ = {isa = PBXBuildFile; fileRef = F426CFEA2008B56A00DE032D /* example.gif */; };
+		F43AE464211AC57B00E9AB24 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F43AE462211AC57A00E9AB24 /* TimerViewController.m */; };
 		F43F1A242016E26200A4B17E /* XJLLiveTaskHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A172016E26200A4B17E /* XJLLiveTaskHeaderView.m */; };
 		F43F1A252016E26200A4B17E /* XJLTaskButten.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A192016E26200A4B17E /* XJLTaskButten.m */; };
 		F43F1A262016E26200A4B17E /* XJLTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A1B2016E26200A4B17E /* XJLTaskCell.m */; };
@@ -586,6 +587,8 @@
 		F426CFE72008B14D00DE032D /* UINavigationBar+ChangeColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+ChangeColor.m"; sourceTree = "<group>"; };
 		F426CFE82008B14E00DE032D /* UINavigationBar+ChangeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+ChangeColor.h"; sourceTree = "<group>"; };
 		F426CFEA2008B56A00DE032D /* example.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = example.gif; sourceTree = "<group>"; };
+		F43AE462211AC57A00E9AB24 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		F43AE463211AC57A00E9AB24 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		F43F1A162016E26200A4B17E /* XJLLiveTaskHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJLLiveTaskHeaderView.h; sourceTree = "<group>"; };
 		F43F1A172016E26200A4B17E /* XJLLiveTaskHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJLLiveTaskHeaderView.m; sourceTree = "<group>"; };
 		F43F1A182016E26200A4B17E /* XJLTaskButten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJLTaskButten.h; sourceTree = "<group>"; };
@@ -639,6 +642,8 @@
 				3A5096121D2F6E7500580D2B /* CustomTransitionViewController.h */,
 				3A5096131D2F6E7500580D2B /* CustomTransitionViewController.m */,
 				3A5096141D2F6E7500580D2B /* CustomTransitionViewController.xib */,
+				F43AE463211AC57A00E9AB24 /* TimerViewController.h */,
+				F43AE462211AC57A00E9AB24 /* TimerViewController.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1624,6 +1629,7 @@
 				C0D981241F273BDD0070382C /* MASViewConstraint.m in Sources */,
 				3A29D0FE1D1A426E004F1FDD /* UIImage+MultiFormat.m in Sources */,
 				C0B8CF7B1F46BCB600DBD937 /* UIDevice+Extension.m in Sources */,
+				F43AE464211AC57B00E9AB24 /* TimerViewController.m in Sources */,
 				3A29D0FF1D1A426E004F1FDD /* UIImage+WebP.m in Sources */,
 				F426CFE32008AF5000DE032D /* UIImage+ImageEffects.m in Sources */,
 				3A427A301D3028B9008880EE /* MGRmndCell.m in Sources */,

@@ -26,4 +26,13 @@
 
 /** 监听屏幕发生旋转 */
 void addObserverDeviceOrientationDidChange(id target, SEL method);
+
+/**
+ 开启一个定时器
+ 
+ @param target 定时器持有者
+ @param timeInterval 执行间隔时间
+ @param handler 重复执行事件
+ */
+void dispatchTimer(id target, double timeInterval,void (^handler)(dispatch_source_t timer));
 @end
