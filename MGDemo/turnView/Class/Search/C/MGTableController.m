@@ -19,6 +19,10 @@
 
 
 @interface MGTableController ()
+{
+    UIView *hideView;
+    UILabel *titleLabel;
+}
 
 /** 顶部的ImageView */
 @property (nonatomic,strong) UIImageView *topImageView;
@@ -53,7 +57,7 @@ static NSString *const CellIdentfier = @"CellIdentfier";
         _sectionDataSources = [NSMutableArray array];
         for (NSUInteger i = 0; i < 10; ++i) {
             MGSectionModel *sectionModel = [[MGSectionModel alloc] init];
-            sectionModel.isExpanded = NO;
+            sectionModel.isExpanded = YES;
             sectionModel.sectionTitle = [NSString stringWithFormat:@"section: %ld", i];
             NSMutableArray *itemArray = [[NSMutableArray alloc] init];
             for (NSUInteger j = 0; j < 3; ++j)
@@ -73,6 +77,7 @@ static NSString *const CellIdentfier = @"CellIdentfier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addHideView];
     
     // 创建头部的imageView
     [self setUpScaleHeaderView];
@@ -84,6 +89,29 @@ static NSString *const CellIdentfier = @"CellIdentfier";
     // 注册 cell
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:CellIdentfier];
+}
+
+- (void)addHideView {
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_WIDTH, 44)];
+    titleView.clipsToBounds = YES;
+    titleView.backgroundColor = [UIColor clearColor];
+    self.navigationItem.titleView = titleView;
+    
+    UILabel *title = [UILabel new];
+    title.text = @"我就喜欢叫你笨蛋";
+    title.textColor = [UIColor orangeColor];
+    [titleView addSubview:title];
+    [title sizeToFit];
+    titleLabel = title;
+    [title mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.navigationItem.titleView);
+    }];
+    
+    hideView = [[UIView alloc] initWithFrame:CGRectMake(0, 44, 100, 30)];
+    hideView.center = CGPointMake(titleView.width/2, (self.navigationItem.titleView.height*2));
+    hideView.backgroundColor = [UIColor redColor];//mainColor;
+    hideView.alpha = 1;
+    [self.navigationItem.titleView addSubview:hideView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -106,17 +134,17 @@ static NSString *const CellIdentfier = @"CellIdentfier";
 //    [self.navigationController.view addSubview:statusView];
 //    [self.navigationController.view bringSubviewToFront:statusView];
     
-    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
-    topView.clipsToBounds = NO;
-    topView.backgroundColor = [UIColor clearColor];
-    _topImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
-    _topImageView.layer.anchorPoint = CGPointMake(0.5, 0);
-    _topImageView.backgroundColor = [UIColor whiteColor];
-    _topImageView.layer.cornerRadius = _topImageView.bounds.size.width/2;
-//    _topImageView.layer.masksToBounds = YES;
-    _topImageView.image = [UIImage imageNamed:@"12"];
-    [topView addSubview:_topImageView];
-    self.navigationItem.titleView = topView;
+//    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
+//    topView.clipsToBounds = NO;
+//    topView.backgroundColor = [UIColor clearColor];
+//    _topImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
+//    _topImageView.layer.anchorPoint = CGPointMake(0.5, 0);
+//    _topImageView.backgroundColor = [UIColor whiteColor];
+//    _topImageView.layer.cornerRadius = _topImageView.bounds.size.width/2;
+////    _topImageView.layer.masksToBounds = YES;
+//    _topImageView.image = [UIImage imageNamed:@"12"];
+//    [topView addSubview:_topImageView];
+//    self.navigationItem.titleView = topView;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchClick)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"GIF展示" style:UIBarButtonItemStylePlain target:self action:@selector(gifClick)];
@@ -200,17 +228,35 @@ static NSString *const CellIdentfier = @"CellIdentfier";
     
     CGFloat contentSet = scrollView.contentOffset.y + self.tableView.contentInset.top;
     
-    if (contentSet >= 0 && contentSet <= 30) {
-        _topImageView.transform = CGAffineTransformMakeScale(1 - contentSet/64, 1-contentSet/64);
-        _topImageView.y = 0;
-    } else if (contentSet > 30) {
-        _topImageView.transform = CGAffineTransformMakeScale(0.5, 0.5);
-        _topImageView.y = 0;
-    } else if (contentSet < 0 ) {
-        _topImageView.transform = CGAffineTransformMakeScale(1, 1);
-        _topImageView.y = 0;
-    }
+//    if (contentSet >= 0 && contentSet <= 30) {
+//        _topImageView.transform = CGAffineTransformMakeScale(1 - contentSet/64, 1-contentSet/64);
+//        _topImageView.y = 0;
+//    } else if (contentSet > 30) {
+//        _topImageView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+//        _topImageView.y = 0;
+//    } else if (contentSet < 0 ) {
+//        _topImageView.transform = CGAffineTransformMakeScale(1, 1);
+//        _topImageView.y = 0;
+//    }
     
+    if (self.navigationItem.titleView) {
+        if (contentSet > 170 ) {
+            CGFloat alpha = 1-(self.navigationItem.titleView.height-(contentSet-170)/40);
+            if (alpha >= 1) {
+                alpha = 1.0;
+            }
+            titleLabel.alpha = alpha;
+            hideView.y = self.navigationItem.titleView.height-(contentSet-170-3);
+            if (hideView.y <= (self.navigationItem.titleView.height-hideView.height)/2) {;
+                hideView.center = CGPointMake(self.navigationItem.titleView.width/2, self.navigationItem.titleView.height/2);
+            }
+        }else if (contentSet<170){
+
+            titleLabel.alpha = 1.0;
+            hideView.frame = CGRectMake((MGSCREEN_WIDTH-100-100)/2, self.navigationItem.titleView.height, 100, 30);
+            hideView.center = CGPointMake(self.navigationItem.titleView.width/2, (self.navigationItem.titleView.height*2));
+        }
+    }
 }
 
 @end
