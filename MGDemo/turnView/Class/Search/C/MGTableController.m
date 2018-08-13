@@ -93,25 +93,33 @@ static NSString *const CellIdentfier = @"CellIdentfier";
 
 - (void)addHideView {
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_WIDTH, 44)];
-    titleView.clipsToBounds = YES;
+//    titleView.clipsToBounds = YES;
     titleView.backgroundColor = [UIColor clearColor];
     self.navigationItem.titleView = titleView;
     
-    UILabel *title = [UILabel new];
-    title.text = @"我就喜欢叫你笨蛋";
-    title.textColor = [UIColor orangeColor];
-    [titleView addSubview:title];
-    [title sizeToFit];
-    titleLabel = title;
-    [title mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.navigationItem.titleView);
-    }];
-    
-    hideView = [[UIView alloc] initWithFrame:CGRectMake(0, 44, 100, 30)];
-    hideView.center = CGPointMake(titleView.width/2, (self.navigationItem.titleView.height*2));
-    hideView.backgroundColor = [UIColor redColor];//mainColor;
-    hideView.alpha = 1;
-    [self.navigationItem.titleView addSubview:hideView];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, self.navigationItem.titleView.height)];
+        title.text = @"我就喜欢叫你笨蛋";
+        title.textColor = [UIColor orangeColor];
+        [title sizeToFit];
+        title.center = CGPointMake(MGSCREEN_WIDTH/2, (self.navigationItem.titleView.height/2));
+        self->titleLabel = title;
+        title.frame = [self.navigationController.navigationBar convertRect:title.frame toView:self.navigationItem.titleView];
+        [titleView addSubview:title];
+        
+        UIView *flowImageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 38, 38)];
+//        flowImageView.center = CGPointMake(MGSCREEN_WIDTH/2, (self.navigationItem.titleView.height*2));
+        flowImageView.center = CGPointMake(MGSCREEN_WIDTH/2, (self.navigationItem.titleView.height*2));
+        flowImageView.alpha = 1;
+        flowImageView.backgroundColor = [UIColor redColor];
+        flowImageView.layer.cornerRadius = 19;
+        flowImageView.clipsToBounds = YES;
+        self->hideView = flowImageView;
+        //坐标系转换到titleview
+        flowImageView.frame = [self.navigationItem.titleView convertRect:flowImageView.frame toView:self.navigationController.navigationBar];
+        //flowImageView添加到titleview
+        [titleView addSubview:flowImageView];
+    });
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -248,13 +256,14 @@ static NSString *const CellIdentfier = @"CellIdentfier";
             titleLabel.alpha = alpha;
             hideView.y = self.navigationItem.titleView.height-(contentSet-170-3);
             if (hideView.y <= (self.navigationItem.titleView.height-hideView.height)/2) {;
-                hideView.center = CGPointMake(self.navigationItem.titleView.width/2, self.navigationItem.titleView.height/2);
+                hideView.center = CGPointMake(MGSCREEN_WIDTH/2, self.navigationItem.titleView.height/2);
+                hideView.frame = [self.navigationController.navigationBar convertRect:hideView.frame toView:self.navigationItem.titleView];
             }
         }else if (contentSet<170){
 
             titleLabel.alpha = 1.0;
-            hideView.frame = CGRectMake((MGSCREEN_WIDTH-100-100)/2, self.navigationItem.titleView.height, 100, 30);
-            hideView.center = CGPointMake(self.navigationItem.titleView.width/2, (self.navigationItem.titleView.height*2));
+            hideView.center = CGPointMake(MGSCREEN_WIDTH/2, (self.navigationItem.titleView.height*2));
+            hideView.frame = [self.navigationController.navigationBar convertRect:hideView.frame toView:self.navigationItem.titleView];
         }
     }
 }
