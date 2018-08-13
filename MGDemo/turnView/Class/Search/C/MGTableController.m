@@ -109,7 +109,6 @@ static NSString *const CellIdentfier = @"CellIdentfier";
         [titleView addSubview:title];
         
         UIView *flowImageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 38, 38)];
-//        flowImageView.center = CGPointMake(MGSCREEN_WIDTH/2, (self.navigationItem.titleView.height*2));
         flowImageView.center = CGPointMake(MGSCREEN_WIDTH/2, (self.navigationItem.titleView.height*2));
         flowImageView.alpha = 1;
         flowImageView.backgroundColor = [UIColor redColor];
