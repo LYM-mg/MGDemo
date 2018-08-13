@@ -93,10 +93,11 @@ static NSString *const CellIdentfier = @"CellIdentfier";
 
 - (void)addHideView {
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_WIDTH, 44)];
-//    titleView.clipsToBounds = YES;
+    titleView.clipsToBounds = YES;
     titleView.backgroundColor = [UIColor clearColor];
     self.navigationItem.titleView = titleView;
     
+    // 主线程列队一个block， 这样做 可以获取到autolayout布局后的frame，也就是titleview的frame。在viewDidLayoutSubviews中同样可以获取到布局后的坐标
     dispatch_async(dispatch_get_main_queue(), ^{
         UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, self.navigationItem.titleView.height)];
         title.text = @"我就喜欢叫你笨蛋";
@@ -116,7 +117,7 @@ static NSString *const CellIdentfier = @"CellIdentfier";
         flowImageView.clipsToBounds = YES;
         self->hideView = flowImageView;
         //坐标系转换到titleview
-        flowImageView.frame = [self.navigationItem.titleView convertRect:flowImageView.frame toView:self.navigationController.navigationBar];
+        flowImageView.frame = [self.navigationController.navigationBar convertRect:flowImageView.frame toView:self.navigationItem.titleView];
         //flowImageView添加到titleview
         [titleView addSubview:flowImageView];
     });
