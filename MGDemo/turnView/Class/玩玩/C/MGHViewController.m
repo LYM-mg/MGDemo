@@ -9,8 +9,10 @@
 #import "MGHFlowLayout.h"
 #import "MGListViewController.h"
 
+#import "UIViewController+Extension.h"
+
 @interface MGHViewController ()<UICollectionViewDataSource,MGHFlowLayoutDelegate>
-@property (nonatomic,weak) UICollectionView *collectionView;
+@property (nonatomic,strong) UICollectionView *collectionView;
 @end
 
 @implementation MGHViewController
@@ -50,6 +52,11 @@ static NSString * const HCellID = @"HCellID";
 //        make.top.equalTo(self.view).offset(64);
 //    }];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"测试安装App" style:UIBarButtonItemStylePlain target:self action:@selector(test)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"🔙" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+}
+
+- (void)back {
+    [self backToController:@"MGWanWanViewController" animated:YES];
 }
 
 - (void)test {
