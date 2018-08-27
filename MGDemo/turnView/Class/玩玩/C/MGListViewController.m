@@ -7,6 +7,8 @@
 
 #import "MGListViewController.h"
 #import "MGApplication.h"
+#import "UIViewController+Extension.h"
+#import "MGRunTimeVC.h"
 
 @interface MGListViewController ()
 @property (nonatomic,strong) NSMutableArray *appList;
@@ -25,6 +27,15 @@
     [super viewDidLoad];
     self.navigationItem.title = @"已安装App";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"测试" style:UIBarButtonItemStylePlain target:self action:@selector(test)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"🔙" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+}
+
+- (void)dealloc {
+    NSLog(@"%s",__func__);
+}
+
+- (void)back {
+    [self backToControllerClass:[MGRunTimeVC class]  animated:YES];
 }
 
 - (void)test {
