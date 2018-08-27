@@ -213,6 +213,9 @@
 		F43F1A292016E26200A4B17E /* XJLTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A212016E26200A4B17E /* XJLTaskViewController.m */; };
 		F43F1A2A2016E26200A4B17E /* XJLWatchLiveTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A232016E26200A4B17E /* XJLWatchLiveTaskCell.m */; };
 		F4436E2C2080585C00EFD7A7 /* MGSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4436E2B2080585C00EFD7A7 /* MGSortViewController.m */; };
+		F4497E1521339FB50018F7C1 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4497E1021339FB50018F7C1 /* UIViewController+Extension.m */; };
+		F4497E1621339FB50018F7C1 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F4497E1221339FB50018F7C1 /* UIViewController+HUD.m */; };
+		F4497E1721339FB50018F7C1 /* UIViewController+SLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4497E1421339FB50018F7C1 /* UIViewController+SLExtension.m */; };
 		F44D0B67200F200100AB7C63 /* debugRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B63200F200000AB7C63 /* debugRibbon.png */; };
 		F44D0B68200F200100AB7C63 /* betaRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B64200F200000AB7C63 /* betaRibbon.png */; };
 		F44D0B69200F200100AB7C63 /* resizedBetaRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B65200F200000AB7C63 /* resizedBetaRibbon.png */; };
@@ -604,6 +607,12 @@
 		F43F1A232016E26200A4B17E /* XJLWatchLiveTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJLWatchLiveTaskCell.m; sourceTree = "<group>"; };
 		F4436E2A2080585C00EFD7A7 /* MGSortViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGSortViewController.h; sourceTree = "<group>"; };
 		F4436E2B2080585C00EFD7A7 /* MGSortViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGSortViewController.m; sourceTree = "<group>"; };
+		F4497E0F21339FB50018F7C1 /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
+		F4497E1021339FB50018F7C1 /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
+		F4497E1121339FB50018F7C1 /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = "<group>"; };
+		F4497E1221339FB50018F7C1 /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
+		F4497E1321339FB50018F7C1 /* UIViewController+SLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SLExtension.h"; sourceTree = "<group>"; };
+		F4497E1421339FB50018F7C1 /* UIViewController+SLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SLExtension.m"; sourceTree = "<group>"; };
 		F44D0B63200F200000AB7C63 /* debugRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debugRibbon.png; sourceTree = "<group>"; };
 		F44D0B64200F200000AB7C63 /* betaRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = betaRibbon.png; sourceTree = "<group>"; };
 		F44D0B65200F200000AB7C63 /* resizedBetaRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resizedBetaRibbon.png; sourceTree = "<group>"; };
@@ -1310,6 +1319,7 @@
 				C0B8CF711F46BCB600DBD937 /* UIViewController+SLExtension.h */,
 				C0B8CF721F46BCB600DBD937 /* UIViewController+SLExtension.m */,
 				F4695A92212D3C24001BBBFC /* UIViewController+HUD.h */,
+				F4497E0E21339FB50018F7C1 /* ViewController */,
 				F4695A91212D3C23001BBBFC /* UIViewController+HUD.m */,
 			);
 			path = ViewController;
@@ -1476,6 +1486,19 @@
 				F43F1A232016E26200A4B17E /* XJLWatchLiveTaskCell.m */,
 			);
 			path = TaskView;
+			sourceTree = "<group>";
+		};
+		F4497E0E21339FB50018F7C1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F4497E0F21339FB50018F7C1 /* UIViewController+Extension.h */,
+				F4497E1021339FB50018F7C1 /* UIViewController+Extension.m */,
+				F4497E1121339FB50018F7C1 /* UIViewController+HUD.h */,
+				F4497E1221339FB50018F7C1 /* UIViewController+HUD.m */,
+				F4497E1321339FB50018F7C1 /* UIViewController+SLExtension.h */,
+				F4497E1421339FB50018F7C1 /* UIViewController+SLExtension.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1658,6 +1681,7 @@
 				F411AC59200DF29D009B73AC /* MQGradientProgressView.m in Sources */,
 				3A29D0D71D1A426E004F1FDD /* MJFoundation.m in Sources */,
 				F402467A207F057400A04718 /* MGMarqueeView.m in Sources */,
+				F4497E1621339FB50018F7C1 /* UIViewController+HUD.m in Sources */,
 				3A29D0F01D1A426E004F1FDD /* UIScrollView+MJExtension.m in Sources */,
 				3A29D0F41D1A426E004F1FDD /* NSData+ImageContentType.m in Sources */,
 				3A5096231D2F6EA100580D2B /* HUTransitionVerticalLinesAnimator.m in Sources */,
@@ -1742,6 +1766,7 @@
 				3A29D0DD1D1A426E004F1FDD /* NSObject+MJCoding.m in Sources */,
 				3A29D0D51D1A426E004F1FDD /* MJArgument.m in Sources */,
 				3AE9E4551CF92D03000DCB72 /* AppDelegate.m in Sources */,
+				F4497E1721339FB50018F7C1 /* UIViewController+SLExtension.m in Sources */,
 				3A23A3B91D2EC6F800FFFF78 /* CustomAnimateTransitionPop.m in Sources */,
 				3A29D1011D1A426E004F1FDD /* UIImageView+WebCache.m in Sources */,
 				C05B45D81F7A3DBC003B77D3 /* CALayer+PauseAimate.m in Sources */,
@@ -1766,6 +1791,7 @@
 				C0D981261F273BDD0070382C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				C0B8CF841F46BCB600DBD937 /* UIViewController+SLExtension.m in Sources */,
 				3AE9E4521CF92D03000DCB72 /* main.m in Sources */,
+				F4497E1521339FB50018F7C1 /* UIViewController+Extension.m in Sources */,
 				3A85018D1D2E31A600E2CE67 /* MGSearchViewController.m in Sources */,
 				C036A3041F2C605000EE45DE /* MGRunTimeVC.m in Sources */,
 				F426CFD620089DEF00DE032D /* MGGIFViewController.m in Sources */,
