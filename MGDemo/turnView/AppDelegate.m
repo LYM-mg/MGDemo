@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface AppDelegate ()
 
@@ -30,6 +31,10 @@
         [application registerUserNotificationSettings:settings];
     }
     [self sendLocalNotification];
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    NSError *error = nil;
+    [session setCategory:AVAudioSessionCategoryPlayback error:&error];
+    [session setActive:YES error:&error];
     return YES;
 }
 
@@ -127,7 +132,7 @@
         notification.repeatInterval = kCFCalendarUnitDay;
         
         // 设置提醒的文字内容
-        notification.alertBody   = @"佳莉大笨蛋大傻瓜 Wake up, woman";
+        notification.alertBody   = @"大笨蛋大傻瓜 Wake up, woman";
         notification.alertTitle  = dateStr;
         notification.alertAction = NSLocalizedString(@"起床了", nil);
         // 2.决定alertAction是否生效

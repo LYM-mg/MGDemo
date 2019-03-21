@@ -16,6 +16,8 @@
 @interface MGWanWanViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *shakeBtn;
 @property (nonatomic,strong) UIScrollView *showView;
+/** <#注释#>  */
+@property (strong,nonatomic) UIView *liveView;
 @end
 
 @implementation MGWanWanViewController
@@ -64,6 +66,20 @@
     scrollSwitchBtn.centerX = self.view.centerX;
     scrollSwitchBtn.timeInterval = 5;
     [self.view addSubview:scrollSwitchBtn];
+    
+    self.liveView = [[UIView alloc]init];
+    self.liveView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:self.liveView];
+    
+    // 显示下面直角，上面圆角的效果
+    self.liveView.frame = CGRectMake(100, 400, 28, 13);
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.liveView.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight | UIRectCornerBottomRight cornerRadii:CGSizeMake(7, 7)];
+    self.liveView.clipsToBounds = YES;
+    CAShapeLayer *liveViewLayer = [[CAShapeLayer alloc] init];
+    liveViewLayer.frame = self.liveView.bounds;
+    liveViewLayer.fillColor = [UIColor blackColor].CGColor;
+    liveViewLayer.path = maskPath.CGPath;
+    self.liveView.layer.mask = liveViewLayer;
 }
 
 - (void)runtimeClick {
@@ -89,6 +105,12 @@
 //    UIView *captureView = [_shakeBtn snapshotViewAfterScreenUpdates:false];
 //    [self.view addSubview:captureView];
 //    captureView.frame = CGRectMake(120,150,200,200);
+    
+    
+    NSDictionary *dict = [NSDictionary dictionary];
+    if (((NSArray *)dict[@"bendan"]).count) {
+        NSLog(@"测试");
+    }
 }
 - (IBAction)ceshiDelay:(MGButton_Delay *)sender {
     sender.selected = !sender.selected;

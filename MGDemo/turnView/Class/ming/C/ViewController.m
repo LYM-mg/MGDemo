@@ -122,10 +122,9 @@
     segment=[[UISegmentedControl alloc] initWithItems:segArr];
     segment.frame=CGRectMake(MGSCREEN_WIDTH/2-266/4, 25, 266/2, 30);
     [segment addTarget:self action:@selector(selectIndex:) forControlEvents:(UIControlEventValueChanged)];
-    segment.layer.cornerRadius = 15;
-    segment.clipsToBounds = YES;
-    
-//    segment.layer.borderColor=[UIColor whiteColor].CGColor;
+    segment.cornerRadius = 30/2;
+    segment.borderWidth = 1;
+    segment.layer.borderColor=[UIColor orangeColor].CGColor;
     segment.tintColor=[UIColor orangeColor];
     NSDictionary *dics = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:15.0f] forKey:NSFontAttributeName];
     [segment setTitleTextAttributes:dics forState:UIControlStateNormal];
@@ -180,7 +179,7 @@
 }
 
 #pragma mark - 翻转动画
-- (void) animationWithView:(UIView *)view WithAnimationTransition:(UIViewAnimationTransition) transition
+- (void)animationWithView:(UIView *)view WithAnimationTransition:(UIViewAnimationTransition) transition
 {
     [UIView animateWithDuration:0.5f animations:^{
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];

@@ -91,6 +91,10 @@
 	<string>App需要您的同意,才能访问相册</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>App需要您的同意,才能访问提醒事项</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

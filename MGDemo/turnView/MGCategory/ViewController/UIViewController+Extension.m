@@ -2,7 +2,7 @@
 //  UIViewController+Extension.m
 //  NewUnion
 //
-//  Created by Tassel on 16/12/18.
+//  Created by Ming on 16/12/18.
 //  Copyright © 2016年 NewUnion. All rights reserved.
 //
 

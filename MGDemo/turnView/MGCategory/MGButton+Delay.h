@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define defaultInterval .5//默认时间间隔
+#define defaultInterval 1.0//默认时间间隔
 @interface MGButton_Delay: UIButton
 @property(nonatomic,assign) IBInspectable CGFloat timeInterval;//用这个给重复点击加间隔
 @property(nonatomic,assign) IBInspectable BOOL isIgnoreEvent;//YES不允许点击NO允许点击

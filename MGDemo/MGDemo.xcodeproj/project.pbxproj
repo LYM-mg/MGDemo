@@ -205,6 +205,7 @@
 		F426CFE92008B14E00DE032D /* UINavigationBar+ChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F426CFE72008B14D00DE032D /* UINavigationBar+ChangeColor.m */; };
 		F426CFEB2008B56A00DE032D /* example.gif in Resources */ = {isa = PBXBuildFile; fileRef = F426CFEA2008B56A00DE032D /* example.gif */; };
 		F43AE464211AC57B00E9AB24 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F43AE462211AC57A00E9AB24 /* TimerViewController.m */; };
+		F43DB40722432B5A00043342 /* UIView+SpeedCreat.m in Sources */ = {isa = PBXBuildFile; fileRef = F43DB40622432B5A00043342 /* UIView+SpeedCreat.m */; };
 		F43F1A242016E26200A4B17E /* XJLLiveTaskHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A172016E26200A4B17E /* XJLLiveTaskHeaderView.m */; };
 		F43F1A252016E26200A4B17E /* XJLTaskButten.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A192016E26200A4B17E /* XJLTaskButten.m */; };
 		F43F1A262016E26200A4B17E /* XJLTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F43F1A1B2016E26200A4B17E /* XJLTaskCell.m */; };
@@ -222,6 +223,7 @@
 		F44D0B6A200F200100AB7C63 /* resizedRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B66200F200000AB7C63 /* resizedRibbon.png */; };
 		F4695A90212D3C09001BBBFC /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4695A8E212D3C08001BBBFC /* UIViewController+Extension.m */; };
 		F4695A93212D3C24001BBBFC /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F4695A91212D3C23001BBBFC /* UIViewController+HUD.m */; };
+		F4852EE921C3AE810075B029 /* NSTimer+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = F4852EE721C3AE810075B029 /* NSTimer+Block.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -591,6 +593,8 @@
 		F426CFEA2008B56A00DE032D /* example.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = example.gif; sourceTree = "<group>"; };
 		F43AE462211AC57A00E9AB24 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		F43AE463211AC57A00E9AB24 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		F43DB40522432B5900043342 /* UIView+SpeedCreat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SpeedCreat.h"; sourceTree = "<group>"; };
+		F43DB40622432B5A00043342 /* UIView+SpeedCreat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SpeedCreat.m"; sourceTree = "<group>"; };
 		F43F1A162016E26200A4B17E /* XJLLiveTaskHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJLLiveTaskHeaderView.h; sourceTree = "<group>"; };
 		F43F1A172016E26200A4B17E /* XJLLiveTaskHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJLLiveTaskHeaderView.m; sourceTree = "<group>"; };
 		F43F1A182016E26200A4B17E /* XJLTaskButten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJLTaskButten.h; sourceTree = "<group>"; };
@@ -621,6 +625,8 @@
 		F4695A8F212D3C09001BBBFC /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		F4695A91212D3C23001BBBFC /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
 		F4695A92212D3C24001BBBFC /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = "<group>"; };
+		F4852EE721C3AE810075B029 /* NSTimer+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Block.m"; sourceTree = "<group>"; };
+		F4852EE821C3AE810075B029 /* NSTimer+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Block.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1252,6 +1258,10 @@
 		C0B8CF4B1F46BCB600DBD937 /* MGCategory */ = {
 			isa = PBXGroup;
 			children = (
+				F43DB40522432B5900043342 /* UIView+SpeedCreat.h */,
+				F43DB40622432B5A00043342 /* UIView+SpeedCreat.m */,
+				F4852EE821C3AE810075B029 /* NSTimer+Block.h */,
+				F4852EE721C3AE810075B029 /* NSTimer+Block.m */,
 				C0B8CF4C1F46BCB600DBD937 /* MGCategoryHeader.h */,
 				C05B45D61F7A3DBC003B77D3 /* CALayer+PauseAimate.h */,
 				C05B45D71F7A3DBC003B77D3 /* CALayer+PauseAimate.m */,
@@ -1536,6 +1546,11 @@
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = H54L47S422;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1735,6 +1750,7 @@
 				3AA3DA9E1D0FDB18008B96E2 /* SVRadialGradientLayer.m in Sources */,
 				3A29D0EB1D1A426E004F1FDD /* MJRefreshGifHeader.m in Sources */,
 				F43F1A242016E26200A4B17E /* XJLLiveTaskHeaderView.m in Sources */,
+				F43DB40722432B5A00043342 /* UIView+SpeedCreat.m in Sources */,
 				3A85016D1D2E308E00E2CE67 /* MGSelectViewController.m in Sources */,
 				3AFE8BA51D2E620F00512C3A /* MGCar.m in Sources */,
 				C0B8CF821F46BCB600DBD937 /* UIView+LYMExtension.m in Sources */,
@@ -1772,6 +1788,7 @@
 				C05B45D81F7A3DBC003B77D3 /* CALayer+PauseAimate.m in Sources */,
 				3A29D0ED1D1A426E004F1FDD /* MJRefreshStateHeader.m in Sources */,
 				C0B8CF761F46BCB600DBD937 /* NSObject+HUD.m in Sources */,
+				F4852EE921C3AE810075B029 /* NSTimer+Block.m in Sources */,
 				F4695A93212D3C24001BBBFC /* UIViewController+HUD.m in Sources */,
 				3AA3DA9B1D0FDB18008B96E2 /* SVIndefiniteAnimatedView.m in Sources */,
 				C0D763F61F5111EF00E029D9 /* MGScrollLabelView.m in Sources */,

@@ -8,10 +8,12 @@
 
 #import "MGShakeVC.h"
 #import <AVFoundation/AVFoundation.h>
+#import <AVFoundation/AVSpeechSynthesis.h>
 #import "MGShakeVC.h"
 #import "MGSortViewController.h"
 
-@interface MGShakeVC ()
+
+@interface MGShakeVC ()<AVSpeechSynthesizerDelegate>
 /** imgUp */
 @property (nonatomic,strong) UIImageView *imgUp;
 /** imgDown */
@@ -21,6 +23,10 @@
 
 @property (nonatomic,strong) AVAudioPlayer *player;
 
+/** <#注释#>  */
+@property (strong,nonatomic) AVSpeechSynthesizer *avSpeaker;
+/** <#注释#>  */
+@property (strong,nonatomic) UITextView *textView;
 @end
 
 @implementation MGShakeVC
@@ -65,11 +71,38 @@
     [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
     [self becomeFirstResponder];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"排序" style:UIBarButtonItemStylePlain target:self action:@selector(sortClick)];
+    UIBarButtonItem *sort = [[UIBarButtonItem alloc] initWithTitle:@"排序" style:UIBarButtonItemStylePlain target:self action:@selector(sortClick)];
+    UIBarButtonItem *read = [[UIBarButtonItem alloc] initWithTitle:@"朗读" style:UIBarButtonItemStylePlain target:self action:@selector(readClick)];
+    self.navigationItem.rightBarButtonItems = @[sort,read];
+    
+    UITextView *textView = [[UITextView alloc] initWithFrame:self.view.frame];
+    textView.y = 10+MGNavHeight;
+    textView.x = 10;
+    textView.width = MGSCREEN_WIDTH-20;
+    textView.height = MGSCREEN_HEIGHT-20;
+    textView.borderColor = [UIColor lightGrayColor];
+    textView.borderWidth = 3;
+    textView.cornerRadius = 10;
+    textView.text = @"笨蛋，我喜欢你,怎么会这样呢？";
+    [self.view addSubview:textView];
+    _textView = textView;
 }
 
 - (void)sortClick {
     [self.navigationController pushViewController:[MGSortViewController new] animated:YES];
+}
+
+- (void)readClick {
+        //初始化要说出的内容
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:_textView.text];
+                                    
+    //通过特定的语言获得声音
+    AVSpeechSynthesisVoice *voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"zh-CN"];
+    //通过voicce标示获得声音
+    //AVSpeechSynthesisVoice *voice = [AVSpeechSynthesisVoice voiceWithIdentifier:AVSpeechSynthesisVoiceIdentifierAlex];
+    utterance.voice = voice;
+    //开始朗读
+    [self.avSpeaker speakUtterance:utterance];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,7 +110,37 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (AVSpeechSynthesizer *)avSpeaker {
+    if (!_avSpeaker) {
+            //初始化语音合成器
+        _avSpeaker = [[AVSpeechSynthesizer alloc] init];
+        _avSpeaker.delegate = self;
+        //初始化要说出的内容
+        AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:@"内心独白，怎么会爱上了她并带她回家"];
+        //设置语速,语速介于AVSpeechUtteranceMaximumSpeechRate和AVSpeechUtteranceMinimumSpeechRate之间
+        //AVSpeechUtteranceMaximumSpeechRate
+        //AVSpeechUtteranceMinimumSpeechRate
+        //AVSpeechUtteranceDefaultSpeechRate
+        utterance.rate = 0.5;
+        
+        //设置音高,[0.5 - 2] 默认 = 1
+        //AVSpeechUtteranceMaximumSpeechRate
+        //AVSpeechUtteranceMinimumSpeechRate
+        //AVSpeechUtteranceDefaultSpeechRate
+        utterance.pitchMultiplier = 1;
+        
+        //设置音量,[0-1] 默认 = 1
+        utterance.volume = 1;
+        
+        //读一段前的停顿时间
+        utterance.preUtteranceDelay = 1;
+        //读完一段后的停顿时间
+        utterance.postUtteranceDelay = 1;
+        [_avSpeaker speakUtterance:utterance];
+                                        
+    }
+    return _avSpeaker;
+}
 #pragma mark - 摇一摇
 // 检测到摇一摇
 -(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event

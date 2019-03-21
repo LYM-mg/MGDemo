@@ -19,6 +19,21 @@
 #import "MGCategoryHeader.h"
 #import "Masonry.h"
 
+#define dispatch_async_main_safe(block)\
+if ([NSThread isMainThread]) {\
+    block();\
+} else {\
+    dispatch_async(dispatch_get_main_queue(), block);\
+}
+
+#ifndef dispatch_main_async_safe
+#define dispatch_main_async_safe(block)\
+if (strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL), dispatch_queue_get_label(dispatch_get_main_queue())) == 0) {\
+    block();\
+} else {\
+    dispatch_async(dispatch_get_main_queue(), block);\
+}
+#endif
 
 // 导航仪颜色
 #define naBarTiniColor [UIColor colorWithRed:174/255.0f green:42/255.0f blue:44/255.0f alpha:1]
