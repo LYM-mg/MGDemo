@@ -46,7 +46,7 @@
 
 - (UILabel * _Nonnull (^)(CGFloat))mg_Alpha {
     return ^(CGFloat value) {
-        self.userInteractionEnabled = value;
+        self.alpha = value;
         return self;
     };
 }
@@ -206,7 +206,7 @@
 
 - (UIButton * _Nonnull (^)(CGFloat))mg_Alpha {
     return ^(CGFloat value) {
-        self.userInteractionEnabled = value;
+        self.alpha = value;
         return self;
     };
 }
@@ -477,7 +477,7 @@
 
 - (UITextField * _Nonnull (^)(CGFloat))mg_Alpha {
     return ^(CGFloat value) {
-        self.userInteractionEnabled = value;
+        self.alpha = value;
         return self;
     };
 }
