@@ -1,10 +1,10 @@
-//
-//  UIView+SpeedCreat.m
-//  Firestonelamp
-//
-//  Created by newunion on 2019/3/20.
-//  Copyright © 2019年 firestonetmt. All rights reserved.
-//
+    //
+    //  UIView+SpeedCreat.m
+    //  Firestonelamp
+    //
+    //  Created by newunion on 2019/3/20.
+    //  Copyright © 2019年 firestonetmt. All rights reserved.
+    //
 
 #import "UIView+SpeedCreat.h"
 
@@ -58,7 +58,7 @@
     };
 }
 
-/// frame
+    /// frame
 - (UILabel*(^)(CGRect value))mg_Frame {
     return ^ (CGRect value) {
         self.frame = value;
@@ -66,7 +66,7 @@
     };
 }
 
-/// 文字
+    /// 文字
 - (UILabel*(^)(NSString *value))mg_Text {
     return ^ (NSString *value) {
         self.text = value;
@@ -74,7 +74,7 @@
     };
 }
 
-/// 字体
+    /// 字体
 - (UILabel*(^)(UIFont *value))mg_Font {
     return ^ (UIFont *value) {
         self.font = value;
@@ -82,7 +82,7 @@
     };
 }
 
-/// 字号
+    /// 字号
 - (UILabel *(^)(CGFloat value))mg_FontSize {
     return ^ (CGFloat value) {
         self.font = [UIFont systemFontOfSize:value];
@@ -90,7 +90,7 @@
     };
 }
 
-/// 文本颜色
+    /// 文本颜色
 - (UILabel*(^)(UIColor *value))mg_TextColor {
     return ^ (UIColor *value) {
         self.textColor = value;
@@ -98,7 +98,7 @@
     };
 }
 
-/// 对齐方式
+    /// 对齐方式
 - (UILabel*(^)(NSTextAlignment value))mg_TextAlignment {
     return ^ (NSTextAlignment value) {
         self.textAlignment = value;
@@ -106,7 +106,7 @@
     };
 }
 
-/// 行数
+    /// 行数
 - (UILabel*(^)(NSInteger value))mg_NumberOfLines {
     return ^ (NSInteger value) {
         self.numberOfLines = value;
@@ -114,7 +114,7 @@
     };
 }
 
-/// 背景色
+    /// 背景色
 - (UILabel*(^)(UIColor *value))mg_BackgroundColor {
     return ^ (UIColor *value) {
         self.backgroundColor = value;
@@ -122,7 +122,7 @@
     };
 }
 
-///  换行方式
+    ///  换行方式
 - (UILabel*(^)(NSLineBreakMode value))mg_LineBreakMode {
     return ^ (NSInteger value) {
         self.lineBreakMode = value;
@@ -130,7 +130,7 @@
     };
 }
 
-/// 阴影颜色
+    /// 阴影颜色
 - (UILabel*(^)(UIColor *value))mg_ShadowColor {
     return ^ (UIColor *value) {
         self.shadowColor = value;
@@ -138,7 +138,7 @@
     };
 }
 
-/// 偏移尺寸
+    /// 偏移尺寸
 - (UILabel*(^)(CGSize value))mg_ShadowOffset {
     return ^ (CGSize value) {
         self.shadowOffset = value;
@@ -218,7 +218,7 @@
     };
 }
 
-/// frame
+    /// frame
 - (UIButton*(^)(CGRect value))mg_Frame {
     return ^ (CGRect value) {
         self.frame = value;
@@ -226,7 +226,7 @@
     };
 }
 
-/// 字体
+    /// 字体
 - (UIButton*(^)(UIFont *value))mg_Font {
     return ^ (UIFont *value) {
         self.titleLabel.font = value;
@@ -234,7 +234,7 @@
     };
 }
 
-/// 字号
+    /// 字号
 - (UIButton *(^)(CGFloat value))mg_FontSize {
     return ^ (CGFloat value) {
         self.titleLabel.font = [UIFont systemFontOfSize:value];
@@ -242,7 +242,7 @@
     };
 }
 
-/// normal 文字
+    /// normal 文字
 - (UIButton*(^)(NSString *value))mg_NormalText {
     return ^ (NSString *value) {
         [self setTitle:value forState:UIControlStateNormal];
@@ -250,7 +250,7 @@
     };
 }
 
-/// selected 文字
+    /// selected 文字
 - (UIButton*(^)(NSString *value))mg_SelectedText {
     return ^ (NSString *value) {
         [self setTitle:value forState:UIControlStateSelected];
@@ -258,7 +258,7 @@
     };
 }
 
-/// highlight 文字
+    /// highlight 文字
 - (UIButton*(^)(NSString *value))mg_HighlightedText {
     return ^ (NSString *value) {
         [self setTitle:value forState:UIControlStateHighlighted];
@@ -273,23 +273,39 @@
     };
 }
 
-/// normal 文字颜色
-- (UIButton*(^)(UIColor *value))mg_TextNormalColor {
+    /// normal 文字颜色
+- (UIButton*(^)(UIColor *value))mg_NormalTextColor {
     return ^ (UIColor *value) {
         [self setTitleColor:value forState:UIControlStateNormal];
         return self;
     };
 }
 
-/// selected 文字颜色
-- (UIButton*(^)(UIColor *value))mg_TextSelectedColor {
+    /// selected 文字颜色
+- (UIButton*(^)(UIColor *value))mg_SelectedTextColor {
     return ^ (UIColor *value) {
         [self setTitleColor:value forState:UIControlStateSelected];
         return self;
     };
 }
 
-/// normal 图片
+    /// Highlighted 文字颜色
+- (UIButton*(^)(UIColor *value))mg_HighlightedTextColor {
+    return ^ (UIColor *value) {
+        [self setTitleColor:value forState:UIControlStateHighlighted];
+        return self;
+    };
+}
+
+    /// Disabled 文字颜色
+- (UIButton*(^)(UIColor *value))mg_DisabledTextColor {
+    return ^ (UIColor *value) {
+        [self setTitleColor:value forState:UIControlStateDisabled];
+        return self;
+    };
+}
+
+    /// normal 图片
 - (UIButton*(^)(UIImage *value))mg_NormalImage {
     return ^ (UIImage *value) {
         [self setImage:value forState:UIControlStateNormal];
@@ -297,7 +313,7 @@
     };
 }
 
-/// selected 图片
+    /// selected 图片
 - (UIButton*(^)(UIImage *value))mg_SelectedImage {
     return ^ (UIImage *value) {
         [self setImage:value forState:UIControlStateSelected];
@@ -305,7 +321,7 @@
     };
 }
 
-/// Highlighted 图片
+    /// Highlighted 图片
 - (UIButton *(^)(UIImage *))mg_HighlightedImage {
     return ^ (UIImage *value) {
         [self setImage:value forState:UIControlStateHighlighted];
@@ -313,7 +329,7 @@
     };
 }
 
-/// Disabled 图片
+    /// Disabled 图片
 - (UIButton *(^)(UIImage *))mg_DisabledImage {
     return ^ (UIImage *value) {
         [self setImage:value forState:UIControlStateDisabled];
@@ -322,7 +338,7 @@
 }
 
 
-/// normal 背景图片
+    /// normal 背景图片
 - (UIButton*(^)(UIImage *value))mg_NormalBackgroundImage {
     return ^ (UIImage *value) {
         [self setBackgroundImage:value forState:UIControlStateNormal];
@@ -330,7 +346,7 @@
     };
 }
 
-/// selected 背景图片
+    /// selected 背景图片
 - (UIButton*(^)(UIImage *value))mg_SelectedBackgroundImage {
     return ^ (UIImage *value) {
         [self setBackgroundImage:value forState:UIControlStateSelected];
@@ -338,7 +354,7 @@
     };
 }
 
-/// Highlighted 背景图片
+    /// Highlighted 背景图片
 - (UIButton*(^)(UIImage *value))mg_HighlightedBackgroundImage {
     return ^ (UIImage *value) {
         [self setBackgroundImage:value forState:UIControlStateHighlighted];
@@ -346,7 +362,7 @@
     };
 }
 
-/// Disabled 背景图片
+    /// Disabled 背景图片
 - (UIButton*(^)(UIImage *value))mg_DisabledBackgroundImage {
     return ^ (UIImage *value) {
         [self setBackgroundImage:value forState:UIControlStateDisabled];
@@ -354,7 +370,7 @@
     };
 }
 
-/// 垂直布局
+    /// 垂直布局
 - (UIButton*(^)(UIControlContentHorizontalAlignment value))mg_ContentVerticalAlignment {
     return ^ (UIControlContentHorizontalAlignment value) {
         self.contentHorizontalAlignment = value;
@@ -362,7 +378,7 @@
     };
 }
 
-/// 水平布局
+    /// 水平布局
 - (UIButton*(^)(UIControlContentVerticalAlignment value))mg_ContentHorizontalAlignment {
     return ^ (UIControlContentVerticalAlignment value) {
         self.contentVerticalAlignment = value;
@@ -370,7 +386,7 @@
     };
 }
 
-/// image 偏移量
+    /// image 偏移量
 - (UIButton*(^)(UIEdgeInsets value))mg_ImageEdgeInsets {
     return ^ (UIEdgeInsets value) {
         self.imageEdgeInsets = value;
@@ -378,7 +394,7 @@
     };
 }
 
-/// title 偏移量
+    /// title 偏移量
 - (UIButton*(^)(UIEdgeInsets value))mg_TitleEdgeInsets {
     return ^ (UIEdgeInsets value) {
         self.titleEdgeInsets = value;
@@ -386,7 +402,7 @@
     };
 }
 
-/// 内容 偏移量
+    /// 内容 偏移量
 - (UIButton*(^)(UIEdgeInsets value))mg_ContentEdgeInsets {
     return ^ (UIEdgeInsets value) {
         self.contentEdgeInsets = value;
@@ -394,7 +410,7 @@
     };
 }
 
-/// 点击事件
+    /// 点击事件
 - (UIButton *(^)(id target, SEL sel, UIControlEvents controevents))mg_Selector {
     return ^ (id target, SEL sel, UIControlEvents controevents) {
         [self addTarget:target action:sel forControlEvents:controevents];
@@ -486,7 +502,7 @@
     };
 }
 
-/// 字号
+    /// 字号
 - (UITextField *(^)(CGFloat value))mg_FontSize {
     return ^ (CGFloat value) {
         self.font = [UIFont systemFontOfSize:value];
@@ -494,7 +510,7 @@
     };
 }
 
-/// 文本颜色
+    /// 文本颜色
 - (UITextField*(^)(UIColor *value))mg_TextColor {
     return ^ (UIColor *value) {
         self.textColor = value;
@@ -584,7 +600,7 @@
 
 @implementation UIView (SpeedCreat)
 
-/// 快速创建一个Label 默认 text "label" font 14 numberofline 1
+    /// 快速创建一个Label 默认 text "label" font 14 numberofline 1
 + (UILabel *)speedCreatLabelWith:(void(^)(UILabel *label))attributeBlock
 {
     UILabel *label = [[UILabel alloc] init];
@@ -604,7 +620,7 @@
     return label;
 }
 
-/// 快速创建一个button 默认 text "button" font 14
+    /// 快速创建一个button 默认 text "button" font 14
 + (UIButton *)speedCreatButtonWith:(void(^)(UIButton *button))attributeBlock
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -618,7 +634,7 @@
     return button;
 }
 
-/// 快速创建textField
+    /// 快速创建textField
 + (UITextField *)speedCreatTextfieldWith:(void(^)(UITextField *textField))attributeBlock {
     UITextField *textField = [[UITextField alloc] init];
     textField.placeholder = @"请输入...";
