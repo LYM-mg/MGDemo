@@ -10,8 +10,22 @@
 
 @implementation UILabel (SpeedCreat)
 
-+ (UILabel *)label {
-    return [[UILabel alloc] init];
+
+    /// 快速创建一个Label 默认 text "label" font 14 numberofline 1
++ (instancetype)speedCreatLabelWith:(void (^)(id label))attributeBlock {
+    UILabel *label = [[UILabel alloc] init];
+    NSAssert(![self isMemberOfClass:[UILabel class]], @"UILabel is an abstract class, you should not instantiate it directly.");
+    ((UILabel *)label).mg_Config();
+    if (attributeBlock) {
+        attributeBlock(label);
+    }
+    return label;
+}
+
+
+
++ (instancetype)label {
+    return [[self alloc] init];
 }
 
 - (UILabel*(^)(void))mg_Config {
@@ -172,12 +186,24 @@
 
 @implementation UIButton (SpeedCreat)
 
-+ (UIButton *)systemButton {
-    return [UIButton buttonWithType:UIButtonTypeSystem];
+    /// 快速创建一个button 默认 text "button" font 14
++ (instancetype)speedCreatButtonWith:(void(^)(id button))attributeBlock
+{
+    id button = [self buttonWithType:UIButtonTypeCustom];
+    NSAssert(![self isMemberOfClass:[UIButton class]], @"UIButton is an abstract class, you should not instantiate it directly.");
+    ((UIButton *)button).mg_Config();
+    if (attributeBlock) {
+        attributeBlock(button);
+    }
+    return button;
 }
 
-+ (UIButton *)customButton {
-    return [UIButton buttonWithType:UIButtonTypeCustom];
++ (instancetype)systemButton {
+    return [self buttonWithType:UIButtonTypeSystem];
+}
+
++ (instancetype)customButton {
+    return [self buttonWithType:UIButtonTypeCustom];
 }
 
 - (UIButton*(^)(void))mg_Config {
@@ -443,6 +469,19 @@
 @end
 
 @implementation UITextField (SpeedCreat)
+    /// 快速创建textField
++ (instancetype)speedCreatTextfieldWith:(void (^)(id textField))attributeBlock {
+    UITextField *textField = [[UITextField alloc] init];
+    textField.placeholder = @"请输入...";
+    textField.frame = CGRectMake(0, 0, 100, 25);
+    NSAssert(![self isMemberOfClass:[UITextField class]], @"UILabel is an abstract class, you should not instantiate it directly.");
+    ((UITextField *)textField).mg_Config();
+    if (attributeBlock) {
+        attributeBlock(textField);
+    }
+    return textField;
+}
+
 
 + (UITextField *)textField {
     return [[UITextField alloc] init];
@@ -457,6 +496,13 @@
         self.leftView = [UIView new];
         self.leftViewMode = UITextFieldViewModeAlways;
         self.clearButtonMode = UITextFieldViewModeAlways;
+        return self;
+    };
+}
+
+- (UITextField *(^)(id<UITextFieldDelegate>))mg_Delegate {
+    return ^(id delegate) {
+        self.delegate = delegate;
         return self;
     };
 }
@@ -546,6 +592,21 @@
     };
 }
 
+- (UITextField *(^)(UIColor *))mg_PlaceHolderColor {
+    return ^(UIColor *value) {
+        [self setValue:value forKeyPath:@"_placeholderLabel.textColor"];
+        return self;
+    };
+}
+
+- (UITextField *(^)(UIFont *))mg_PlaceHolderCFont {
+    return ^(UIFont *value) {
+        [self setValue:value forKeyPath:@"_placeholderLabel.font"];
+        return self;
+    };
+}
+
+
 - (UITextField *(^)(UITextBorderStyle value))mg_BorderStyle {
     return ^(UITextBorderStyle value) {
         self.borderStyle = value;
@@ -574,6 +635,13 @@
     };
 }
 
+- (UITextField *(^)(id, SEL, UIControlEvents))mg_Selector {
+    return ^ (id target, SEL sel, UIControlEvents controevents) {
+        [self addTarget:target action:sel forControlEvents:controevents];
+        return self;
+    };
+}
+
 - (UITextField *(^)(CGFloat value))mg_CornerRadius {
     return ^ (CGFloat value) {
         self.layer.cornerRadius = value;
@@ -598,53 +666,3 @@
 
 @end
 
-@implementation UIView (SpeedCreat)
-
-    /// 快速创建一个Label 默认 text "label" font 14 numberofline 1
-+ (UILabel *)speedCreatLabelWith:(void(^)(UILabel *label))attributeBlock
-{
-    UILabel *label = [[UILabel alloc] init];
-    label.text = @"label";
-    [label sizeToFit];
-    label.font = [UIFont systemFontOfSize:14];
-    label.textColor = [UIColor blackColor];
-    label.textAlignment = NSTextAlignmentLeft;
-    label.numberOfLines = 1;
-    label.backgroundColor = [UIColor clearColor];
-    label.lineBreakMode = NSLineBreakByWordWrapping;
-    label.shadowColor = [UIColor clearColor];
-    label.shadowOffset = CGSizeMake(0, 0);
-    if (attributeBlock) {
-        attributeBlock(label);
-    }
-    return label;
-}
-
-    /// 快速创建一个button 默认 text "button" font 14
-+ (UIButton *)speedCreatButtonWith:(void(^)(UIButton *button))attributeBlock
-{
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:@"button" forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:14];
-    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-    button.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    if (attributeBlock) {
-        attributeBlock(button);
-    }
-    return button;
-}
-
-    /// 快速创建textField
-+ (UITextField *)speedCreatTextfieldWith:(void(^)(UITextField *textField))attributeBlock {
-    UITextField *textField = [[UITextField alloc] init];
-    textField.placeholder = @"请输入...";
-    textField.frame = CGRectMake(0, 0, 100, 25);
-    textField.font = [UIFont systemFontOfSize:14];
-    textField.clearsOnBeginEditing = true;
-    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    textField.leftView = [UIView new];
-    textField.leftViewMode = UITextFieldViewModeAlways;
-    return textField;
-}
-
-@end

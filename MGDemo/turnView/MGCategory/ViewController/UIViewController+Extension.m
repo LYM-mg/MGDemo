@@ -83,24 +83,21 @@
 }
 
 - (void)backToController:(NSString *)controllerName animated:(BOOL)animated{
-    if (self.navigationController) {
-        NSArray *childViewControllers = self.navigationController.childViewControllers;
-        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
-            return [evaluatedObject isKindOfClass:NSClassFromString(controllerName)];
-        }];
-        NSArray *resluts = [childViewControllers filteredArrayUsingPredicate:predicate];
-        [self.navigationController popToViewController:resluts.firstObject animated:animated];
-    }
+    Class cls = NSClassFromString(controllerName);
+    [self backToControllerClass:cls animated:animated];
 }
 
 - (void)backToControllerClass:(Class)class animated:(BOOL)animated{
-    if (self.navigationController) {
+    NSSe
+    if (self.navigationController && class) {
         NSArray *childViewControllers = self.navigationController.childViewControllers;
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
             return [evaluatedObject isKindOfClass:class];
         }];
         NSArray *resluts = [childViewControllers filteredArrayUsingPredicate:predicate];
-        [self.navigationController popToViewController:resluts.firstObject animated:animated];
+        if (resluts && resluts.count > 0) {
+            [self.navigationController popToViewController:resluts.firstObject animated:animated];
+        }
     }
 }
 @end

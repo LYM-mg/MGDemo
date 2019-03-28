@@ -10,8 +10,10 @@
 
 #pragma mark - UILabel
 @interface UILabel (SpeedCreat)
+    /// 快速创建Label
++ (instancetype)speedCreatLabelWith:(void(^)(id label))attributeBlock;
     /// 初始化
-+ (UILabel *)label;
++ (instancetype)label;
 
     /// 初始化设置
 @property (nonatomic,copy,readonly) UILabel *(^mg_Config)(void);
@@ -49,7 +51,7 @@
     /// 圆角 CGFloat
 @property (nonatomic,assign,readonly) UILabel *(^mg_CornerRadius)(CGFloat value);
     /// 加到父控件
-@property (nonatomic,copy,readonly) UILabel *(^mg_AddTo)(UIView *value);
+@property (nonatomic,strong,readonly) UILabel *(^mg_AddTo)(UIView *value);
     /// 完成block
 @property (nonatomic,copy,readonly) UILabel *(^mg_Completed)(void(^value)(UILabel *));
 
@@ -58,10 +60,12 @@
 
 #pragma mark - UIButton
 @interface UIButton (SpeedCreat)
+    /// 快速创建Button
++ (instancetype)speedCreatButtonWith:(void(^)(id button))attributeBlock;
     /// 初始化custom按钮
-+ (UIButton *)customButton;
++ (instancetype)customButton;
     /// 初始化system按钮
-+ (UIButton *)systemButton;
++ (instancetype)systemButton;
 
     /// 初始化设置
 @property (nonatomic,copy,readonly) UIButton *(^mg_Config)(void);
@@ -136,10 +140,15 @@
 
 #pragma mark - UITextField
 @interface UITextField (SpeedCreat)
+    /// 快速创建TextField
++ (instancetype)speedCreatTextfieldWith:(void(^)(id textField))attributeBlock;
+
     /// 初始化
-+ (UITextField *)textField;
++ (instancetype)textField;
     /// 默认设置
-@property (nonatomic,copy,readonly) UITextField *(^mg_Config)(void) ;
+@property (nonatomic,copy,readonly) UITextField *(^mg_Config)(void);
+    /// 设置代理
+@property (nonatomic,copy,readonly) UITextField *(^mg_Delegate)(id <UITextFieldDelegate>);
 
     /// 是否可用
 @property (nonatomic,assign,readonly) UITextField *(^mg_Enabled)(BOOL value);
@@ -163,8 +172,13 @@
 @property (nonatomic,copy,readonly) UITextField *(^mg_Text)(NSString *value);
     /// 文本颜色
 @property (nonatomic,strong,readonly) UITextField *(^mg_TextColor)(UIColor *value);
-    /// 占位图
+    /// 占位文字
 @property (nonatomic,copy,readonly) UITextField *(^mg_PlaceHolder)(NSString *value);
+    /// 占位文字颜色
+@property (nonatomic,strong,readonly) UITextField *(^mg_PlaceHolderColor)(UIColor *value);
+    /// 占位文字字体
+@property (nonatomic,strong,readonly) UITextField *(^mg_PlaceHolderCFont)(UIFont *value);
+
     /// return键类型
 @property (nonatomic,assign,readonly) UITextField *(^mg_ReturnKeyType)(UIReturnKeyType value);
     /// 边框样式
@@ -174,22 +188,15 @@
     /// 删除view显示样式
 @property (nonatomic,assign,readonly) UITextField *(^mg_ClearButtonMode)(UITextFieldViewMode value);
 
+    /// selector
+@property (nonatomic,copy,readonly) UITextField *(^mg_Selector)(id target, SEL sel, UIControlEvents controevents);
     /// 圆角 CGFloat
 @property (nonatomic,assign,readonly) UITextField *(^mg_CornerRadius)(CGFloat value);
     /// 加到父控件
-@property (nonatomic,copy,readonly) UITextField *(^mg_AddTo)(UIView *value);
+@property (nonatomic,strong,readonly) UITextField *(^mg_AddTo)(UIView *value);
     /// 完成block
 @property (nonatomic,copy,readonly) UITextField *(^mg_Completed)(void(^value)(UITextField *));
 
 @end
 
-#pragma mark - UIView
-@interface UIView (SpeedCreat)
-    /// 快速创建Label
-+ (UILabel *)speedCreatLabelWith:(void(^)(UILabel *label))attributeBlock;
-    /// 快速创建Button
-+ (UIButton *)speedCreatButtonWith:(void(^)(UIButton *button))attributeBlock;
-    /// 快速创建TextField
-+ (UITextField *)speedCreatTextfieldWith:(void(^)(UITextField *textField))attributeBlock;
-@end
 
