@@ -8,6 +8,7 @@
 
 #import "MGDealImageViewController.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+#import "UIViewController+HUD.h"
 
 @interface MGDealImageViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageV1;
@@ -75,6 +76,7 @@
 - (void)openCamera:(UIImagePickerControllerSourceType)type{
     if (![UIImagePickerController isSourceTypeAvailable:type]){
         NSString *tipStr = (type == UIImagePickerControllerSourceTypeCamera) ?@"相机不可用": @"相册不可用";
+        [self showHint:tipStr];
         return;
     }
     UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
@@ -93,6 +95,11 @@
         //1.获取用户选中的图片
     UIImage *selectedImg =  info[UIImagePickerControllerOriginalImage];
 
+    if ([picker.mediaTypes.firstObject isEqualToString:(__bridge NSString *)kUTTypeImage]) {
+        unsigned char *data = [self imageGrayWithData:[self convertUIImageToData:selectedImg] width:selectedImg];
+        UIImage *newImage = [self convertDataToUIImage:data width:selectedImg];
+        self.imageV6.image = newImage;
+    }
 
         //3.隐藏当前图片选择控制器
     [self dismissViewControllerAnimated:YES completion:NULL];
