@@ -221,6 +221,8 @@
 		F44D0B68200F200100AB7C63 /* betaRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B64200F200000AB7C63 /* betaRibbon.png */; };
 		F44D0B69200F200100AB7C63 /* resizedBetaRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B65200F200000AB7C63 /* resizedBetaRibbon.png */; };
 		F44D0B6A200F200100AB7C63 /* resizedRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B66200F200000AB7C63 /* resizedRibbon.png */; };
+		F45AA6272255D9760061A0F0 /* MGDealImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F45AA6252255D9760061A0F0 /* MGDealImageViewController.m */; };
+		F45AA6282255D9760061A0F0 /* MGDealImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45AA6262255D9760061A0F0 /* MGDealImageViewController.xib */; };
 		F4695A90212D3C09001BBBFC /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4695A8E212D3C08001BBBFC /* UIViewController+Extension.m */; };
 		F4695A93212D3C24001BBBFC /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F4695A91212D3C23001BBBFC /* UIViewController+HUD.m */; };
 		F4852EE921C3AE810075B029 /* NSTimer+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = F4852EE721C3AE810075B029 /* NSTimer+Block.m */; };
@@ -621,6 +623,9 @@
 		F44D0B64200F200000AB7C63 /* betaRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = betaRibbon.png; sourceTree = "<group>"; };
 		F44D0B65200F200000AB7C63 /* resizedBetaRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resizedBetaRibbon.png; sourceTree = "<group>"; };
 		F44D0B66200F200000AB7C63 /* resizedRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resizedRibbon.png; sourceTree = "<group>"; };
+		F45AA6242255D9760061A0F0 /* MGDealImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGDealImageViewController.h; sourceTree = "<group>"; };
+		F45AA6252255D9760061A0F0 /* MGDealImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGDealImageViewController.m; sourceTree = "<group>"; };
+		F45AA6262255D9760061A0F0 /* MGDealImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGDealImageViewController.xib; sourceTree = "<group>"; };
 		F4695A8E212D3C08001BBBFC /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		F4695A8F212D3C09001BBBFC /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		F4695A91212D3C23001BBBFC /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
@@ -662,6 +667,9 @@
 				3A5096141D2F6E7500580D2B /* CustomTransitionViewController.xib */,
 				F43AE463211AC57A00E9AB24 /* TimerViewController.h */,
 				F43AE462211AC57A00E9AB24 /* TimerViewController.m */,
+				F45AA6242255D9760061A0F0 /* MGDealImageViewController.h */,
+				F45AA6252255D9760061A0F0 /* MGDealImageViewController.m */,
+				F45AA6262255D9760061A0F0 /* MGDealImageViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1581,6 +1589,7 @@
 				3A8595B11D30F8F300D7720C /* 12.png in Resources */,
 				F402467D207F057400A04718 /* new_home_notice@3x.png in Resources */,
 				3A8595B31D30F8F300D7720C /* buyao.wav in Resources */,
+				F45AA6282255D9760061A0F0 /* MGDealImageViewController.xib in Resources */,
 				3A8595B51D30F8F300D7720C /* cellDatas.plist in Resources */,
 				3A8595B01D30F8F300D7720C /* 1.plist in Resources */,
 				3A8595B81D30F8F300D7720C /* homeDatas.plist in Resources */,
@@ -1810,6 +1819,7 @@
 				3AE9E4521CF92D03000DCB72 /* main.m in Sources */,
 				F4497E1521339FB50018F7C1 /* UIViewController+Extension.m in Sources */,
 				3A85018D1D2E31A600E2CE67 /* MGSearchViewController.m in Sources */,
+				F45AA6272255D9760061A0F0 /* MGDealImageViewController.m in Sources */,
 				C036A3041F2C605000EE45DE /* MGRunTimeVC.m in Sources */,
 				F426CFD620089DEF00DE032D /* MGGIFViewController.m in Sources */,
 				3A29D0FD1D1A426E004F1FDD /* UIImage+GIF.m in Sources */,
@@ -1926,7 +1936,7 @@
 				DEVELOPMENT_TEAM = H54L47S422;
 				GCC_PREFIX_HEADER = turnView/MGDemo.pch;
 				INFOPLIST_FILE = turnView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView2;
 				PRODUCT_NAME = MGDemo;
@@ -1943,7 +1953,7 @@
 				DEVELOPMENT_TEAM = H54L47S422;
 				GCC_PREFIX_HEADER = turnView/MGDemo.pch;
 				INFOPLIST_FILE = turnView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView2;
 				PRODUCT_NAME = MGDemo;
@@ -1997,7 +2007,7 @@
 				DEVELOPMENT_TEAM = H54L47S422;
 				GCC_PREFIX_HEADER = turnView/MGDemo.pch;
 				INFOPLIST_FILE = turnView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ming.turnView2;
 				PRODUCT_NAME = MGDemo;

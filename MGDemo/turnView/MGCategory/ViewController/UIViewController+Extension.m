@@ -88,7 +88,6 @@
 }
 
 - (void)backToControllerClass:(Class)class animated:(BOOL)animated{
-    NSSe
     if (self.navigationController && class) {
         NSArray *childViewControllers = self.navigationController.childViewControllers;
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {

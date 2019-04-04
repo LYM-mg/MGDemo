@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "MGScrollViewLabel.h"
 #import "MGButton+Delay.h"
+#import "MGDealImageViewController.h"
 
 @interface MGWanWanViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *shakeBtn;
@@ -59,7 +60,7 @@
     MGButton_Delay *scrollSwitchBtn=[MGButton_Delay buttonWithType:UIButtonTypeCustom];
     [scrollSwitchBtn addTarget:self action:@selector(ss:) forControlEvents:UIControlEventTouchUpInside];
     scrollSwitchBtn.selected = NO;
-    [scrollSwitchBtn setTitle:@"你咩，代码咋就不行" forState:UIControlStateNormal];
+    [scrollSwitchBtn setTitle:@"图片处理" forState:UIControlStateNormal];
      [scrollSwitchBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [scrollSwitchBtn sizeToFit];
     scrollSwitchBtn.y = 450;
@@ -123,6 +124,7 @@
     }
 }
 - (void)ss:(UIButton *)sender {
+    [self.navigationController pushViewController:[MGDealImageViewController new] animated:YES];
      NSLog(@"靠  代码不响应");
 }
 

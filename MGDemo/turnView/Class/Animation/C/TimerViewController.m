@@ -27,14 +27,7 @@
     
     self.titleLabel = label;
     [self.view addSubview:label];
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     __block int i = 10;
     self.titleLabel.text = [NSString stringWithFormat:@"%i",i];
     __weak __typeof(self) weakSelf  = self;
@@ -46,8 +39,16 @@
             i--;
             weakSelf.titleLabel.text = [NSString stringWithFormat:@"%i",i];
         }
-//        [self.titleLabel sizeToFit];
     });
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+
 }
 
 
