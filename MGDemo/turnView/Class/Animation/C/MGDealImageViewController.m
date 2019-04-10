@@ -9,6 +9,7 @@
 #import "MGDealImageViewController.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "UIViewController+HUD.h"
+#import "MGAllocViewController.h"
 
 @interface MGDealImageViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageV1;
@@ -257,4 +258,12 @@
     }
     return resultData;
 }
+
+
+
+- (IBAction)allocClick:(UIButton *)sender {
+    [self.navigationController pushViewController:[MGAllocViewController new] animated:YES];
+}
+
+
 @end

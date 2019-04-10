@@ -77,19 +77,30 @@
                                         <constraint firstAttribute="height" constant="120" id="kzU-7z-Vwi"/>
                                     </constraints>
                                 </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb4-JC-sCk">
+                                    <rect key="frame" x="10" y="410" width="365" height="30"/>
+                                    <color key="backgroundColor" red="1" green="0.50196078430000002" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" title="内存分配"/>
+                                    <connections>
+                                        <action selector="allocClick:" destination="-1" eventType="touchUpInside" id="CfY-Fd-eBx"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="LR3-cf-TEA" firstAttribute="top" secondItem="ce8-HX-ORc" secondAttribute="bottom" constant="10" id="DN4-sG-MQb"/>
                                 <constraint firstAttribute="bottom" secondItem="LR3-cf-TEA" secondAttribute="bottom" constant="10" id="EZp-pw-CvK"/>
+                                <constraint firstItem="bb4-JC-sCk" firstAttribute="top" secondItem="LR3-cf-TEA" secondAttribute="bottom" constant="10" id="Nal-3s-e9o"/>
                                 <constraint firstAttribute="trailing" secondItem="J77-CQ-fZq" secondAttribute="trailing" constant="20" id="SQ5-lW-YQy"/>
                                 <constraint firstItem="u4M-zc-eXy" firstAttribute="width" secondItem="vTa-84-XHA" secondAttribute="width" multiplier="0.46" id="UJT-NS-DGG"/>
                                 <constraint firstItem="ce8-HX-ORc" firstAttribute="leading" secondItem="vTa-84-XHA" secondAttribute="leading" constant="10" id="XFf-c8-3NO"/>
                                 <constraint firstItem="LR3-cf-TEA" firstAttribute="leading" secondItem="vTa-84-XHA" secondAttribute="leading" constant="10" id="dBi-xR-D2O"/>
                                 <constraint firstItem="ce8-HX-ORc" firstAttribute="top" secondItem="J77-CQ-fZq" secondAttribute="bottom" constant="10" id="fTJ-0F-b3q"/>
                                 <constraint firstItem="J77-CQ-fZq" firstAttribute="top" secondItem="vTa-84-XHA" secondAttribute="top" constant="20" id="pIK-jM-lVf"/>
+                                <constraint firstItem="bb4-JC-sCk" firstAttribute="trailing" secondItem="LR3-cf-TEA" secondAttribute="trailing" id="qXt-Gp-0ba"/>
                                 <constraint firstAttribute="trailing" secondItem="LR3-cf-TEA" secondAttribute="trailing" constant="10" id="qmX-MD-2Do"/>
                                 <constraint firstAttribute="trailing" secondItem="ce8-HX-ORc" secondAttribute="trailing" constant="10" id="sdR-nl-LFk"/>
                                 <constraint firstItem="J77-CQ-fZq" firstAttribute="leading" secondItem="vTa-84-XHA" secondAttribute="leading" constant="10" id="ufI-LW-SG8"/>
+                                <constraint firstItem="bb4-JC-sCk" firstAttribute="leading" secondItem="LR3-cf-TEA" secondAttribute="leading" id="x9s-wv-GGU"/>
                             </constraints>
                         </scrollView>
                     </subviews>

@@ -13,6 +13,7 @@
 #import "MGScrollViewLabel.h"
 #import "MGButton+Delay.h"
 #import "MGDealImageViewController.h"
+#import "UIView+MGBadge.h"
 
 @interface MGWanWanViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *shakeBtn;
@@ -67,6 +68,7 @@
     scrollSwitchBtn.centerX = self.view.centerX;
     scrollSwitchBtn.timeInterval = 5;
     [self.view addSubview:scrollSwitchBtn];
+    [scrollSwitchBtn showBadge];
     
     self.liveView = [[UIView alloc]init];
     self.liveView.backgroundColor = [UIColor blackColor];
@@ -81,6 +83,20 @@
     liveViewLayer.fillColor = [UIColor blackColor].CGColor;
     liveViewLayer.path = maskPath.CGPath;
     self.liveView.layer.mask = liveViewLayer;
+
+    MGButton_Delay *redBtn=[MGButton_Delay buttonWithType:UIButtonTypeCustom];
+    [redBtn addTarget:self action:@selector(ss:) forControlEvents:UIControlEventTouchUpInside];
+    redBtn.selected = NO;
+    [redBtn setTitle:@"约束测试小红点" forState:UIControlStateNormal];
+    [redBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//    [redBtn sizeToFit];
+    redBtn.timeInterval = 5;
+    [self.view addSubview:redBtn];
+    [redBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(-20-49);
+    }];
+    [redBtn showBadge];
 }
 
 - (void)runtimeClick {
@@ -126,6 +142,7 @@
 - (void)ss:(UIButton *)sender {
     [self.navigationController pushViewController:[MGDealImageViewController new] animated:YES];
      NSLog(@"靠  代码不响应");
+    [sender hideBadge];
 }
 
 - (IBAction)start:(id)sender {

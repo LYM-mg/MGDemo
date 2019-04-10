@@ -217,12 +217,14 @@
 		F4497E1521339FB50018F7C1 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4497E1021339FB50018F7C1 /* UIViewController+Extension.m */; };
 		F4497E1621339FB50018F7C1 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F4497E1221339FB50018F7C1 /* UIViewController+HUD.m */; };
 		F4497E1721339FB50018F7C1 /* UIViewController+SLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4497E1421339FB50018F7C1 /* UIViewController+SLExtension.m */; };
+		F44A12CA225C7C6D00AB6668 /* MGAllocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F44A12C9225C7C6D00AB6668 /* MGAllocViewController.m */; };
 		F44D0B67200F200100AB7C63 /* debugRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B63200F200000AB7C63 /* debugRibbon.png */; };
 		F44D0B68200F200100AB7C63 /* betaRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B64200F200000AB7C63 /* betaRibbon.png */; };
 		F44D0B69200F200100AB7C63 /* resizedBetaRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B65200F200000AB7C63 /* resizedBetaRibbon.png */; };
 		F44D0B6A200F200100AB7C63 /* resizedRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = F44D0B66200F200000AB7C63 /* resizedRibbon.png */; };
 		F45AA6272255D9760061A0F0 /* MGDealImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F45AA6252255D9760061A0F0 /* MGDealImageViewController.m */; };
 		F45AA6282255D9760061A0F0 /* MGDealImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45AA6262255D9760061A0F0 /* MGDealImageViewController.xib */; };
+		F465B29B225D93F800F69BB9 /* UIView+MGBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = F465B29A225D93F800F69BB9 /* UIView+MGBadge.m */; };
 		F4695A90212D3C09001BBBFC /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4695A8E212D3C08001BBBFC /* UIViewController+Extension.m */; };
 		F4695A93212D3C24001BBBFC /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F4695A91212D3C23001BBBFC /* UIViewController+HUD.m */; };
 		F4852EE921C3AE810075B029 /* NSTimer+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = F4852EE721C3AE810075B029 /* NSTimer+Block.m */; };
@@ -619,6 +621,8 @@
 		F4497E1221339FB50018F7C1 /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
 		F4497E1321339FB50018F7C1 /* UIViewController+SLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SLExtension.h"; sourceTree = "<group>"; };
 		F4497E1421339FB50018F7C1 /* UIViewController+SLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SLExtension.m"; sourceTree = "<group>"; };
+		F44A12C8225C7C6D00AB6668 /* MGAllocViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGAllocViewController.h; sourceTree = "<group>"; };
+		F44A12C9225C7C6D00AB6668 /* MGAllocViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGAllocViewController.m; sourceTree = "<group>"; };
 		F44D0B63200F200000AB7C63 /* debugRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debugRibbon.png; sourceTree = "<group>"; };
 		F44D0B64200F200000AB7C63 /* betaRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = betaRibbon.png; sourceTree = "<group>"; };
 		F44D0B65200F200000AB7C63 /* resizedBetaRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resizedBetaRibbon.png; sourceTree = "<group>"; };
@@ -626,6 +630,9 @@
 		F45AA6242255D9760061A0F0 /* MGDealImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGDealImageViewController.h; sourceTree = "<group>"; };
 		F45AA6252255D9760061A0F0 /* MGDealImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGDealImageViewController.m; sourceTree = "<group>"; };
 		F45AA6262255D9760061A0F0 /* MGDealImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGDealImageViewController.xib; sourceTree = "<group>"; };
+		F465B298225D93D300F69BB9 /* MGBadgeProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGBadgeProtocol.h; sourceTree = "<group>"; };
+		F465B299225D93F800F69BB9 /* UIView+MGBadge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MGBadge.h"; sourceTree = "<group>"; };
+		F465B29A225D93F800F69BB9 /* UIView+MGBadge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+MGBadge.m"; sourceTree = "<group>"; };
 		F4695A8E212D3C08001BBBFC /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		F4695A8F212D3C09001BBBFC /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		F4695A91212D3C23001BBBFC /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
@@ -670,6 +677,8 @@
 				F45AA6242255D9760061A0F0 /* MGDealImageViewController.h */,
 				F45AA6252255D9760061A0F0 /* MGDealImageViewController.m */,
 				F45AA6262255D9760061A0F0 /* MGDealImageViewController.xib */,
+				F44A12C8225C7C6D00AB6668 /* MGAllocViewController.h */,
+				F44A12C9225C7C6D00AB6668 /* MGAllocViewController.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1316,6 +1325,9 @@
 				F426CFE52008B11C00DE032D /* UIViewController+Utils.m */,
 				F426CFE82008B14E00DE032D /* UINavigationBar+ChangeColor.h */,
 				F426CFE72008B14D00DE032D /* UINavigationBar+ChangeColor.m */,
+				F465B298225D93D300F69BB9 /* MGBadgeProtocol.h */,
+				F465B299225D93F800F69BB9 /* UIView+MGBadge.h */,
+				F465B29A225D93F800F69BB9 /* UIView+MGBadge.m */,
 			);
 			path = MGCategory;
 			sourceTree = "<group>";
@@ -1659,6 +1671,7 @@
 			files = (
 				F426CFD320089D3E00DE032D /* LLGifView.m in Sources */,
 				3A5096211D2F6EA100580D2B /* HUTransitionGhostAnimator.m in Sources */,
+				F465B29B225D93F800F69BB9 /* UIView+MGBadge.m in Sources */,
 				C0B8CF791F46BCB600DBD937 /* UIButton+Extension.m in Sources */,
 				3A427A151D30175A008880EE /* MGHomeModel.m in Sources */,
 				F426CFD220089D3E00DE032D /* LLGifImageView.m in Sources */,
@@ -1829,6 +1842,7 @@
 				3A29D0EC1D1A426E004F1FDD /* MJRefreshNormalHeader.m in Sources */,
 				C05B45D51F7A332A003B77D3 /* MGApplication.m in Sources */,
 				3A29D0E21D1A426E004F1FDD /* MJRefreshComponent.m in Sources */,
+				F44A12CA225C7C6D00AB6668 /* MGAllocViewController.m in Sources */,
 				F43F1A282016E26200A4B17E /* XJLTaskLittleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

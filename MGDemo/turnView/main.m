@@ -15,6 +15,7 @@ int main(int argc, char * argv[]) {
         int *b = (int *)(&a+1);
         printf("%d,%d ,%d,%d ,%d ",*(a+1),*(a+2),*b,*(b-1),*(b-2));
         
+
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
