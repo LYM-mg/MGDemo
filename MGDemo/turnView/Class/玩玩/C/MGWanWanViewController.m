@@ -96,7 +96,7 @@
         make.centerX.equalTo(self.view);
         make.bottom.equalTo(self.view).offset(-20-49);
     }];
-    [redBtn showBadge];
+    [redBtn showBadgeWithValue:12];
 }
 
 - (void)runtimeClick {

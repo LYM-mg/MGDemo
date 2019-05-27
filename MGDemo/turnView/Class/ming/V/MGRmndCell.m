@@ -1,8 +1,8 @@
 //
 //  MGRmndCell.m
 //  MGHuntForCity
-//  github:    https://github.com/ZhongTaoTian/MGHuntForCity
-//  项目讲解博客:http://www.jianshu.com/p/8b0d694d1c69
+//  github:    
+//  项目讲解博客:
 //  Created by MacBook on 15/7/2.
 //  Copyright (c) 2015年 维尼的小熊. All rights reserved.
 //  推荐cell

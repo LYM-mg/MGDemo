@@ -31,6 +31,10 @@
 
 @implementation MGShakeVC
 
+- (void)dealloc {
+    MGLogFunc;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    // 上半部分的图
@@ -79,7 +83,7 @@
     textView.y = 10+MGNavHeight;
     textView.x = 10;
     textView.width = MGSCREEN_WIDTH-20;
-    textView.height = MGSCREEN_HEIGHT-20;
+    textView.height = MGSCREEN_HEIGHT-20-textView.y;
     textView.borderColor = [UIColor lightGrayColor];
     textView.borderWidth = 3;
     textView.cornerRadius = 10;
